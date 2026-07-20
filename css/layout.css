@@ -1,0 +1,438 @@
+@charset "utf-8";
+
+/* ==============================
+ * header, footer, form, popup(modal/ bottomsheet ...) 등 컴포넌트 형태의 공통 style
+ * ============================== */
+
+/*------- header -------*/
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 300;
+    width: 100%;
+    height: 6rem;
+    background: rgba(0, 0, 0, 0.6);
+}
+.header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+}
+.header .logo {
+    display: inline-block;
+    width: 11.25rem;
+}
+.header .logo img{
+    width: 11.1875rem;
+}
+.header .gnb{
+    display: flex;
+    margin: 0 -3.75rem;
+}
+.header .gnb .depth1 a{
+    display: block;
+    padding: 1.25rem 0;
+    margin: 0 3.75rem;
+    color: #fff;
+    font-size: 1.125rem;
+    text-align: center;
+}
+.header .gnb .depth1 a.active,
+.header .gnb .depth1 a:hover{
+    color: #6fd5ff;
+    font-weight: 700;
+}
+/*------- //header -------*/
+
+/*------- footer -------*/
+.footer {
+    position: relative;
+    width: 100%;
+    color: #777;
+    font-size: 1.125rem;
+    border-top: 0.0625rem solid #ccc;
+}
+.footer .logo img{
+    width: 8.125rem;
+}
+.footer .inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+.footer address{
+    font-family: '굴림';
+    font-size: 0.75rem;
+    color: #959595;
+}
+/*------- //footer -------*/
+
+/*------- list -------*/
+.list-wrap .list,
+.list li{
+    position: relative;
+    padding-left: 0.75rem;
+}
+.list-wrap .list:before,
+.list li:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0.8125rem;
+    width: 0.25rem;
+    height: 0.25rem;
+    background: #333;
+    border-radius: 50%;
+}
+.list-blue .list:before,
+.list-blue li:before{
+    background-color: #0082c9;
+}
+.list-white .list:before,
+.list-white li:before{
+    background-color: #fff;
+}
+/*------- //list -------*/
+
+/*------- pagination -------*/
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4.375rem;
+}
+.pagination .button{
+    position: relative;
+    top: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 0;
+    border: 0.0625rem solid #c9d8de;
+}
+.pagination .button:after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 53%;
+    top: 50%;
+    width: 0.3125rem;
+    height: 0.5rem;
+    background-image: url('./../images/icons/icon_arrow_right.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.pagination .button.prev-btn:after{
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+.pagination .button.next-btn:after{
+    transform: translate(-50%, -50%);
+}
+
+.pagination .num{
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+.pagination .num li{
+    margin: 0 0.5rem;
+    font-family: '돋움','Dotum';
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #9e9e9e;
+}
+.pagination .num li.active{
+    color: #006db3;
+}
+/*------- //pagination -------*/
+
+/*------- sub page title -------*/
+.sub-wrap .title-area{
+    height: 21.625rem;
+    margin-bottom: 5.625rem;
+    background: url('./../images/common/bg_visual.jpg') no-repeat top center / cover;
+}
+.sub-wrap .title-area .inner{
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+.sub-wrap .title-area .inner p{
+    margin-bottom: 2.25rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #003159;
+}
+.sub-wrap .contents{
+    padding-bottom: 4.375rem;
+}
+/*------- //sub page title -------*/
+
+/*------- search box -------*/
+.search-area .search-box{
+    border: 0.0625rem solid #2384c6;
+}
+.search-area .search-section{
+    display: flex;
+    flex-wrap: wrap;
+}
+.search-box .search-wrap{
+    display: flex;
+    width: 50%;
+    border-top: 0.0625rem solid #c9d8de;
+}
+.search-box .search-section.col3 .search-wrap {
+    width: calc(100% / 3);
+}
+    
+.search-box .search-wrap-set{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.search-box .search-wrap-set .search-wrap + .search-wrap{
+    border-left: 0.0625rem solid #c9d8de;
+}
+
+.search-box .search-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 7.5rem;
+    height: 100%;
+    padding: 0 0.75rem;
+    text-align: center;
+    color: #003159;
+    font-size: 0.875rem;
+    letter-spacing: -0.0625rem;
+    line-height: 1.2;
+    background: #f8fafd;
+    border-right: 0.0625rem solid #c9d8de;
+}
+.search-box .search-title > span{
+    display: inline-block;
+    margin-top: 0.125rem;
+    font-size: 0.75rem;
+}
+.search-box .search-content{
+    display: flex;
+    align-items: center;
+    width: calc(100% - 7.5rem);
+    padding: 0.5rem 5.625rem 0.5rem 1.4375rem;
+}
+.search-box .search-content.col2{
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+.search-box .search-content.col2 input {
+    flex: auto !important;
+    width: calc(100% / 2 - 0.75rem) !important;
+}
+.search-box .search-content.col2 .col2-first{
+    flex: .5; 
+    margin-right: 0.75rem;
+}
+.search-box .search-content.col2 .col2-last{
+    flex: .5;
+}
+.search-box .col3 .search-content{
+    padding: 0.625rem 3.375rem 0.625rem 1.4375rem;
+}
+.search-area .btn-wrap{
+    margin-top: 2.5rem;
+    text-align: right;
+}
+.search-area .btn{
+    background: #0072bc;
+}
+/*------- //search box -------*/
+
+/*------- datepicker -------*/
+.ui-datepicker{
+    display: none;
+}
+.ui-datepicker-trigger{
+    display: none;
+}
+
+.ui-datepicker {
+    z-index: 200 !important;
+    width: 17.5rem;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+.ui-datepicker-header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.25rem 0;
+    background-color: #2384c6;
+}
+
+.ui-datepicker-prev, 
+.ui-datepicker-next {
+    position: absolute;
+    width: 1.625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url('./../images/icons/icon_arrow_right01.png') no-repeat center;
+    background-size: 50%;
+}
+.ui-datepicker-prev span, 
+.ui-datepicker-next span {
+    font-size: 0;
+}
+.ui-datepicker-prev {
+    left: 0.625rem;
+    transform: translateY(-50%) rotate(180deg);
+}
+.ui-datepicker-next {
+    right: 0.625rem;
+}
+
+.ui-datepicker-title {
+    width: 7.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ui-datepicker-year, 
+.ui-datepicker-month {
+    padding-right: 1.125rem;
+    font-size: 1.25rem;
+    color: #fff;
+    border: none;
+    text-align: center;
+    background-color: #2384c6;
+    background-image: url("./../images/icons/icon_arrow_down01.png");
+    background-repeat: no-repeat;
+    background-position: center right 0;
+    background-size: 0.5rem;
+}
+
+.ui-datepicker-calendar {
+    text-align: center;
+}
+.ui-datepicker-calendar thead th {
+    padding: 1rem 0 0.75rem 0;
+}
+.ui-datepicker-calendar td {
+    position: relative;
+    padding: 0.375rem 0.125rem;
+}
+.ui-datepicker-calendar a {
+    display: block;
+    color: inherit;
+    line-height: 1.5;
+}
+.ui-datepicker-calendar .ui-datepicker-other-month {
+    color: #B1A7A6;
+    background-color: #F5F3F4;
+}
+.ui-datepicker-today {
+    color: #2384c6;
+}
+.ui-datepicker .ui-state-active {
+    color: #fff;
+    font-weight: 700;
+}
+.ui-datepicker .ui-state-active::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2384c6;
+    border-radius: 50%;
+    z-index: -1;rPw
+}
+/*------- //datepicker -------*/
+
+/*------- fancybox -------*/
+.fancybox-overlay{
+    background: rgba(0, 0, 0, 0.6);
+}
+.fancybox-close{
+    top: 0.25rem;
+    right: 0.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url('./../images/icons/icon_close.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+.fancybox-prev span{
+    left: -3.125rem;
+    visibility: visible;
+    display: block;
+    width: 2.625rem;
+    height: 2.625rem;
+    background-image: url('./../images/icons/icon_arrow_right01.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.25rem;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    transform: rotate(180deg);
+}
+.fancybox-next span{
+    right: -3.125rem;
+    visibility: visible;
+    display: block;
+    width: 2.625rem;
+    height: 2.625rem;
+    background-image: url('./../images/icons/icon_arrow_right01.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.25rem;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+}
+.fancybox-skin{
+    padding: 0 !important;
+    background: none;
+}
+.fancybox-wrap{
+    width: 56.25rem !important;
+    height: auto !important;
+}
+.fancybox-outer,
+.fancybox-inner,
+.fancybox-inner img{
+    width: 100% !important;
+    height: 100% !important;
+}
+.fancybox-opened .fancybox-title{
+    display: none;
+}
+/*------- //fancybox -------*/
+
+
+/*------- media screen -------*/
+@media screen and (max-width: 74.9375rem) {
+    .search-box .col3 .search-content{
+        padding: 0.625rem 0.5rem;
+    }
+    .search-box .search-content{
+    	padding: 0.5rem;
+    }
+    .footer .inner{
+    	padding: 1.5rem 2.5rem;
+    }
+}

@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+
+/* ==============================
+ * common 공통
+ * 메인 및 서브 모든 페이지에서 사용하는 스타일 요소
+ * ============================== */
+
+/* font */
+@font-face {
+  font-family: "MG_KFCC";
+  font-weight: 400;
+  font-style: normal;
+  src: 
+    url('../fonts/MG_KFCC_Regular.woff2') format('woff2'),
+    url('../fonts/MG_KFCC_Regular.woff') format('woff'),
+    url("../fonts/MG_KFCC_Regular.eot") format("embedded-opentype"),
+
+    url('../fonts/MG_KFCC_L_Regular.woff2') format('woff2'),
+    url('../fonts/MG_KFCC_L_Regular.woff') format('woff'),
+    url("../fonts/MG_KFCC_L_Regular.ttf") format("truetype"),
+    url("../fonts/MG_KFCC_L_Regular.eot") format("embedded-opentype"),
+
+    url('../fonts/MG_KFCC_OTF_Regular.woff2') format('woff2'),
+    url('../fonts/MG_KFCC_OTF_Regular.woff') format('woff'),
+    url("../fonts/MG_KFCC_OTF_Regular.eot") format("embedded-opentype"),
+
+    url('../fonts/MG_KFCC_L_OTF_Regular.woff2') format('woff2'),
+    url('../fonts/MG_KFCC_L_OTF_Regular.woff') format('woff'),
+    url("../fonts/MG_KFCC_L_OTF_Regular.otf") format("opentype"),
+    url("../fonts/MG_KFCC_L_OTF_Regular.eot") format("embedded-opentype");
+}
+
+@font-face {
+  font-family: "MG_KFCC";
+  font-weight: 700;
+  font-style: normal;
+  src: 
+    url('../fonts/MG_KFCC_Bold.woff') format('woff2'),
+    url('../fonts/MG_KFCC_Bold.woff2') format('woff'),
+    url("../fonts/MG_KFCC_Bold.eot") format("embedded-opentype"),
+
+    url('../fonts/MG_KFCC_L_Bold.woff2') format('woff2'),
+    url('../fonts/MG_KFCC_L_Bold.woff') format('woff'),
+    url("../fonts/MG_KFCC_L_Bold.ttf") format("truetype"),
+    url("../fonts/MG_KFCC_L_Bold.eot") format("embedded-opentype"),
+
+    url('../fonts/MG_KFCC_OTF_Bold.woff2') format('woff2'),
+    url('../fonts/MG_KFCC_OTF_Bold.woff') format('woff'),
+    url("../fonts/MG_KFCC_OTF_Bold.eot") format("embedded-opentype"),
+
+    url('../fonts/MG_KFCC_L_OTF_Bold.woff2') format('woff2'),
+    url('../fonts/MG_KFCC_L_OTF_Bold.woff') format('woff'),
+    url("../fonts/MG_KFCC_L_OTF_Bold.otf") format("opentype"),
+    url("../fonts/MG_KFCC_L_OTF_Bold.eot") format("embedded-opentype");
+}
+#container {
+  width: 100%;
+  min-height: calc(100vh - 4.25rem);
+}
+.inner{
+  position: relative;
+  width: 62.5rem;
+  margin: 0 auto;
+}
+.contents {
+  position: relative;
+}
+
+/* 접근성을 위한 텍스트 블라이드처리 공통 클래스 */
+.sr-only{
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: -1000vw;
+}
+.hidden {
+  position: absolute;
+  left: -312.5rem;
+  top: -312.5rem;
+  overflow: hidden;
+}
+.hide {
+  display: none !important;
+}
+.block {
+  display: block !important;
+}
+
+/*------- media screen -------*/
+@media screen  and (max-width: 74.9375rem) {
+  .inner{
+    width: 100%;
+    padding: 0 2.5rem;
+  }
+}
