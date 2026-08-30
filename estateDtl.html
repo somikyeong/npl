@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MG새마을금고 NPL 홍보 플랫폼 물건 상세정보. 경공매 진행상태, 면적, 입찰기간, 감정평가금액, 매각조건을 확인할 수 있습니다.">
+
+    <title>물건상세 | MG새마을금고 NPL 홍보 플랫폼</title>
+
+    <meta property="og:title" content="물건상세 | MG새마을금고 NPL 홍보 플랫폼">
+    <meta property="og:url" content="https://www.kfcc.co.kr">
+    <meta property="og:image" content="https://www.kfcc.co.kr/static/images/og_img.jpg">
+
+    <link rel="icon" type="image/svg+xml" href="./images/common/favicon.svg">
+
+    <!-- [D] : 250619 | fancybox v5 => v2으로 버전 수정에 따른 파일 변경 -->
+    <link rel="stylesheet" href="./css/jquery.fancybox.css">
+    <link rel="stylesheet" href="./css/jquery.fancybox-thumbs.css">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/module.css">
+    <link rel="stylesheet" href="./css/content.css">
+</head>
+<body>
+<a href="#container" class="skip-nav">본문 바로가기</a>
+
+<!-- [S]: header -->
+<header class="header">
+    <div class="inner">
+        <a href="./index.html" class="logo">
+            <img class="logo_img" src="./images/common/logo.png" alt="MG새마을금고 NPL 홍보 플랫폼 홈으로 이동">
+        </a>
+        <nav class="nav" aria-label="주메뉴">
+            <ul class="gnb">
+                <li class="depth1">
+                    <a href="./estateBidList.html" id="bidMenu"><span>경매물건</span></a>
+                </li>
+                <li class="depth1">
+                    <a href="./estateSaleList.html" id="saleMenu"><span>공매물건</span></a>
+                </li>
+                <!-- [D] : 250619 | 공매FAQ 페이지 오픈 전까지 비노출 -->
+                <li class="depth1" hidden>
+                    <a href="javascript:;" id="faqMenu"><span>공매FAQ</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- [E]: header -->
+
+<main id="wrap" class="sub-wrap">
+    <div id="container" class="sub03-container" tabindex="-1">
+        <!-- [S]: title -->
+        <div class="title-area">
+            <div class="inner">
+                <h1>물건상세</h1>
+            </div>
+        </div>
+        <!-- [E]: title -->
+
+        <!-- [S]: contents -->
+        <div class="contents inner">
+            <!-- [S]: 물건 개요 -->
+            <section aria-labelledby="dtlSummaryTitle">
+                <h2 class="sr-only" id="dtlSummaryTitle">물건 개요</h2>
+
+                <div class="btn-wrap">
+                    <button type="button" class="btn-square print"><span>출력</span></button>
+                    <button type="button" class="btn-square list" onclick="goEstateList();"><span>목록</span></button>
+                </div>
+
+                <div class="title-wrap">
+                    <div class="title-top">
+                        <p>
+                            <span class="flag flagA">경 매</span>
+                            <span>2024 타경 4245</span>
+                        </p>
+                        <ul class="title-info">
+                            <li>공고일자 : 2024.05.20</li>
+                            <li>조회수 : 127회</li>
+                        </ul>
+                    </div>
+                    <div class="title-bottom">
+                        <span class="category">[ 기타시설 / 타운하우스 ]</span>
+                        <strong class="address">석곡면 연반리 산19번지 외 42필지 (착공전)</strong>
+                    </div>
+                </div>
+
+                <div class="cont-area">
+                    <!-- [D] : 250619.1 | fancybox v5 => v2으로 버전 수정에 따른 마크업 변경 -->
+                    <div class="gallery-wrap">
+                        <!-- 메인 이미지 -->
+                        <a id="mainImageLink" class="fancybox mainImageLink" href="/upload/data/mciEstate/61-1_1750844612884.jpg" aria-label="대표 사진 확대해서 보기">
+                            <img id="mainImage" src="/upload/data/mciEstate/61-1_1750844612884.jpg" alt="석곡면 연반리 산19번지 외 42필지 대표 사진" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                        </a>
+
+                        <!-- 썸네일 : zoom 연결 X, 메인 이미지 교체용 / 팝업용 a는 Fancybox가 참조하는 숨김 마크업 -->
+                        <div class="thumbs" role="group" aria-label="물건 사진 목록">
+                            <button type="button" aria-label="1번째 사진 보기" data-src="/upload/data/mciEstate/61-1_1750844612884.jpg">
+                                <img src="/upload/data/mciEstate/61-1_1750844612884.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                            </button>
+                            <a href="/upload/data/mciEstate/61-1_1750844612884.jpg" class="fancybox hidden" data-fancybox-group="gallery" tabindex="-1" aria-hidden="true"></a>
+
+                            <button type="button" aria-label="2번째 사진 보기" data-src="/upload/data/mciEstate/61-2_1750844614498.jpg">
+                                <img src="/upload/data/mciEstate/61-2_1750844614498.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                            </button>
+                            <a href="/upload/data/mciEstate/61-2_1750844614498.jpg" class="fancybox hidden" data-fancybox-group="gallery" tabindex="-1" aria-hidden="true"></a>
+
+                            <button type="button" aria-label="3번째 사진 보기" data-src="/upload/data/mciEstate/61-3_1750844615672.jpg">
+                                <img src="/upload/data/mciEstate/61-3_1750844615672.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                            </button>
+                            <a href="/upload/data/mciEstate/61-3_1750844615672.jpg" class="fancybox hidden" data-fancybox-group="gallery" tabindex="-1" aria-hidden="true"></a>
+
+                            <button type="button" aria-label="4번째 사진 보기" data-src="/upload/data/mciEstate/61-4_1750844616981.jpg">
+                                <img src="/upload/data/mciEstate/61-4_1750844616981.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                            </button>
+                            <a href="/upload/data/mciEstate/61-4_1750844616981.jpg" class="fancybox hidden" data-fancybox-group="gallery" tabindex="-1" aria-hidden="true"></a>
+
+                            <button type="button" aria-label="5번째 사진 보기" data-src="/upload/data/mciEstate/61-5_1750844617935.jpg">
+                                <img src="/upload/data/mciEstate/61-5_1750844617935.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                            </button>
+                            <a href="/upload/data/mciEstate/61-5_1750844617935.jpg" class="fancybox hidden" data-fancybox-group="gallery" tabindex="-1" aria-hidden="true"></a>
+                        </div>
+                    </div>
+                    <!-- //[D] : 250619.1 | fancybox v5 => v2으로 버전 수정에 따른 마크업 변경 -->
+
+                    <div class="info-wrap print-flex uses-transform section">
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt>경공매</dt>
+                                    <dd>경매</dd>
+                                </dl>
+                                <dl>
+                                    <dt>진행상태</dt>
+                                    <dd>경매 준비중</dd>
+                                </dl>
+                                <dl>
+                                    <dt>면적</dt>
+                                    <dd><span class="blueA">토지 274.98</span>㎡ / <span class="blueA">건물 632.69</span>㎡</dd>
+                                </dl>
+                                <dl>
+                                    <dt>입찰기간</dt>
+                                    <dd>2026.08.12 - 2026.12.16</dd>
+                                </dl>
+                                <dl>
+                                    <dt>감정평가금액<span>(백만원)</span></dt>
+                                    <dd class="blueA">6,134 (백만원)</dd>
+                                </dl>
+                                <dl>
+                                    <dt>마지막회차 최저입찰가격<span>(백만원)</span></dt>
+                                    <dd class="blueA">6,134 (백만원)</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>법원명/온비드</dt>
+                                    <dd><span class="onbid">광주지방법원</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt>문의처</dt>
+                                    <dd>나주동부금고 정인환 대리<br>061-336-1557</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- [E]: 물건 개요 -->
+
+            <!-- [S]: 기본정보 -->
+            <section aria-labelledby="dtlBasicTitle">
+                <h2 class="s-title" id="dtlBasicTitle">기본정보</h2>
+                <div class="table-wrap print-flex uses-transform section">
+                    <dl class="place">
+                        <dt>대표소재지</dt>
+                        <dd>석곡면 연반리 산19번지 외 42필지</dd>
+                    </dl>
+                    <table class="table-info">
+                        <caption>기본정보</caption>
+                        <colgroup>
+                            <col span="4" style="width: 25%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">사업용도</th>
+                                <th scope="col">인허가여부</th>
+                                <th scope="col">인허가번호</th>
+                                <th scope="col" class="bor-right-none">착공 및 완공여부</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>기타시설/타운하우스</td>
+                                <td>부</td>
+                                <td>-</td>
+                                <td>착공전</td>
+                            </tr>
+                            <tr>
+                                <th scope="colgroup" colspan="4" class="bor-right-none">기타</th>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><p class="blueA">2024타경4245</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- [E]: 기본정보 -->
+
+            <!-- [S]: 매각조건 -->
+            <section aria-labelledby="dtlTermsTitle">
+                <h2 class="s-title" id="dtlTermsTitle">매각조건</h2>
+                <div class="table-wrap print-flex uses-transform section">
+                    <table class="table-option">
+                        <caption>매각조건</caption>
+                        <colgroup>
+                            <col span="4" style="width: 25%;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">감정평가금액 <span>(백만원)</span></th>
+                                <td>6,134 (백만원)</td>
+                                <th scope="row">감정평가기관 / 일자</th>
+                                <td>가온감정평가법인 / 2025.05.30</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1회차 최저입찰가 <span>(백만원)</span></th>
+                                <td>6,134 (백만원)</td>
+                                <th scope="row">마지막회차 최저입찰가격</th>
+                                <td>6,134 (백만원)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">유찰저감률 <span>(%)</span></th>
+                                <td>20%</td>
+                                <th scope="row">매각처분방법 / 수의계약 가능 여부</th>
+                                <td>경매입찰 / 불가</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- [E]: 매각조건 -->
+        </div>
+        <!-- [E]: contents -->
+    </div>
+</main>
+
+<!-- [S]: footer -->
+<footer class="footer">
+    <div class="inner">
+        <a href="./index.html" class="logo">
+            <img src="./images/common/logo01.png" alt="MG새마을금고">
+        </a>
+
+        <p class="copyright"><small>COPYRIGHT 2025 ©새마을금고 NPL 홍보 플랫폼. ALL RIGHTS RESERVED.</small></p>
+    </div>
+</footer>
+<!-- [E]: footer -->
+
+<!-- 목록 복귀용 검색 조건 전달 폼 -->
+<form name="EstateDtlfrm" id="EstateDtlfrm" method="get">
+    <input type="hidden" name="pageNo" value="1">
+    <input type="hidden" name="ownerType" value="">
+    <input type="hidden" name="estateType" value="B">
+    <input type="hidden" name="estateStatus" value="">
+    <input type="hidden" name="estateLocType" value="">
+    <input type="hidden" name="estateLocDtlType" value="">
+    <input type="hidden" name="estateUseType" value="">
+    <input type="hidden" name="bussType" value="">
+    <input type="hidden" name="bussDtlType" value="">
+    <input type="hidden" name="estateLoc" value="">
+    <input type="hidden" name="gmgoNm" value="">
+    <input type="hidden" name="mgrNm" value="">
+    <input type="hidden" name="bidStrDt" value="">
+    <input type="hidden" name="bidEndDt" value="">
+    <input type="hidden" name="orderKey" value="byNotDt">
+    <input type="hidden" name="perCnt" value="8">
+</form>
+
+<!-- [S]: script -->
+<script src="./js/common.js"></script>
+<!-- [D] : 250619.1 | fancybox v5 => v2으로 버전 수정에 따른 파일 변경 -->
+<script src="./js/jquery.fancybox.js"></script>
+<script src="./js/jquery.fancybox.pack.js"></script>
+<script src="./js/jquery.fancybox-thumbs.js"></script>
+<script>
+    $(function () {
+        var estateType = $('#EstateDtlfrm input[name=estateType]').val() || 'B';
+
+        // 헤더 메뉴 active 처리
+        $(estateType === 'B' ? '#bidMenu' : '#saleMenu')
+            .addClass('active')
+            .attr('aria-current', 'page');
+
+        // 썸네일 클릭 시 메인 이미지 교체 (zoom 없음)
+        $('.thumbs button[data-src]').on('click', function () {
+            var newSrc = $(this).data('src');
+
+            $('#mainImage').attr('src', newSrc);
+            $('#mainImageLink').attr('href', newSrc);
+        });
+
+        initGallery();
+        initPrint();
+    });
+
+    /**
+     * 사진 확대 갤러리 :: hidden 요소만 Fancybox 그룹으로 묶고,
+     * 메인 이미지 클릭 시 현재 사진의 index로 팝업을 연다.
+     */
+    function initGallery() {
+        // fancybox 미로드 시에도 썸네일 교체는 동작하도록 방어
+        if (!$.fn.fancybox) return;
+
+        var options = {
+            helpers: { thumbs: { width: 60, height: 60 } },
+            closeBtn: true,
+            arrows: true,
+            loop: false
+        };
+
+        $('.fancybox.hidden').fancybox(options);
+
+        $('#mainImageLink').on('click', function (e) {
+            e.preventDefault();
+
+            var currentHref = $(this).attr('href');
+            var galleryItems = $('.fancybox.hidden');
+            var startIndex = galleryItems.index(galleryItems.filter('[href="' + currentHref + '"]'));
+
+            $.fancybox.open(galleryItems, $.extend({ index: Math.max(startIndex, 0) }, options));
+        });
+    }
+
+    /**
+     * 출력 :: 상세 내용만 담은 iframe을 만들어 인쇄한다. (2025-08-29 추가)
+     */
+    function initPrint() {
+        $('.print').on('click', function (e) {
+            e.preventDefault();
+
+            var $prtCont = $('div.contents.inner').clone(false, false);
+
+            $prtCont.find('.btn-wrap').remove();                 // 버튼영역 제거
+            $prtCont.find('.title-info li').eq(1).remove();       // 조회수 제거
+            $prtCont.find("a:contains('바로가기')").remove();      // 바로가기 제거
+
+            var html = $prtCont[0].innerHTML.replace(/[\n\t]/g, '');
+            var $iframe = $('<iframe>', { style: 'display: none;' }).appendTo('body');
+            var iframe = $iframe[0];
+            var doc = iframe.contentWindow.document;
+
+            doc.open();
+            doc.write(
+                  '<!doctype html><html lang="ko"><head>'
+                + '<meta charset="UTF-8">'
+                + '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">'
+                + '<link rel="stylesheet" href="./css/reset.css">'
+                + '<link rel="stylesheet" href="./css/common.css">'
+                + '<link rel="stylesheet" href="./css/layout.css">'
+                + '<link rel="stylesheet" href="./css/module.css">'
+                + '<link rel="stylesheet" href="./css/content.css">'
+                + '<link rel="stylesheet" href="./css/jquery.fancybox.css">'
+                + '<link rel="stylesheet" href="./css/jquery.fancybox-thumbs.css">'
+                + '<style>'
+                + '@media print {'
+                + '    .sub03-container .cont-area{flex-direction: column;}'
+                + '    .sub03-container .cont-area .gallery-wrap{width: 100%;}'
+                + '    .sub03-container .cont-area .info-wrap ul{padding: 27px 0 0 0;}'
+                + '    .info-wrap ul li:last-child dl:last-child{padding-bottom: 27px;}'
+                + '    .print-flex{display: block !important;}'
+                + '    .uses-transform{transform: none !important;}'
+                + '    .section{break-inside: avoid;}'
+                + '    thead{display: table-header-group;}'
+                + '    tr, img, svg, canvas{break-inside: avoid; page-break-inside: avoid;}'
+                + '    * {-webkit-print-color-adjust: exact; print-color-adjust: exact;}'
+                + '}'
+                + '@page {'
+                + '    size: A4;'
+                + '    margin: 12mm;'
+                + '}'
+                + '</style>'
+                + '</head><body>'
+                + '<div id="wrap" class="sub-wrap">'
+                + '<div id="container" class="sub03-container">'
+                + html
+                + '</div>'
+                + '</div>'
+                + '</body></html>'
+            );
+            doc.close();
+
+            iframe.contentWindow.focus();
+            iframe.contentWindow.print();
+
+            setTimeout(function () {
+                iframe.remove();
+            }, 1000);
+        });
+    }
+
+    /**
+     * 목록으로 :: 경공매 구분에 맞는 목록 페이지로 검색 조건과 함께 이동한다.
+     */
+    function goEstateList() {
+        var f = document.EstateDtlfrm;
+        var estateType = $('#EstateDtlfrm input[name=estateType]').val() || 'B';
+
+        f.action = (estateType === 'B') ? './estateBidList.html' : './estateSaleList.html';
+        f.submit();
+    }
+</script>
+<!-- [E]: script -->
+</body>
+</html>

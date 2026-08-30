@@ -65,10 +65,14 @@
     align-items: center;
     padding: 1.5rem 0;
 }
-.footer address{
+.footer .copyright{
     font-family: '굴림';
     font-size: 0.75rem;
     color: #959595;
+}
+/* small 기본 축소(0.83em) 방지 */
+.footer .copyright small{
+    font-size: inherit;
 }
 /*------- //footer -------*/
 
@@ -157,14 +161,15 @@
 .sub-wrap .title-area{
     height: 21.625rem;
     margin-bottom: 5.625rem;
-    background: url('./../images/common/bg_visual.jpg') no-repeat top center / cover;
+    background: url('./../images/main/bg_visual.jpg') no-repeat top center / cover;
 }
 .sub-wrap .title-area .inner{
     display: flex;
     align-items: flex-end;
     height: 100%;
 }
-.sub-wrap .title-area .inner p{
+.sub-wrap .title-area .inner p,
+.sub-wrap .title-area .inner h1{
     margin-bottom: 2.25rem;
     font-size: 1.875rem;
     font-weight: 700;

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="315" height="350" viewBox="0 0 315 350" role="img" aria-label="이미지 없음">
+  <rect width="315" height="350" fill="#eef2f6"/>
+  <g fill="none" stroke="#b6c4d1" stroke-width="4">
+    <rect x="97" y="133" width="121" height="92" rx="6"/>
+    <path d="M97 205l32-30 26 24 30-33 33 39"/>
+  </g>
+  <circle cx="132" cy="161" r="9" fill="#b6c4d1"/>
+  <text x="157.5" y="262" fill="#8a9bab" font-family="'Malgun Gothic', '맑은 고딕', sans-serif" font-size="16" text-anchor="middle">이미지 준비중</text>
+</svg>

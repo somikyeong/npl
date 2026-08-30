@@ -194,7 +194,8 @@
     transform: translateY(100%);
     transition: all .3s ease;
 }
-.main-wrap .new-area .content a:hover .list{
+.main-wrap .new-area .content a:hover .list,
+.main-wrap .new-area .content a:focus .list{
     transform: translateY(0%);
     transition: all .3s ease;
 }
@@ -300,6 +301,12 @@
 }
 .sub02-container .cont-top .title .title-info > span{
     font-weight: inherit;
+}
+/* 카드 제목 링크는 제목 색상을 그대로 따르도록 */
+.sub02-container .cont-top .title .title-info a,
+.sub02-container .cont-top .title .title-info a:link,
+.sub02-container .cont-top .title .title-info a:visited{
+    color: inherit;
 }
 .sub02-container .cont-top strong{
     font-family: '돋움','Dotum';
@@ -487,7 +494,8 @@
     width: 100%;
     height: 100%;
 }
-.sub03-container .cont-area .gallery-wrap a{
+.sub03-container .cont-area .gallery-wrap a,
+.sub03-container .cont-area .gallery-wrap button{
     display: block;
 }
 .sub03-container .cont-area .gallery-wrap .mainImageLink{
@@ -500,7 +508,8 @@
     gap: 0.125rem;
         height: calc((100% - 17.875rem) - 0.125rem);
 }
-.sub03-container .cont-area .thumbs a{
+.sub03-container .cont-area .thumbs a,
+.sub03-container .cont-area .thumbs button{
     width: calc(100% / 4);
 }
 

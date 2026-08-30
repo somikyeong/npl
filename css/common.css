@@ -58,6 +58,10 @@
   width: 100%;
   min-height: calc(100vh - 4.25rem);
 }
+/* 본문 바로가기 이동 대상(tabindex="-1")의 기본 외곽선 제거 */
+#container:focus {
+  outline: none;
+}
 .inner{
   position: relative;
   width: 62.5rem;
@@ -65,6 +69,26 @@
 }
 .contents {
   position: relative;
+}
+
+/* 접근성 : 본문 바로가기(반복 영역 건너뛰기) 링크 */
+.skip-nav {
+  position: absolute;
+  left: 0;
+  top: -3.125rem;
+  z-index: 400;
+  width: 100%;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: #fff;
+  background: #003159;
+  transition: top .2s ease;
+}
+.skip-nav:focus,
+.skip-nav:active {
+  top: 0;
 }
 
 /* 접근성을 위한 텍스트 블라이드처리 공통 클래스 */
