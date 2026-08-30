@@ -98,6 +98,9 @@ section {
 }
 html {
   height: 100%;
+  /* 모바일 가로/세로 전환 시 브라우저 임의 폰트 확대 방지 */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 body {
   position: relative;
@@ -181,6 +184,7 @@ i {
 }
 img {
   vertical-align: top;
+  max-width: 100%;
 }
 select,
 input,
@@ -251,20 +255,22 @@ textarea:-ms-input-placeholder {
 
 
 /*------- media screen -------*/
-@media screen and (max-width: 75rem) {
-  body{
-    width: 75rem;
-  }
-}
-
-@media (min-width: 40rem) and (max-width: 74.9375rem) {
+/* 태블릿 이하 : 고정폭 해제 */
+@media screen and (max-width: 74.9375rem) {
   body{
     width: 100%;
   }
 }
 
-@media (max-width: 39.9375rem) {
+/* 모바일 : 320px까지 가로 스크롤 없이 대응 */
+@media screen and (max-width: 47.9375rem) {
   body{
-    min-width: 40rem;
+    min-width: 20rem;
+  }
+  /* iOS Safari는 폰트 16px 미만 입력요소를 포커스하면 화면을 확대하므로 1rem 유지 */
+  input,
+  select,
+  textarea{
+    font-size: 1rem;
   }
 }

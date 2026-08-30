@@ -118,3 +118,19 @@
     padding: 0 2.5rem;
   }
 }
+
+@media screen and (max-width: 47.9375rem) {
+  .inner{
+    padding: 0 1.25rem;
+  }
+  /* 모바일 헤더는 높이가 줄어들어 뷰포트 여백도 함께 조정 */
+  #container {
+    min-height: calc(100vh - 3.5rem);
+  }
+}
+
+@media screen and (max-width: 30rem) {
+  .inner{
+    padding: 0 1rem;
+  }
+}
