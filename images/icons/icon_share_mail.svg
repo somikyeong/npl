@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" role="img" aria-label="이메일">
+  <g fill="none" stroke="#5a5a5a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4.5" y="7.5" width="19" height="13" rx="2.5"/>
+    <path d="m5.5 9 8.5 6 8.5-6"/>
+  </g>
+</svg>

@@ -67,9 +67,54 @@
             <section aria-labelledby="dtlSummaryTitle">
                 <h2 class="sr-only" id="dtlSummaryTitle">물건 개요</h2>
 
+                <!-- [D] : 태블릿 이하에서는 출력/목록 대신 공유하기 버튼만 노출됩니다. (CSS 제어) -->
                 <div class="btn-wrap">
                     <button type="button" class="btn-square print"><span>출력</span></button>
                     <button type="button" class="btn-square list" onclick="goEstateList();"><span>목록</span></button>
+                    <button type="button" class="btn-square share" onclick="fnShare();"><span>공유하기</span></button>
+
+                    <!-- [S]: 공유하기 팝업 -->
+                    <!-- [D] : 썸네일/물건번호/소재지는 fnShare()에서 본문 값을 읽어 채웁니다. -->
+                    <div class="share-layer" id="shareLayer" hidden>
+                        <div class="share-dim" onclick="fnShareClose();"></div>
+                        <!-- 버튼 아래 붙는 비모달 팝업이라 aria-modal은 쓰지 않는다 -->
+                        <div class="share-popup" role="dialog" aria-labelledby="shareLayerTitle" tabindex="-1">
+                            <div class="share-head">
+                                <h2 id="shareLayerTitle">공유하기</h2>
+                                <button type="button" class="share-close" onclick="fnShareClose();">
+                                    <span class="sr-only">공유하기 닫기</span>
+                                </button>
+                            </div>
+                            <div class="share-body">
+                                <div class="share-thumb">
+                                    <img id="shareThumb" src="./images/common/noImage.svg" alt="" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                                </div>
+                                <p class="share-num" id="shareNum"></p>
+                                <p class="share-addr" id="shareAddr"></p>
+                                <ul class="share-list">
+                                    <li>
+                                        <button type="button" class="share-btn kakao" onclick="fnShareKakao();">
+                                            <span class="ico"></span>
+                                            <span class="txt">카카오톡</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="share-btn mail" onclick="fnShareMail();">
+                                            <span class="ico"></span>
+                                            <span class="txt">이메일</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="share-btn url" onclick="fnShareUrl();">
+                                            <span class="ico"></span>
+                                            <span class="txt">URL복사</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [E]: 공유하기 팝업 -->
                 </div>
 
                 <div class="title-wrap">
@@ -92,7 +137,6 @@
                 <div class="cont-area">
                     <!-- [D] : 250619.1 | fancybox v5 => v2으로 버전 수정에 따른 마크업 변경 -->
                     <div class="gallery-wrap">
-                        <!-- 메인 이미지 -->
                         <a id="mainImageLink" class="fancybox mainImageLink" href="/upload/data/mciEstate/61-1_1750844612884.jpg" aria-label="대표 사진 확대해서 보기">
                             <img id="mainImage" src="/upload/data/mciEstate/61-1_1750844612884.jpg" alt="석곡면 연반리 산19번지 외 42필지 대표 사진" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
                         </a>
@@ -355,6 +399,12 @@
             var doc = iframe.contentWindow.document;
 
             doc.open();
+            /*
+             * 닫는 태그는 '<\/' 로 이스케이프한다. (실행 결과는 동일)
+             * 이스케이프하지 않으면, body 끝 앞에 스크립트를 주입하는 도구
+             * (Live Server 등)가 이 문자열을 문서의 body 끝으로 착각해
+             * 여기에 스크립트를 끼워 넣고, 바깥 script가 그 자리에서 끊긴다.
+             */
             doc.write(
                   '<!doctype html><html lang="ko"><head>'
                 + '<meta charset="UTF-8">'
@@ -383,14 +433,14 @@
                 + '    size: A4;'
                 + '    margin: 12mm;'
                 + '}'
-                + '</style>'
-                + '</head><body>'
+                + '<\/style>'
+                + '<\/head><body>'
                 + '<div id="wrap" class="sub-wrap">'
                 + '<div id="container" class="sub03-container">'
                 + html
-                + '</div>'
-                + '</div>'
-                + '</body></html>'
+                + '<\/div>'
+                + '<\/div>'
+                + '<\/body><\/html>'
             );
             doc.close();
 
@@ -412,6 +462,85 @@
 
         f.action = (estateType === 'B') ? './estateBidList.html' : './estateSaleList.html';
         f.submit();
+    }
+
+    /* 공유 팝업을 열기 직전 포커스를 돌려줄 요소 */
+    var shareOpener = null;
+
+    /**
+     * 공유하기 :: 태블릿 이하에서만 노출되는 버튼. 공유 팝업을 연다.
+     * 팝업 내용(썸네일/물건번호/소재지)은 본문에 그려진 값을 그대로 가져다 쓴다.
+     */
+    function fnShare() {
+        var $layer = $('#shareLayer');
+
+        $('#shareThumb').attr('src', $('#mainImage').attr('src'));
+        $('#shareNum').text($('.title-wrap .title-top p span').not('.flag').text().trim());
+        $('#shareAddr').text($('.title-wrap .address').text().trim());
+
+        shareOpener = document.activeElement;
+        /* hidden 속성 미지원 브라우저를 대비해 class로도 함께 제어한다 */
+        $layer.removeAttr('hidden').addClass('is-open');
+        /* 닫기 버튼 대신 팝업 자체에 포커스를 줘 X에 포커스링이 그려지지 않게 한다 */
+        $layer.find('.share-popup').focus();
+    }
+
+    function fnShareClose() {
+        $('#shareLayer').attr('hidden', 'hidden').removeClass('is-open');
+
+        if (shareOpener) {
+            shareOpener.focus();
+            shareOpener = null;
+        }
+    }
+
+    /* ESC로 닫기 */
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape' && $('#shareLayer').hasClass('is-open')) {
+            fnShareClose();
+        }
+    });
+
+    /**
+     * 카카오톡 공유.
+     * [D] : Kakao JavaScript SDK와 앱 키가 준비되면 아래 주석 블록을 사용하세요.
+     *       (SDK 미탑재 상태에서는 URL 복사로 대체 동작합니다.)
+     */
+    function fnShareKakao() {
+        if (typeof Kakao === 'undefined' || !Kakao.isInitialized || !Kakao.isInitialized()) {
+            fnShareUrl();
+            return;
+        }
+
+        Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: $('#shareNum').text(),
+                description: $('#shareAddr').text(),
+                imageUrl: $('#shareThumb').prop('src'),
+                link: { mobileWebUrl: location.href, webUrl: location.href }
+            }
+        });
+    }
+
+    /** 이메일 공유 :: 기본 메일 앱을 연다. */
+    function fnShareMail() {
+        var subject = $('#shareNum').text() + ' ' + $('#shareAddr').text();
+        var body = subject + '\n' + location.href;
+
+        location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+
+    /** URL 복사 :: clipboard 미지원 브라우저는 prompt로 대체한다. */
+    function fnShareUrl() {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(location.href).then(function () {
+                alert('주소가 복사되었습니다.');
+            });
+            return;
+        }
+
+        prompt('아래 주소를 복사해 주세요.', location.href);
     }
 </script>
 <!-- [E]: script -->

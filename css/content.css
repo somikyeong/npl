@@ -6,12 +6,12 @@
 
 /*------- main -------*/
 .main-wrap .inner{
-    padding: 5.625rem 0 8.125rem;
+    padding: 9rem 0 13rem;
 }
 .main-wrap .title{
-    margin-bottom: 4.375rem;
+    margin-bottom: 7rem;
     font-weight: 700;
-    font-size: 1.875rem;
+    font-size: 3rem;
     text-align: center;
     line-height: 1;
     color: #242424;
@@ -19,25 +19,20 @@
 
 .main-wrap .visual-area{
     width: 100%;
-    height: 48.75rem;
+    height: 78rem;
     background: url('./../images/main/bg_visual.jpg') no-repeat center / cover;
-    border-bottom: 0.0625rem solid #8ca6ab;
-}
-
-.main-wrap .visual-area img{
-	width: 100%;
-	heigth: 100%;
+    border-bottom: 0.1rem solid #8ca6ab;
 }
 
 .main-wrap .quick-area{
     background: linear-gradient(to right , #f2f9ff 60%, #0071bc 40%);
-    border-bottom: 0.0625rem solid #d5e1e9;
+    border-bottom: 0.1rem solid #d5e1e9;
 }
 .main-wrap .quick-area .inner{
     display: flex;
-    width: 87.5rem;
+    width: 140rem;
     padding: 0;
-} 
+}
 .main-wrap .quick-area .menu{
     position: relative;
     background: #f2f9ff;
@@ -50,14 +45,14 @@
     display: block;
     position: absolute;
     right: 0;
-    top: 50%; 
+    top: 50%;
     transform: translateY(-50%);
-    width: 0.0625rem;
-    height: 1.125rem;
+    width: 0.1rem;
+    height: 1.8rem;
     background: #ddd;
 }
 .main-wrap .quick-area .menu.menu02{
-    width: 20rem;
+    width: 32rem;
 }
 .main-wrap .quick-area .menu.menu03{
     flex: 1;
@@ -69,38 +64,38 @@
     justify-content: center;
     position: relative;
     width: 100%;
-    height: 9.375rem;
-    padding-left: 0.625rem;
+    height: 15rem;
+    padding-left: 1rem;
     color: #005b98;
-    font-size: 1.25rem;
-    letter-spacing: -0.0625rem;
+    font-size: 2rem;
+    letter-spacing: -0.1rem;
 }
 .main-wrap .quick-area .menu.menu01 .menu-cont{
-    margin-left: 15.3125rem;
+    margin-left: 24.5rem;
 }
 .main-wrap .quick-area .menu.menu02 .menu-cont{
-    margin-left: 9.8125rem;
+    margin-left: 15.7rem;
 }
 .main-wrap .quick-area .menu.menu03 .menu-cont{
-    margin-left: 10.25rem;
+    margin-left: 16.4rem;
     color: #fff;
     cursor: initial;
 }
 .main-wrap .quick-area .menu.menu03 .menu-cont .list{
-    margin-top: 1.0625rem;
+    margin-top: 1.7rem;
 }
 .main-wrap .quick-area .menu.menu03 .menu-cont .list li{
-    font-size: 1rem;
+    font-size: 1.6rem;
 }
 .main-wrap .quick-area .menu .menu-cont:before{
     content: '';
     display: block;
     position: absolute;
-    left: -4.5rem;
-    top: 50%; 
+    left: -7.2rem;
+    top: 50%;
     transform: translateY(-50%);
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 5.6rem;
+    height: 5.6rem;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -115,11 +110,10 @@
     background-image: url('./../images/main/ico_puick03.png');
 }
 
-
 .main-wrap .quick-area .menu b > span{
     display: block;
     font-weight: 400;
-    font-size: 1.125rem;
+    font-size: 1.8rem;
 }
 .main-wrap .quick-area .menu b{
     position: relative;
@@ -134,11 +128,11 @@
 }
 
 .main-wrap .search-area .inner{
-    width: 87.5rem;
+    width: 140rem;
 }
 
 .main-wrap .new-area{
-    padding: 5.625rem 0 8.125rem;
+    padding: 9rem 0 13rem;
 }
 .main-wrap .new-area .inner{
     padding: 0;
@@ -147,16 +141,16 @@
     overflow-x: auto;
 }
 .main-wrap .new-area .content .sell-list{
-    display: flex; 
+    display: flex;
     justify-content: space-between;
-    width: 104.375rem;
+    width: 167rem;
     margin: 0 auto;
 }
 .main-wrap .new-area .content .sell-wrap{
     overflow: hidden;
-    width: 19.6875rem;
-    height: 21.875rem;
-    margin-right: 1.75rem;
+    width: 31.5rem;
+    height: 35rem;
+    margin-right: 2.8rem;
 }
 .main-wrap .new-area .content .sell-wrap:last-of-type{
     margin-right: 0;
@@ -169,7 +163,7 @@
     background: rgba(0,0,0,.02);
 }
 .main-wrap .new-area .content .sell-wrap a li {
-    letter-spacing: -0.0625rem;
+    letter-spacing: -0.1rem;
 }
 .main-wrap .new-area .content .sell-wrap a img{
     width: 100%;
@@ -188,7 +182,7 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 1.25rem;
+    padding: 2rem;
     background: rgba(0,0,0,.2);
     color: #fff;
     transform: translateY(100%);
@@ -204,64 +198,64 @@
 /*------- 매각처분 방식 및 공매 절차 -------*/
 .sub01-container .contents dl{
     display: flex;
-    padding: 4rem 2.25rem 4rem 3rem;
+    padding: 6.4rem 3.6rem 6.4rem 4.8rem;
 }
 .sub01-container .contents dl:first-child {
     padding-top: 0;
 }
 .sub01-container .contents dl + dl{
-    border-top: 0.0625rem solid #dcdcdc;
+    border-top: 0.1rem solid #dcdcdc;
 }
 .sub01-container .contents dt{
-    width: 12.1875rem;
-    margin-right: 1.25rem;
-    font-size: 1.625rem;
+    width: 19.5rem;
+    margin-right: 2rem;
+    font-size: 2.6rem;
     font-weight: 700;
     line-height: 1.2;
     color: #0072bc;
 }
 .sub01-container .contents dd{
     flex: 1;
-    padding-left: 3.75rem;
+    padding-left: 6rem;
     color: #2f2f2f;
-    font-size: 1rem; 
-    letter-spacing: -0.0625rem;
+    font-size: 1.6rem;
+    letter-spacing: -0.1rem;
     line-height: 1.8;
 }
 .sub01-container .contents dd .list li + li{
-    margin-top: 1.5rem;
+    margin-top: 2.4rem;
 }
 
 /*------- //매각처분 방식 및 공매 절차 -------*/
 
 /*------- 전체물건검색 -------*/
 .sub02-container .search-list-area{
-    margin-top: 3.75rem;
+    margin-top: 6rem;
 }
 
 .sub02-container .search-list-title{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 1.6rem;
 }
 .sub02-container .search-list-title .s-title{
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     font-weight: 700;
     color: #003159;
 }
 .sub02-container .search-list-title .compare-guide{
     display: flex;
     align-items: center;
-    gap: 0.375rem;
-    font-size: 0.875rem;
+    gap: 0.6rem;
+    font-size: 1.4rem;
     color: #003159;
-    letter-spacing: -0.0625rem;
+    letter-spacing: -0.1rem;
 }
 .sub02-container .search-list-title .compare-guide img{
     flex-shrink: 0;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 2rem;
+    height: 2rem;
 }
 .sub02-container .search-list-title .select-area{
     display: flex;
@@ -269,21 +263,21 @@
     align-items: center;
 }
 .sub02-container .search-list-title .select-area > span{
-    font-size: 0.875rem;
+    font-size: 1.4rem;
     color: #003159;
-    letter-spacing: -0.0625rem;
+    letter-spacing: -0.1rem;
 }
 .sub02-container .search-list-title .select-area .select-box:first-of-type{
-    width: 8.125rem;
-    margin: 0 0.625rem 0 1.375rem;
+    width: 13rem;
+    margin: 0 1rem 0 2.2rem;
 }
 .sub02-container .search-list-title .select-area .select-box:last-of-type{
-    width: 5.625rem;
+    width: 9rem;
 }
 
 .sub02-container .search-list-cont{
-    margin-top: 0.625rem;
-    border-top: 0.125rem solid #2384c6;
+    margin-top: 1rem;
+    border-top: 0.2rem solid #2384c6;
 }
 .sub02-container .cont{
     cursor: pointer;
@@ -293,30 +287,49 @@
 }
 
 .sub02-container .cont.empty{
-    padding-top: 6.25rem;
+    padding-top: 10rem;
     text-align: center;
 }
 .sub02-container .cont.empty img{
-    width: 2.5625rem;
+    width: 4.1rem;
 }
 .sub02-container .cont.empty p{
-    margin-top: 1.125rem;
+    margin-top: 1.8rem;
 }
 
 .sub02-container .cont-top{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5625rem 1.25rem 0.5625rem 0.625rem;
-    border-bottom: 0.0625rem solid #c9d8de;
+    padding: 0.9rem 2rem 0.9rem 1rem;
+    border-bottom: 0.1rem solid #c9d8de;
+}
+/* flag와 제목은 항상 한 줄에 나란히 두고, 제목만 남는 폭을 차지한다 */
+.sub02-container .cont-top .title{
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+    min-width: 0;
+}
+.sub02-container .cont-top .title .flag{
+    flex-shrink: 0;
 }
 .sub02-container .cont-top .title .title-info{
-    display: inline-block;
-    margin-left: 0.75rem;
+    /* 3줄을 넘기면 말줄임. padding-top은 첫 줄 글자를 flag 글자와 맞추기 위한 값 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    flex: 1;
+    min-width: 0;
+    margin-left: 1.2rem;
+    padding-top: 0.3rem;
     font-family: '돋움','Dotum';
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #262626;
+    line-height: 1.5;
 }
 .sub02-container .cont-top .title .title-info > span{
     font-weight: inherit;
@@ -329,7 +342,7 @@
 }
 .sub02-container .cont-top strong{
     font-family: '돋움','Dotum';
-    font-size: 0.875rem;
+    font-size: 1.4rem;
     color: #2f2f2f;
 }
 
@@ -337,7 +350,7 @@
     display: flex;
     align-items: center;
     /* 왼쪽 여백은 cont-top과 맞춰 flag와 비교버튼의 기준선을 일치시킨다 */
-    padding: 0.75rem 1.375rem 0.75rem 0.625rem;
+    padding: 1.2rem 2.2rem 1.2rem 1rem;
 }
 /*
  * 비교버튼은 바로 위 flag(경 매 / 공 매) 너비의 중앙에 놓는다.
@@ -345,7 +358,7 @@
  */
 .sub02-container .cont-top .flag,
 .sub02-container .compare-box{
-    width: 4rem;
+    width: 6.4rem;
 }
 .sub02-container .compare-box{
     display: flex;
@@ -354,17 +367,17 @@
     flex-shrink: 0;
 }
 .sub02-container .compare-btn{
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 2rem;
+    height: 2rem;
     background: url('./../images/icons/icon_compare.svg') no-repeat center / 100%;
 }
 .sub02-container .compare-btn[aria-pressed="true"]{
     background-image: url('./../images/icons/icon_compare_on.svg');
 }
 .sub02-container .img-box{
-    width: 7.5rem;
-    height: 7.5rem;
-    border: 0.0625rem solid #c9d8de;
+    width: 12rem;
+    height: 12rem;
+    border: 0.1rem solid #c9d8de;
 }
 .sub02-container .img-box img{
     width: 100%;
@@ -376,7 +389,7 @@
     justify-content: space-between;
     flex: 1;
     position: relative;
-    padding-left: 3.75rem;
+    padding-left: 6rem;
 }
 .sub02-container .info:before{
     content: '';
@@ -385,18 +398,18 @@
     left: 50%;
     top: 0;
     transform: translateX(-50%);
-    width: 0.0625rem;
+    width: 0.1rem;
     height: 100%;
     background: #d9d9d9;
 }
 .sub02-container .info .col{
-    display: flex; 
-    width: calc(100% / 2 - 2.5rem);
+    display: flex;
+    width: calc(100% / 2 - 4rem);
 }
 .sub02-container .info .col p{
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.2rem;
     word-break: keep-all;
-    min-height: 1.3125rem;
+    min-height: 2.1rem;
 }
 .sub02-container .info .col p:last-of-type{
     margin-bottom: 0;
@@ -404,32 +417,32 @@
 .sub02-container .info .col-title{
     display: inline-block;
     width: max-content;
-    margin-right: 2.375rem;
-    font-size: 0.875rem;
+    margin-right: 3.8rem;
+    font-size: 1.4rem;
     color: #003159;
 }
 .sub02-container .info .col-cont{
     flex: 1;
     display: inline-block;
     font-family: '돋움','Dotum';
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     color: #003159;
     line-height: 1.75;
 }
 
 .sub02-container .info .list-wrap .list:before{
-    top: 0.625rem;
+    top: 1rem;
     background: #003159;
 }
 
 /*------- 비교하기 시트 -------*/
 .compare-notice{
-    margin: 0 1.25rem;
-    padding: 0.625rem 0.875rem;
-    font-size: 0.875rem;
+    margin: 0 2rem;
+    padding: 1rem 1.4rem;
+    font-size: 1.4rem;
     color: #003159;
     background: #f8fafd;
-    border: 0.0625rem solid #c9d8de;
+    border: 0.1rem solid #c9d8de;
 }
 .compare-list-wrap{
     /* 시트 높이를 넘으면 이 안에서 스크롤한다 (min-height:0 이 있어야 flex 안에서 줄어든다) */
@@ -440,17 +453,17 @@
 /* 담은 물건이 적으면 가운데, 넘치면 왼쪽부터 가로 스크롤 */
 .compare-list{
     display: flex;
-    gap: 1rem;
+    gap: 1.6rem;
     width: max-content;
     margin: 0 auto;
-    padding: 1.25rem;
+    padding: 2rem;
 }
 .compare-card{
     overflow: hidden;
-    width: 17.5rem;
+    width: 28rem;
     background: #fff;
-    border: 0.0625rem solid #e0e0e0;
-    border-radius: 0.5rem;
+    border: 0.1rem solid #e0e0e0;
+    border-radius: 0.8rem;
 }
 /* 담은 물건이 적어도 3칸은 유지한다. 높이는 flex stretch로 채워진 카드에 맞춘다. */
 .compare-card.is-empty{
@@ -462,28 +475,28 @@
     border-color: #d5d5d5;
 }
 .compare-card-placeholder{
-    padding: 1rem;
-    font-size: 0.875rem;
+    padding: 1.6rem;
+    font-size: 1.4rem;
     color: #9e9e9e;
     text-align: center;
-    letter-spacing: -0.0625rem;
+    letter-spacing: -0.1rem;
 }
 .compare-card-thumb{
     position: relative;
 }
 .compare-card-thumb img{
     width: 100%;
-    height: 8.75rem;
+    height: 14rem;
     object-fit: cover;
     background: #eef2f6;
 }
 /* 원형 빼기 버튼 */
 .compare-remove{
     position: absolute;
-    right: 0.5rem;
-    top: 0.5rem;
-    width: 1.75rem;
-    height: 1.75rem;
+    right: 0.8rem;
+    top: 0.8rem;
+    width: 2.8rem;
+    height: 2.8rem;
     background: rgba(0, 0, 0, 0.55);
     border-radius: 50%;
 }
@@ -494,46 +507,46 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 0.75rem;
-    height: 0.125rem;
+    width: 1.2rem;
+    height: 0.2rem;
     background: #fff;
 }
 .compare-card-body{
-    padding: 0.875rem;
+    padding: 1.4rem;
 }
 .compare-card-flags{
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem;
-    margin-bottom: 0.5rem;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
 }
 .compare-card-flags .flag{
-    padding: 0.25rem 0.5rem;
+    padding: 0.4rem 0.8rem;
 }
 .compare-card-state{
     display: inline-block;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.2rem;
     line-height: 1;
     color: #0072bc;
     background: #f2f9ff;
-    border: 0.0625rem solid #c9d8de;
+    border: 0.1rem solid #c9d8de;
 }
 .compare-card-title{
     display: block;
-    padding-bottom: 0.75rem;
-    margin-bottom: 0.75rem;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
     font-family: '돋움','Dotum';
-    font-size: 0.8125rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #003159;
     line-height: 1.4;
-    border-bottom: 0.0625rem solid #e6e6e6;
+    border-bottom: 0.1rem solid #e6e6e6;
 }
 .compare-card-info dt{
     position: relative;
-    padding-left: 0.625rem;
-    font-size: 0.75rem;
+    padding-left: 1rem;
+    font-size: 1.2rem;
     color: #5a5a5a;
     line-height: 1.4;
 }
@@ -542,17 +555,17 @@
     display: block;
     position: absolute;
     left: 0;
-    top: 0.5rem;
-    width: 0.1875rem;
-    height: 0.1875rem;
+    top: 0.8rem;
+    width: 0.3rem;
+    height: 0.3rem;
     background: #9e9e9e;
     border-radius: 50%;
 }
 .compare-card-info dd{
-    margin: 0.125rem 0 0.5rem;
-    padding-left: 0.625rem;
+    margin: 0.2rem 0 0.8rem;
+    padding-left: 1rem;
     font-family: '돋움','Dotum';
-    font-size: 0.8125rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #262626;
     line-height: 1.4;
@@ -561,13 +574,148 @@
 .compare-card-info dd:last-of-type{
     margin-bottom: 0;
 }
+/* 시트 오른쪽 위 : 초기화 / 닫기 */
+.compare-util{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.4rem;
+    padding: 1.4rem 2rem 0;
+}
+.compare-reset{
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url('./../images/icons/icon_reset.svg') no-repeat center / 1.8rem 1.8rem;
+}
+.compare-close{
+    font-size: 1.4rem;
+    color: #5a5a5a;
+    text-decoration: underline;
+}
+
+/*
+ * 중간 단계(.is-mid) :: 같은 마크업을 CSS로만 요약형으로 바꾼다.
+ * 카드를 가로로 눕히고 대표 정보(제목 + 금액)만 남긴다.
+ */
+/* 요약형에서는 카드가 화면을 나눠 갖는다 */
+.sheet.is-mid .compare-list{
+    width: 100%;
+    gap: 1.2rem;
+    padding: 2rem;
+}
+.sheet.is-mid .compare-card{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex: 1;
+    /* 빼기 버튼의 기준 위치 */
+    position: relative;
+    min-width: 0;
+    width: auto;
+    padding: 1.2rem 3.2rem 1.2rem 1.2rem;
+    border-radius: 1.2rem;
+}
+.sheet.is-mid .compare-card-thumb{
+    position: static;
+    flex-shrink: 0;
+    width: 7rem;
+}
+.sheet.is-mid .compare-card-thumb img{
+    height: 7rem;
+    border-radius: 0.8rem;
+}
+/* 빼기 버튼은 카드 오른쪽 위 X로 */
+.sheet.is-mid .compare-remove{
+    right: 1rem;
+    top: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background: none;
+}
+.sheet.is-mid .compare-remove:before,
+.sheet.is-mid .compare-remove:after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1.4rem;
+    height: 0.1rem;
+    background: #262626;
+}
+.sheet.is-mid .compare-remove:before{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.sheet.is-mid .compare-remove:after{
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.sheet.is-mid .compare-card-body{
+    min-width: 0;
+    flex: 1;
+    padding: 0;
+}
+.sheet.is-mid .compare-card-flags{
+    margin-bottom: 0.6rem;
+}
+.sheet.is-mid .compare-card-title{
+    /* 두 줄까지만 보여주고 말줄임 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    padding-bottom: 0;
+    margin-bottom: 0.6rem;
+    border-bottom: 0;
+}
+/* 항목은 마지막 한 쌍(금액)만 남기고, 한 줄로 붙인다 */
+.sheet.is-mid .compare-card-info{
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+}
+.sheet.is-mid .compare-card-info dt,
+.sheet.is-mid .compare-card-info dd{
+    display: none;
+    padding-left: 0;
+    margin: 0;
+}
+.sheet.is-mid .compare-card-info dt:last-of-type,
+.sheet.is-mid .compare-card-info dd:last-of-type{
+    display: block;
+}
+.sheet.is-mid .compare-card-info dt:before{
+    display: none;
+}
+/* 빈 칸은 + 와 안내문구 */
+.sheet.is-mid .compare-card.is-empty{
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+}
+.sheet.is-mid .compare-card-placeholder{
+    padding: 0;
+}
+.sheet.is-mid .compare-card-placeholder:before{
+    content: '+';
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: #9e9e9e;
+    line-height: 1;
+}
 /*------- //비교하기 시트 -------*/
 /*------- //전체물건검색 -------*/
 
 /*------- 물건상세 -------*/
+/* 공유하기 팝업(.share-layer)의 기준 위치 */
 .sub03-container .btn-wrap{
+    position: relative;
     text-align: right;
-    margin-bottom: 0.875rem;
+    margin-bottom: 1.4rem;
 }
 
 .sub03-container .btn-square.list span:before{
@@ -577,8 +725,8 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 0.6875rem;
-    height: 0.625rem;
+    width: 1.1rem;
+    height: 1rem;
     background: url('./../images/icons/icon_list.png') no-repeat center / 100%;
 }
 /*------- 물건상세 출력버튼추가 2025-08-29 -------*/
@@ -589,51 +737,66 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 0.6875rem;
-    height: 0.625rem;
+    width: 1.1rem;
+    height: 1rem;
     background: url('./../images/icons/icon_print.png') no-repeat center / 100%;
 }
+/* 공유하기 : 태블릿 이하에서 출력/목록을 대체한다 */
+.sub03-container .btn-square.share{
+    display: none;
+}
+.sub03-container .btn-square.share span:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.1rem;
+    height: 1rem;
+    background: url('./../images/icons/icon_share.svg') no-repeat center / 100%;
+}
 .sub03-container .title-wrap{
-    padding: 0.625rem 2.1875rem 2.1875rem;
-    border-top: 0.125rem solid #2384c6;
+    padding: 1rem 3.5rem 3.5rem;
+    border-top: 0.2rem solid #2384c6;
     background: #f8fafd;
 }
 .sub03-container .title-wrap .title-top{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 0.625rem;
-    margin-bottom: 1.875rem;
-    border-bottom: 0.0625rem dashed #c9d8de;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    border-bottom: 0.1rem dashed #c9d8de;
 }
 .sub03-container .title-wrap .title-top > p{
-	display: flex;
+    display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 0.3125rem;
+    gap: 0.5rem;
 }
 .sub03-container .title-wrap .title-top .num{
     display: inline-block;
-    margin-left: 1.25rem;
+    margin-left: 2rem;
     font-family: '돋움','Dotum';
-    font-size: 0.8125rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #262626;
 }
 .sub03-container .title-top > p .flag + span{
-	margin-left: 0.3125rem;
+    margin-left: 0.5rem;
 }
 .sub03-container .title-wrap .title-info{
     display: flex;
     align-items: center;
     font-family: '돋움','Dotum';
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     color: #262626;
 }
 .sub03-container .title-wrap .title-info li{
     position: relative;
-    margin-left: 0.625rem;
-    padding-left: 0.625rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
 }
 .sub03-container .title-wrap .title-info li:not(:first-child):before{
     content: '';
@@ -642,7 +805,7 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 0.0625rem;
+    width: 0.1rem;
     height: 63%;
     background: #262626;
 }
@@ -651,27 +814,27 @@
 }
 .sub03-container .title-wrap .title-bottom .category{
     display: block;
-    margin-bottom: 0.25rem;
-    font-size: 0.75rem;
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
     color: #262626;
 }
 .sub03-container .title-wrap .title-bottom .address{
-    font-size: 1rem;
+    font-size: 1.6rem;
     color: #003159;
 }
 
 .sub03-container .cont-area{
     display: flex;
-    border-top: 0.0625rem solid #c9d8de;
-    border-bottom: 0.0625rem solid #c9d8de;
+    border-top: 0.1rem solid #c9d8de;
+    border-bottom: 0.1rem solid #c9d8de;
 }
 
 .sub03-container .cont-area .gallery-wrap{
-	display: flex;
+    display: flex;
     flex-direction: column;
-    gap: 0.125rem;
-    width: 26.25rem;
-    height: 23.6875rem;
+    gap: 0.2rem;
+    width: 42rem;
+    height: 37.9rem;
 }
 .sub03-container .cont-area .gallery-wrap img{
     width: 100%;
@@ -682,14 +845,14 @@
     display: block;
 }
 .sub03-container .cont-area .gallery-wrap .mainImageLink{
-    height: 17.875rem;
+    height: 28.6rem;
 }
 
 .sub03-container .cont-area .thumbs{
     display: flex;
     justify-content: flex-start;
-    gap: 0.125rem;
-        height: calc((100% - 17.875rem) - 0.125rem);
+    gap: 0.2rem;
+        height: calc((100% - 28.6rem) - 0.2rem);
 }
 .sub03-container .cont-area .thumbs a,
 .sub03-container .cont-area .thumbs button{
@@ -701,26 +864,26 @@
     overflow: hidden;
 }
 .sub03-container .cont-area .info-wrap ul{
-    padding: 1.6875rem 3.125rem;
+    padding: 2.7rem 5rem;
 }
 .sub03-container .cont-area .info-wrap ul li + li{
-    margin-top: 1.875rem;
-    padding-top: 1.6875rem;
-    border-top: 0.0625rem dashed #c9d8de;
+    margin-top: 3rem;
+    padding-top: 2.7rem;
+    border-top: 0.1rem dashed #c9d8de;
 }
 .sub03-container .cont-area .info-wrap dl{
     display: flex;
     align-items: flex-start;
     font-family: '돋움','Dotum';
-    font-size: 0.75rem;
+    font-size: 1.2rem;
 }
 
 .sub03-container .cont-area .info-wrap dl + dl{
-    margin-top: 1rem;
+    margin-top: 1.6rem;
 }
 .sub03-container .cont-area .info-wrap dt{
-    width: 12.125rem;
-    margin-right: 3.75rem;
+    width: 19.4rem;
+    margin-right: 6rem;
     font-weight: 700;
     color: #003159;
     white-space:nowrap;
@@ -734,56 +897,56 @@
 }
 .sub03-container .cont-area .info-wrap dd a{
     display:inline-block;
-    margin-top: -0.25rem;
-    margin-left: 0.9375rem;
-    padding: 0.375rem 1rem 0.375rem 0.5rem;
+    margin-top: -0.4rem;
+    margin-left: 1.5rem;
+    padding: 0.6rem 1.6rem 0.6rem 0.8rem;
     overflow: hidden;
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     line-height: 1;
     word-break: break-all;
     color: #5a5a5a;
-    background: #f8fafd url('./../images/icons/icon_arrow_right02.png') no-repeat center right 0.5rem / 0.25rem 0.375rem;
-    border: 0.0625rem solid #c9cacb;
+    background: #f8fafd url('./../images/icons/icon_arrow_right02.png') no-repeat center right 0.8rem / 0.4rem 0.6rem;
+    border: 0.1rem solid #c9cacb;
 }
 
 .sub03-container section + section{
-    margin-top: 3.375rem;
+    margin-top: 5.4rem;
 }
 .sub03-container .s-title{
-    margin-bottom: 1rem;;
-    font-size: 1rem;
+    margin-bottom: 1.6rem;;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #003159;
 }
 
 .sub03-container .table-wrap{
-    border-top: 0.125rem solid #2384c6;
+    border-top: 0.2rem solid #2384c6;
 }
 .sub03-container .table-wrap th{
-    padding: 0.875rem 1.3125rem;
-    font-size: 0.875rem;
+    padding: 1.4rem 2.1rem;
+    font-size: 1.4rem;
     color: #003159;
     line-height: 1;
-    border-right: 0.0625rem solid #c9d8de;
-    border-bottom: 0.0625rem solid #c9d8de;
+    border-right: 0.1rem solid #c9d8de;
+    border-bottom: 0.1rem solid #c9d8de;
     background: #f8fafd;
     vertical-align: middle;
 }
 .sub03-container .table-wrap td{
-	min-height: 2.6875rem;
-    height: 2.6875rem;
-    padding: 0.875rem 1rem;
+    min-height: 4.3rem;
+    height: 4.3rem;
+    padding: 1.4rem 1.6rem;
     font-family: '돋움','Dotum';
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     color: #262626;
     line-height: 1.2;
     vertical-align: middle;
     word-break: keep-all;
-    border-bottom: 0.0625rem solid #c9d8de;
+    border-bottom: 0.1rem solid #c9d8de;
     box-sizing: border-box;
 }
 .sub03-container .table-wrap td:not(:last-of-type){
-    border-right: 0.0625rem solid #c9d8de;
+    border-right: 0.1rem solid #c9d8de;
 }
 .sub03-container .table-wrap .bor-right-none{
     border-right: 0;
@@ -795,34 +958,34 @@
     text-align: left;
 }
 .sub03-container .table-option th > span{
-    font-size: 0.75rem;
+    font-size: 1.2rem;
 }
 
 .sub03-container .place{
     display: flex;
     justify-content: flex-start;
-    border-bottom: 0.0625rem solid #c9d8de;
+    border-bottom: 0.1rem solid #c9d8de;
 }
 .sub03-container .place dt{
-	display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.875rem 1.75rem;
-    font-size: 0.875rem;
+    padding: 1.4rem 2.8rem;
+    font-size: 1.4rem;
     color: #003159;
     line-height: 1;
-    border-right: 0.0625rem solid #c9d8de;
+    border-right: 0.1rem solid #c9d8de;
     background: #f8fafd;
     word-break: keep-all;
 }
 .sub03-container .place dd{
-	display: flex;
+    display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    padding: 0.625rem 1.375rem;
+    padding: 1rem 2.2rem;
     font-family: '돋움','Dotum';
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     line-height: 1.2;
     color: #262626;
 }
@@ -831,29 +994,29 @@
 /*------- 공매FAQ -------*/
 .sub04-container .search-wrap .input-box{
     position: relative;
-    width: 36.625rem;
-    margin: 0 auto 3.25rem;
+    width: 58.6rem;
+    margin: 0 auto 5.2rem;
     text-align: center;
 }
 .sub04-container .search-wrap .input-box input{
     position: relative;
-    padding: 0.6875rem 3.25rem 0.6875rem 1.875rem;
-    font-size: 1.25rem;
+    padding: 1.1rem 5.2rem 1.1rem 3rem;
+    font-size: 2rem;
     color: #333;
-    border: 0.125rem solid #2384c6;
-    border-radius: 0.25rem;
+    border: 0.2rem solid #2384c6;
+    border-radius: 0.4rem;
 }
 .sub04-container .search-wrap .input-box input:read-only{
     color: #7b7b7b;
 }
 .sub04-container .search-wrap .input-box .search-btn{
     position: absolute;
-    right: 1rem;
+    right: 1.6rem;
     top: 50%;
     z-index: 10;
     transform: translateY(-50%);
-    width: 1.625rem;
-    height: 1.625rem;
+    width: 2.6rem;
+    height: 2.6rem;
     font-size: 0;
     overflow: hidden;
     background: url('./../images/icons/icon_search.png') no-repeat center / 100%;
@@ -861,24 +1024,24 @@
 
 .sub04-container .num-wrap{
     text-align: right;
-    margin-bottom: 1.0625rem;
+    margin-bottom: 1.7rem;
 }
 .sub04-container .num-wrap .num{
     color: #181818;
-    font-size: 1rem;
+    font-size: 1.6rem;
 }
 
 .sub04-container .content-wrap{
-    border-top: 0.125rem solid #2384c6;
+    border-top: 0.2rem solid #2384c6;
 }
 .sub04-container .content-wrap dl{
-    padding: 3rem 1.625rem;
-    border-bottom: 0.0625rem solid #dcdcdc;
+    padding: 4.8rem 2.6rem;
+    border-bottom: 0.1rem solid #dcdcdc;
 }
 .sub04-container .content-wrap dt{
     position: relative;
-    padding: 0 3.4375rem 0 3.9375rem;
-    font-size: 1.25rem;
+    padding: 0 5.5rem 0 6.3rem;
+    font-size: 2rem;
     color: #181818;
     cursor: pointer;
 }
@@ -887,8 +1050,8 @@
     display: block;
     position: absolute;
     left: 0;
-    bottom: 0.1875rem;
-    font-size: 1.625rem;
+    bottom: 0.3rem;
+    font-size: 2.6rem;
     line-height: 1;
 }
 .sub04-container .content-wrap dt:after{
@@ -898,8 +1061,8 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%) rotate(180deg);
-    width: 1.3125rem;
-    height: 0.625rem;
+    width: 2.1rem;
+    height: 1rem;
     background: url('./../images/icons/icon_arrow_down01.png') no-repeat center / cover;
     transition: all .3s ease;
 }
@@ -909,38 +1072,36 @@
 }
 .sub04-container .content-wrap dd{
     position: relative;
-    margin: 4.125rem 0 1.25rem 0;
-    padding: 0 4.0625rem 0 6.25rem;
+    margin: 6.6rem 0 2rem 0;
+    padding: 0 6.5rem 0 10rem;
     line-height: 1.7;
 }
 .sub04-container .content-wrap dd:before{
     content: 'A.';
     display: block;
     position: absolute;
-    left: 3.125rem;
-    top: -0.5rem;
+    left: 5rem;
+    top: -0.8rem;
     color: #2384c6;
-    font-size: 1.625rem;
+    font-size: 2.6rem;
 }
 /*------- //공매FAQ -------*/
-
-
 
 /*------- media screen -------*/
 @media screen and (max-width: 87.5rem) {
     .main-wrap .quick-area .inner,
     .main-wrap .search-area .inner{
         width: 100% !important;
-        padding: 5.625rem 2.5rem;
+        padding: 9rem 4rem;
     }
 }
 
 /* 태블릿 */
 @media screen and (max-width: 74.9375rem) {
     .main-wrap .visual-area{
-        height: 32.5rem;
+        height: 52rem;
     }
-    /* 최신물건 : 고정폭(104.375rem)을 풀고 가로 스크롤 카드로 */
+    /* 최신물건 : 고정폭(167rem)을 풀고 가로 스크롤 카드로 */
     .main-wrap .new-area .content{
         -webkit-overflow-scrolling: touch;
     }
@@ -948,7 +1109,48 @@
         justify-content: flex-start;
         width: max-content;
         margin: 0;
-        padding: 0 2.5rem;
+        padding: 0 4rem;
+    }
+    .sub02-container .search-list-title .select-area{
+        justify-content: flex-start;
+    }
+    /* 물건상세 : 출력/목록 대신 공유하기만 노출 */
+    .sub03-container .btn-square.print,
+    .sub03-container .btn-square.list{
+        display: none;
+    }
+    .sub03-container .btn-square.share{
+        display: inline-block;
+    }
+    /*
+     * 물건 개요 :: 사진(42rem 고정) + 항목명(19.4rem + 6rem)이 폭을 다 먹어
+     * 값이 한 글자씩 줄바꿈되던 문제. 사진은 비율로, 항목명은 좁게 잡는다.
+     */
+    .sub03-container .cont-area .gallery-wrap{
+        width: 40%;
+        height: auto;
+    }
+    .sub03-container .cont-area .gallery-wrap .mainImageLink{
+        height: auto;
+        aspect-ratio: 3 / 2;
+    }
+    .sub03-container .cont-area .gallery-wrap img{
+        object-fit: cover;
+    }
+    .sub03-container .cont-area .thumbs{
+        height: 6.4rem;
+    }
+    .sub03-container .cont-area .info-wrap ul{
+        padding: 2.4rem;
+    }
+    .sub03-container .cont-area .info-wrap ul li + li{
+        margin-top: 2.4rem;
+        padding-top: 2.4rem;
+    }
+    .sub03-container .cont-area .info-wrap dt{
+        width: 13rem;
+        margin-right: 2.4rem;
+        white-space: normal;
     }
 }
 
@@ -966,17 +1168,17 @@
     }
     .sub02-container .info .col-cont p{
         display: flex;
-        gap: 0.5rem;
-        margin-bottom: 0.375rem;
+        gap: 0.8rem;
+        margin-bottom: 0.6rem;
     }
     .sub02-container .info .col-cont .sr-only{
         position: static;
         top: auto;
         left: auto;
         overflow: visible;
-        flex: 0 0 5.25rem;
+        flex: 0 0 8.4rem;
         font-family: "MG_KFCC", sans-serif;
-        font-size: 0.8125rem;
+        font-size: 1.3rem;
         color: #003159;
     }
 }
@@ -985,29 +1187,29 @@
 @media screen and (max-width: 47.9375rem) {
     /*------- main -------*/
     .main-wrap .inner{
-        padding: 3rem 0 4rem;
+        padding: 4.8rem 0 6.4rem;
     }
     .main-wrap .quick-area .inner,
     .main-wrap .search-area .inner{
-        padding: 3rem 1.25rem 4rem;
+        padding: 4.8rem 2rem 6.4rem;
     }
     .main-wrap .title{
-        margin-bottom: 1.875rem;
-        font-size: 1.375rem;
+        margin-bottom: 3rem;
+        font-size: 2.2rem;
     }
     .main-wrap .visual-area{
-        height: 20rem;
+        height: 32rem;
     }
 
     .main-wrap .new-area{
-        padding: 3rem 0 4rem;
+        padding: 4.8rem 0 6.4rem;
     }
     .main-wrap .new-area .content{
         scroll-snap-type: x proximity;
     }
     .main-wrap .new-area .content .sell-list{
-        gap: 0.75rem;
-        padding: 0 1.25rem;
+        gap: 1.2rem;
+        padding: 0 2rem;
     }
     /*
      * 최신물건 :: 터치기기는 hover가 없으므로 오버레이를 걷어내고
@@ -1015,8 +1217,8 @@
      * 높이는 지정하지 않고 flex stretch로 카드끼리 맞춘다.
      */
     .main-wrap .new-area .content .sell-wrap{
-        flex: 0 0 15rem;
-        width: 15rem;
+        flex: 0 0 24rem;
+        width: 24rem;
         height: auto;
         margin-right: 0;
         scroll-snap-align: start;
@@ -1025,11 +1227,11 @@
         display: flex;
         flex-direction: column;
         background: #f8fafd;
-        border: 0.0625rem solid #d5e1e9;
+        border: 0.1rem solid #d5e1e9;
     }
     .main-wrap .new-area .content .sell-wrap a img{
         flex-shrink: 0;
-        height: 11.25rem;
+        height: 18rem;
         object-fit: cover;
     }
     .main-wrap .new-area .content .info{
@@ -1040,7 +1242,7 @@
     .main-wrap .new-area .content .list{
         justify-content: flex-start;
         height: auto;
-        padding: 0.875rem 1rem;
+        padding: 1.4rem 1.6rem;
         color: #003159;
         background: transparent;
         transform: none;
@@ -1052,24 +1254,24 @@
         transform: none;
     }
     .main-wrap .new-area .content .list li{
-        font-size: 0.8125rem;
+        font-size: 1.3rem;
         line-height: 1.5;
     }
     /* 배경이 밝아지므로 흰색 불릿을 본문색으로 */
     .main-wrap .new-area .content .list-white li:before{
-        top: 0.5rem;
+        top: 0.8rem;
         background-color: #003159;
     }
 
     /*------- 매각처분 방식 및 공매 절차 -------*/
     .sub01-container .contents dl{
         flex-direction: column;
-        padding: 2rem 0;
+        padding: 3.2rem 0;
     }
     .sub01-container .contents dt{
         width: 100%;
-        margin: 0 0 0.75rem;
-        font-size: 1.25rem;
+        margin: 0 0 1.2rem;
+        font-size: 2rem;
     }
     .sub01-container .contents dd{
         padding-left: 0;
@@ -1078,45 +1280,48 @@
 
     /*------- 물건목록 -------*/
     .sub02-container .search-list-area{
-        margin-top: 2rem;
+        margin-top: 3.2rem;
     }
     /* 안내문구와 정렬영역을 위아래로 */
     .sub02-container .search-list-title{
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.625rem;
+        gap: 1rem;
     }
     .sub02-container .search-list-title .compare-guide{
         align-items: flex-start;
-        font-size: 0.8125rem;
-        line-height: 1.25rem;
+        font-size: 1.3rem;
+        line-height: 2rem;
     }
     .sub02-container .search-list-title .select-area{
         flex-wrap: wrap;
         width: 100%;
-        gap: 0.5rem;
+        gap: 0.8rem;
     }
     .sub02-container .search-list-title .select-area .select-box:first-of-type{
-        margin: 0 0 0 0.75rem;
+        margin: 0 0 0 1.2rem;
     }
     .sub02-container .cont-top{
-        padding: 0.625rem 0.75rem;
+        padding: 1rem 1.2rem;
     }
-    .sub02-container .cont-top .title .title-info{
-        display: block;
-        margin: 0.375rem 0 0;
-        line-height: 1.5;
-    }
-    /* 썸네일 위, 정보 아래로 세로 배치 */
+    /*
+     * 왼쪽에 썸네일 + 그 아래 비교버튼, 오른쪽에 정보를 두는 2열 배치.
+     * DOM 순서(비교버튼 > 썸네일 > 정보)와 화면 순서가 다르므로 grid로 자리를 지정한다.
+     */
     .sub02-container .cont-bottom{
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.875rem;
-        padding: 0.875rem 0.75rem;
+        display: grid;
+        grid-template-columns: 11.8rem 1fr;
+        grid-template-rows: auto auto;
+        align-items: start;
+        column-gap: 1.4rem;
+        row-gap: 0.8rem;
+        padding: 1.4rem 1.2rem;
     }
-    /* 비교 버튼은 썸네일 위 한 줄로 (너비는 유지해 flag 중앙 정렬을 지킨다) */
+    /* 비교 버튼은 썸네일 아래, 썸네일 가로폭의 가운데에 맞춘다 */
     .sub02-container .compare-box{
-        margin-bottom: -0.25rem;
+        grid-column: 1;
+        grid-row: 2;
+        width: 11.8rem;
     }
     /* 아이콘 크기는 그대로 두고 터치 영역만 44px로 넓힌다 */
     .sub02-container .compare-btn{
@@ -1129,56 +1334,89 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 2.75rem;
-        height: 2.75rem;
+        width: 4.4rem;
+        height: 4.4rem;
     }
     .sub02-container .img-box{
-        width: 100%;
-        height: 11.25rem;
+        grid-column: 1;
+        grid-row: 1;
+        width: 11.8rem;
+        height: 11.8rem;
     }
     .sub02-container .img-box img{
         object-fit: cover;
     }
     .sub02-container .info{
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        /* 왼쪽 열(썸네일 + 비교버튼) 전체 높이의 세로 가운데에 놓는다 */
+        align-self: center;
         flex-direction: column;
-        gap: 0.5rem;
+        flex-wrap: nowrap;
+        gap: 0;
         padding-left: 0;
     }
     .sub02-container .info:before{
         display: none;
     }
-    .sub02-container .info .col{
-        display: block;
-        width: 100%;
+    /*
+     * 노출 항목(진행상태 > 사업용도 > 물건상세 > 금액)이 두 .col에 나뉘어 있고
+     * 순서도 DOM과 다르므로, 중간 래퍼를 display:contents로 걷어내
+     * 각 p를 .info의 flex 아이템으로 만든 뒤 order로 재정렬한다.
+     */
+    .sub02-container .info .col,
+    .sub02-container .info .col-cont{
+        display: contents;
+    }
+    /* 개시결정일자(공고일자) / 소재지는 모바일에서 숨김 */
+    .sub02-container .info .col:first-child .col-cont p:nth-child(1),
+    .sub02-container .info .col:first-child .col-cont p:nth-child(3){
+        display: none;
+    }
+    .sub02-container .info .col:last-child .col-cont p:nth-child(1){
+        order: 1;
+    }
+    .sub02-container .info .col:last-child .col-cont p:nth-child(2){
+        order: 2;
+    }
+    .sub02-container .info .col:first-child .col-cont p:nth-child(2){
+        order: 3;
+    }
+    .sub02-container .info .col:last-child .col-cont p:nth-child(3){
+        order: 4;
+        margin-bottom: 0;
     }
     .sub02-container .cont.empty{
-        padding-top: 3.125rem;
+        padding-top: 5rem;
     }
 
-    /* 비교 카드는 가로 스크롤로 넘겨본다 */
+    /* 비교 카드는 2장만 담기므로, 고정폭 대신 화면을 나눠 갖는다 */
     .compare-list{
-        gap: 0.75rem;
-        padding: 1rem;
+        width: 100%;
+        gap: 0.8rem;
+        padding: 1.6rem;
     }
     .compare-card{
-        width: 15rem;
+        flex: 1;
+        min-width: 0;
+        width: auto;
     }
     .compare-card-thumb img{
-        height: 8.125rem;
+        height: 11rem;
     }
     .compare-notice{
-        margin: 0 1rem;
+        margin: 0 1.6rem;
     }
 
     /*------- 물건상세 -------*/
     .sub03-container .title-wrap{
-        padding: 0.625rem 1rem 1.25rem;
+        padding: 1rem 1.6rem 2rem;
     }
     .sub03-container .title-wrap .title-top{
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
+        gap: 0.8rem;
+        margin-bottom: 1.6rem;
     }
     .sub03-container .title-wrap .title-info{
         flex-wrap: wrap;
@@ -1203,31 +1441,100 @@
         object-fit: cover;
     }
     .sub03-container .cont-area .thumbs{
-        height: 4.5rem;
+        height: 7.2rem;
     }
     .sub03-container .cont-area .info-wrap ul{
-        padding: 1.25rem 1rem;
+        padding: 2rem 1.6rem;
     }
     .sub03-container .cont-area .info-wrap ul li + li{
-        margin-top: 1.25rem;
-        padding-top: 1.25rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
     }
     .sub03-container .cont-area .info-wrap dt{
-        width: 8.125rem;
-        margin-right: 1rem;
+        width: 13rem;
+        margin-right: 1.6rem;
         white-space: normal;
     }
     .sub03-container section + section{
-        margin-top: 2.25rem;
+        margin-top: 3.6rem;
     }
-    /* 기본정보 표 : 여백을 줄여 4열을 유지 */
     .sub03-container .table-wrap th{
-        padding: 0.625rem 0.375rem;
-        font-size: 0.8125rem;
+        padding: 1rem 0.6rem;
+        font-size: 1.3rem;
         word-break: keep-all;
     }
     .sub03-container .table-wrap td{
-        padding: 0.625rem 0.375rem;
+        padding: 1rem 0.6rem;
+    }
+    /*
+     * 기본정보 표 :: 4열이 너무 좁아 2열로 접는다.
+     * 사업용도/인허가여부 → 인허가번호/착공 및 완공여부 순으로 두 줄.
+     * 표 구조는 유지한 채 grid로 배치하고, DOM 순서(th 4개 → td 4개)와
+     * 화면 순서가 다르므로 order로 항목명/값을 짝지어 재배열한다.
+     */
+    .sub03-container .table-info{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .sub03-container .table-info colgroup{
+        display: none;
+    }
+    .sub03-container .table-info caption{
+        position: absolute;
+        width: 0.1rem;
+        height: 0.1rem;
+        margin: 0;
+        overflow: hidden;
+        text-indent: 0;
+        clip-path: inset(50%);
+    }
+    .sub03-container .table-info thead,
+    .sub03-container .table-info tbody,
+    .sub03-container .table-info tr{
+        display: contents;
+    }
+    /* grid 아이템이 되면 vertical-align이 듣지 않아 flex로 가운데 정렬한다 */
+    .sub03-container .table-info th,
+    .sub03-container .table-info td{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        min-height: 4.3rem;
+    }
+    .sub03-container .table-info thead th:nth-child(1){
+        order: 1;
+    }
+    .sub03-container .table-info thead th:nth-child(2){
+        order: 2;
+    }
+    .sub03-container .table-info tbody tr:first-child td:nth-child(1){
+        order: 3;
+    }
+    .sub03-container .table-info tbody tr:first-child td:nth-child(2){
+        order: 4;
+    }
+    .sub03-container .table-info thead th:nth-child(3){
+        order: 5;
+    }
+    .sub03-container .table-info thead th:nth-child(4){
+        order: 6;
+    }
+    .sub03-container .table-info tbody tr:first-child td:nth-child(3){
+        order: 7;
+    }
+    .sub03-container .table-info tbody tr:first-child td:nth-child(4){
+        order: 8;
+    }
+    /* 오른쪽 칸으로 옮겨간 셀은 세로 구분선을 지운다 */
+    .sub03-container .table-info thead th:nth-child(2),
+    .sub03-container .table-info tbody tr:first-child td:nth-child(2){
+        border-right: 0;
+    }
+    /* 기타 / 그 값 행은 2열을 모두 차지 */
+    .sub03-container .table-info tbody tr + tr > *{
+        grid-column: 1 / -1;
+        order: 9;
     }
     /* 매각조건 표 : 항목/값을 세로로 쌓기 */
     .sub03-container .table-option,
@@ -1244,8 +1551,8 @@
     }
     .sub03-container .table-option caption{
         position: absolute;
-        width: 0.0625rem;
-        height: 0.0625rem;
+        width: 0.1rem;
+        height: 0.1rem;
         margin: 0;
         overflow: hidden;
         text-indent: 0;
@@ -1256,64 +1563,64 @@
     }
     .sub03-container .place dt{
         justify-content: flex-start;
-        padding: 0.625rem 0.75rem;
+        padding: 1rem 1.2rem;
         border-right: 0;
-        border-bottom: 0.0625rem solid #c9d8de;
+        border-bottom: 0.1rem solid #c9d8de;
     }
     .sub03-container .place dd{
-        padding: 0.625rem 0.75rem;
+        padding: 1rem 1.2rem;
     }
 
     /*------- 공매FAQ -------*/
     .sub04-container .search-wrap .input-box{
         width: 100%;
-        margin-bottom: 2rem;
+        margin-bottom: 3.2rem;
     }
     .sub04-container .search-wrap .input-box input{
-        padding: 0.625rem 3rem 0.625rem 1rem;
-        font-size: 1rem;
+        padding: 1rem 4.8rem 1rem 1.6rem;
+        font-size: 1.6rem;
     }
     .sub04-container .content-wrap dl{
-        padding: 1.5rem 0.75rem;
+        padding: 2.4rem 1.2rem;
     }
     .sub04-container .content-wrap dt{
-        padding: 0 2rem 0 1.875rem;
-        font-size: 1.0625rem;
+        padding: 0 3.2rem 0 3rem;
+        font-size: 1.7rem;
     }
     .sub04-container .content-wrap dt:before{
-        font-size: 1.25rem;
+        font-size: 2rem;
     }
     .sub04-container .content-wrap dd{
-        margin: 1.75rem 0 0.5rem;
-        padding: 0 0 0 1.875rem;
+        margin: 2.8rem 0 0.8rem;
+        padding: 0 0 0 3rem;
     }
     .sub04-container .content-wrap dd:before{
         left: 0;
-        font-size: 1.25rem;
+        font-size: 2rem;
     }
 }
 
 @media screen and (max-width: 30rem) {
     .main-wrap .quick-area .inner,
     .main-wrap .search-area .inner{
-        padding: 2.5rem 1rem 3rem;
+        padding: 4rem 1.6rem 4.8rem;
     }
     .main-wrap .visual-area{
-        height: 16.25rem;
+        height: 26rem;
     }
     .main-wrap .new-area .content .sell-list{
-        padding: 0 1rem;
+        padding: 0 1.6rem;
     }
     .main-wrap .new-area .content .sell-wrap{
-        flex: 0 0 13.75rem;
-        width: 13.75rem;
+        flex: 0 0 22rem;
+        width: 22rem;
     }
     .main-wrap .new-area .content .sell-wrap a img{
-        height: 10rem;
+        height: 16rem;
     }
     .sub02-container .info .col-cont .sr-only{
-        flex: 0 0 4.75rem;
-        font-size: 0.75rem;
+        flex: 0 0 7.6rem;
+        font-size: 1.2rem;
     }
     /* 상세 정보 항목명/값을 세로로 */
     .sub03-container .cont-area .info-wrap dl{
@@ -1321,6 +1628,6 @@
     }
     .sub03-container .cont-area .info-wrap dt{
         width: 100%;
-        margin: 0 0 0.25rem;
+        margin: 0 0 0.4rem;
     }
 }

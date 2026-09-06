@@ -56,7 +56,7 @@
 }
 #container {
   width: 100%;
-  min-height: calc(100vh - 4.25rem);
+  min-height: calc(100vh - 6.8rem);
 }
 /* 본문 바로가기 이동 대상(tabindex="-1")의 기본 외곽선 제거 */
 #container:focus {
@@ -64,7 +64,7 @@
 }
 .inner{
   position: relative;
-  width: 62.5rem;
+  width: 100rem;
   margin: 0 auto;
 }
 .contents {
@@ -75,13 +75,13 @@
 .skip-nav {
   position: absolute;
   left: 0;
-  top: -3.125rem;
+  top: -5rem;
   z-index: 400;
   width: 100%;
-  height: 3.125rem;
-  line-height: 3.125rem;
+  height: 5rem;
+  line-height: 5rem;
   text-align: center;
-  font-size: 0.9375rem;
+  font-size: 1.5rem;
   color: #fff;
   background: #003159;
   transition: top .2s ease;
@@ -100,8 +100,8 @@
 }
 .hidden {
   position: absolute;
-  left: -312.5rem;
-  top: -312.5rem;
+  left: -500rem;
+  top: -500rem;
   overflow: hidden;
 }
 .hide {
@@ -115,22 +115,22 @@
 @media screen  and (max-width: 74.9375rem) {
   .inner{
     width: 100%;
-    padding: 0 2.5rem;
+    padding: 0 4rem;
   }
 }
 
 @media screen and (max-width: 47.9375rem) {
   .inner{
-    padding: 0 1.25rem;
+    padding: 0 2rem;
   }
   /* 모바일 헤더는 높이가 줄어들어 뷰포트 여백도 함께 조정 */
   #container {
-    min-height: calc(100vh - 3.5rem);
+    min-height: calc(100vh - 5.6rem);
   }
 }
 
 @media screen and (max-width: 30rem) {
   .inner{
-    padding: 0 1rem;
+    padding: 0 1.6rem;
   }
 }

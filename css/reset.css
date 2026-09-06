@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-
-
 /* HTML Default */
 html,
 body,
@@ -98,6 +96,13 @@ section {
 }
 html {
   height: 100%;
+  /*
+   * rem 기준을 10px로 맞춘다. (16px * 62.5% = 10px)
+   * 1rem = 10px / 1.6rem = 16px / 10rem = 100px
+   * 단, @media 조건부의 rem은 루트 font-size가 아니라 브라우저 기본값(16px)을
+   * 따르므로 breakpoint 값은 바꾸지 않는다.
+   */
+  font-size: 62.5%;
   /* 모바일 가로/세로 전환 시 브라우저 임의 폰트 확대 방지 */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -108,7 +113,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "MG_KFCC", sans-serif;
-  font-size: 1rem;
+  font-size: 1.6rem;
   line-height: 1.5;
   box-sizing: border-box;
   color: #000;
@@ -158,9 +163,9 @@ a:focus {
 }
 legend,
 caption {
-  text-indent: -624.9375rem;
-  margin-top: -0.0625rem;
-  height: 0.0625rem;
+  text-indent: -999.9rem;
+  margin-top: -0.1rem;
+  height: 0.1rem;
 }
 textarea {
   resize: vertical;
@@ -172,7 +177,7 @@ select {
   color: inherit;
   font: inherit;
   font-family: '돋움','Dotum';
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   color: #949494;
   vertical-align: middle;
   -webkit-box-sizing: border-box;
@@ -199,7 +204,7 @@ select {
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
-  border: 0.0625rem solid;
+  border: 0.1rem solid;
 }
 select::-ms-expand {
   display: none;
@@ -213,37 +218,37 @@ label {
   /* Chrome/Opera/Safari */
   color: #999;
   text-align: left;
-  letter-spacing: -0.03125rem;
+  letter-spacing: -0.05rem;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #999;
   text-align: left;
-  letter-spacing: -0.03125rem;
+  letter-spacing: -0.05rem;
 }
 ::-moz-placeholder {
   /* Firefox 18- */
   color: #999;
   text-align: left;
-  letter-spacing: -0.03125rem;
+  letter-spacing: -0.05rem;
 }
 input:-ms-input-placeholder {
   /* IE 10+ */
   color: rgba(153, 153, 153, 0.9) !important;
   text-align: left !important;
-  letter-spacing: -0.03125rem;
+  letter-spacing: -0.05rem;
 }
 textarea:-ms-input-placeholder {
   /* IE 10+ */
   color: rgba(153, 153, 153, 0.9) !important;
   text-align: left !important;
-  letter-spacing: -0.03125rem;
+  letter-spacing: -0.05rem;
 }
 ::-ms-input-placeholder {
   /* IE 10+ */
   color: rgba(153, 153, 153, 0.9);
   text-align: left !important;
-  letter-spacing: -0.03125rem;
+  letter-spacing: -0.05rem;
 }
 
 ::-ms-clear {
@@ -252,7 +257,6 @@ textarea:-ms-input-placeholder {
 ::-ms-reveal {
   display: none;
 }
-
 
 /*------- media screen -------*/
 /* 태블릿 이하 : 고정폭 해제 */
@@ -265,12 +269,12 @@ textarea:-ms-input-placeholder {
 /* 모바일 : 320px까지 가로 스크롤 없이 대응 */
 @media screen and (max-width: 47.9375rem) {
   body{
-    min-width: 20rem;
+    min-width: 32rem;
   }
-  /* iOS Safari는 폰트 16px 미만 입력요소를 포커스하면 화면을 확대하므로 1rem 유지 */
+  /* iOS Safari는 폰트 16px 미만 입력요소를 포커스하면 화면을 확대하므로 1.6rem 유지 */
   input,
   select,
   textarea{
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }

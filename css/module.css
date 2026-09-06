@@ -23,9 +23,9 @@
 .select-box select {
   position: relative;
   width: 100%;
-  padding: 0.25rem 0.6875rem;
+  padding: 0.4rem 1.1rem;
   border-color: #cdcdcd;
-  background: url('./../images/icons/icon_select_arrow.png') no-repeat right 0.625rem center / 0.375rem 0.1875rem;
+  background: url('./../images/icons/icon_select_arrow.png') no-repeat right 1rem center / 0.6rem 0.3rem;
 }
 /*------- //select -------*/
 
@@ -35,7 +35,7 @@ input[type="password"] {
   -webkit-appearance: none;
   background: none;
   width: 100%;
-  border: 0.0625rem solid #cdcdcd;
+  border: 0.1rem solid #cdcdcd;
 }
 input:disabled,
 input:read-only {
@@ -50,68 +50,68 @@ textarea::placeholder {
 input.text {
   display: block;
   position: relative;
-  padding: 0.25rem 0.6875rem;
+  padding: 0.4rem 1.1rem;
   color: #333;
 }
 input.calendar{
-  padding-right: 1.625rem;
-  background: url('./../images/icons/icon_calendar.png') no-repeat center right 0.375rem / 0.9375rem 1.125rem;
+  padding-right: 2.6rem;
+  background: url('./../images/icons/icon_calendar.png') no-repeat center right 0.6rem / 1.5rem 1.8rem;
 }
 /*------- //input -------*/
 
 /*------- btn -------*/
 .btnBox {
-  margin-top: 1.25rem;
+  margin-top: 2rem;
   text-align: right;
 }
 a.btn,
 .btn {
-  padding: 0.875rem 2.8125rem;
+  padding: 1.4rem 4.5rem;
   display: inline-block;
-  min-width: 9.375rem;
+  min-width: 15rem;
   color: #fff;
-  font-size: 1.125rem;
+  font-size: 1.8rem;
   text-align: center;
-  border-radius: 2.1875rem;
+  border-radius: 3.5rem;
 }
 a:focus-visible{
-  border: 0.1875rem solid #003a68;
+  border: 0.3rem solid #003a68;
 }
 a:focus:not(:focus-visible){
   border : none;
 }
 button:focus-visible{
-  outline: 0.1875rem solid #003a68;
+  outline: 0.3rem solid #003a68;
 }
 button:focus:not(:focus-visible){
   outline : 0;
 }
 .btn.small {
-  min-width: 6.25rem;  
-  height: 2.6875rem;
-  font-size: 0.9375rem;
+  min-width: 10rem;  
+  height: 4.3rem;
+  font-size: 1.5rem;
 }
 .btn.long {
-  height: 4.0625rem;
-  padding: 0 4.375rem;
+  height: 6.5rem;
+  padding: 0 7rem;
 }
 .btn + .btn {
-  margin-left: 0.9375rem;
+  margin-left: 1.5rem;
 }
 
 .btn-square{
   display: inline-block;
-  padding: 0.25rem 0.75rem;
+  padding: 0.4rem 1.2rem;
   font-family: '돋움','Dotum';
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   color: #494949;
-  border: 0.0625rem solid #c9cacb !important;
+  border: 0.1rem solid #c9cacb !important;
   background: #f8fafd;
 }
 .btn-square span{
   display: inline-block;
   position: relative;
-  padding-left: 1.125rem;
+  padding-left: 1.8rem;
   line-height: 1;
   vertical-align: middle;
 }
@@ -120,11 +120,11 @@ button:focus:not(:focus-visible){
 /*------- flag -------*/
 .flag{
   display: inline-block;
-  padding: 0.375rem 1.125rem;
-  font-size: 0.75rem;
+  padding: 0.6rem 1.8rem;
+  font-size: 1.2rem;
   color: #fefefe;
   text-align: center;
-  letter-spacing: -0.0625rem;
+  letter-spacing: -0.1rem;
   line-height: 1;
 }
 .flag.flagA{
@@ -140,32 +140,32 @@ button:focus:not(:focus-visible){
 @media screen and (max-width: 47.9375rem) {
   a.btn,
   .btn {
-    min-width: 7.5rem;
-    padding: 0.75rem 1.875rem;
-    font-size: 1rem;
+    min-width: 12rem;
+    padding: 1.2rem 3rem;
+    font-size: 1.6rem;
   }
   .btn.small {
-    min-width: 5.625rem;
-    height: 2.5rem;
-    padding: 0 1.25rem;
-    font-size: 0.9375rem;
+    min-width: 9rem;
+    height: 4rem;
+    padding: 0 2rem;
+    font-size: 1.5rem;
   }
   .btn.long {
-    height: 3.25rem;
-    padding: 0 2.5rem;
+    height: 5.2rem;
+    padding: 0 4rem;
   }
   .btn + .btn {
-    margin-left: 0.5rem;
+    margin-left: 0.8rem;
   }
   .btn-square {
-    padding: 0.375rem 0.625rem;
+    padding: 0.6rem 1rem;
   }
   /* 입력요소 폰트가 1rem으로 커지는 만큼 여백을 조정 */
   .select-box select,
   input.text {
-    padding: 0.4375rem 0.625rem;
+    padding: 0.7rem 1rem;
   }
   input.calendar {
-    padding-right: 1.75rem;
+    padding-right: 2.8rem;
   }
 }

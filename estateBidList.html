@@ -103,7 +103,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="search-wrap">
+                                    <div class="search-wrap is-fold">
                                         <label class="search-title" for="estateUseType">용도지역</label>
                                         <div class="search-content select-box">
                                             <select id="estateUseType" name="estateUseType">
@@ -131,7 +131,7 @@
                                     </div>
                                 </div>
                                 <div class="search-wrap-set">
-                                    <div class="search-wrap" role="group" aria-labelledby="bussLabel">
+                                    <div class="search-wrap is-fold" role="group" aria-labelledby="bussLabel">
                                         <span class="search-title" id="bussLabel">사업용도</span>
                                         <div class="search-content col2 select-box">
                                             <select id="bussType" name="bussType" class="col2-first black" aria-label="사업구분 선택">
@@ -187,7 +187,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="search-wrap">
+                                    <div class="search-wrap is-fold">
                                         <label class="search-title" for="estateLoc">주소 상세</label>
                                         <div class="search-content">
                                             <input type="text" id="estateLoc" name="estateLoc" class="text" placeholder="물건 소재지 상세">
@@ -195,13 +195,13 @@
                                     </div>
                                 </div>
                                 <div class="search-wrap-set">
-                                    <div class="search-wrap">
+                                    <div class="search-wrap is-fold">
                                         <label class="search-title" for="gmgoNm">담당 기관명<span>(새마을금고명)</span></label>
                                         <div class="search-content">
                                             <input type="text" id="gmgoNm" name="gmgoNm" class="text" placeholder="담당 기관명">
                                         </div>
                                     </div>
-                                    <div class="search-wrap">
+                                    <div class="search-wrap is-fold">
                                         <label class="search-title" for="mgrNm">담당자명</label>
                                         <div class="search-content">
                                             <input type="text" id="mgrNm" name="mgrNm" class="text" placeholder="담당자명">
@@ -209,6 +209,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- [D] : 모바일에서만 노출되는 아코디언 토글입니다. (PC/태블릿은 CSS로 숨김)
+                                 위 3개 항목은 항상 보이고, class에 is-fold 가 붙은 항목만 접힙니다. -->
+                            <button type="button" class="search-toggle" aria-expanded="false"><span>검색조건 더보기</span></button>
                         </div>
                     </form>
                     <div class="btn-wrap">
@@ -682,12 +685,43 @@
 </form>
 
 <!-- [S]: 비교하기 시트 -->
+<!--
+ * [D] : 시트는 3단계이며, #compareSheet에 붙는 class로 단계가 결정됩니다.
+ *
+ *   1) 맨 위    : <div class="sheet is-full">      / .sheet-body max-height 90vh
+ *   2) 중간     : <div class="sheet is-mid">       / .sheet-body max-height 28rem
+ *                 (카드가 가로로 눕는 요약형 - 썸네일 + 제목 + 금액만 노출)
+ *   3) 토글만   : <div class="sheet is-collapsed"> / .sheet-body max-height 0
+ *
+ *   - 세 클래스는 동시에 붙이지 마세요. 하나만 붙습니다.
+ *   - class를 모두 떼면 CSS 기본값(중간 높이)으로 보이지만, 요약형 레이아웃은
+ *     .is-mid 에만 걸려 있으므로 중간 단계는 반드시 is-mid 를 붙여야 합니다.
+ *   - 화살표 방향(.sheet-arrow)도 이 class를 따라갑니다.
+ *     맨 위 / 중간 = 아래 방향, 토글만 = 위 방향.
+ *   - 시트 자체를 감출 때는 class가 아니라 #compareSheet 의 hidden 속성을 씁니다.
+ *
+ *   [ 퍼블리싱에 들어있는 제어 함수 - 교체하셔도 됩니다 ]
+ *   - fnSetCompareStep('full' | 'mid' | 'collapsed') : 해당 단계로 지정
+ *   - fnCompareStep()      : 현재 단계 문자열 반환
+ *   - fnNextCompareStep()  : 다음 단계로 (맨위 > 중간 > 토글만 > 맨위 순환)
+ *                            #compareToggle 클릭에 연결되어 있습니다.
+ *   - 단계를 바꿀 때 #compareToggle 의 aria-expanded 도 함께 맞춰주세요.
+ *     (토글만 단계 = false, 나머지 = true)
+-->
 <div class="sheet" id="compareSheet" role="region" aria-label="비교하기" hidden>
     <button type="button" class="sheet-toggle" id="compareToggle" aria-expanded="true" aria-controls="compareSheetBody">
-        <span>비교하기</span>
+        <span class="sr-only">비교하기</span>
+        <span class="sheet-arrow" aria-hidden="true"><i></i><i></i><i></i></span>
     </button>
     <div class="sheet-body" id="compareSheetBody">
-        <p class="compare-notice" id="compareNotice" role="alert" hidden>최대 3건까지 비교할 수 있습니다.</p>
+        <div class="compare-util">
+            <button type="button" class="compare-reset" onclick="fnResetCompare();">
+                <span class="sr-only">비교 목록 초기화</span>
+            </button>
+            <button type="button" class="compare-close" onclick="fnSetCompareStep('collapsed');">닫기</button>
+        </div>
+
+        <p class="compare-notice" id="compareNotice" role="alert" hidden></p>
 
         <!-- [D] : 카드는 목록에서 담은 물건으로 fnRenderCompare()가 채웁니다. -->
         <div class="compare-list-wrap">
@@ -727,6 +761,16 @@
         $('#datepicker1').next('.ui-datepicker-trigger').attr('aria-label', '입찰기간 시작일 달력 열기');
         $('#datepicker2').next('.ui-datepicker-trigger').attr('aria-label', '입찰기간 종료일 달력 열기');
 
+        // 검색조건 아코디언 :: 모바일에서만 보이는 토글 (위 3개 항목은 항상 노출)
+        $('.search-toggle').on('click', function () {
+            var open = $(this).attr('aria-expanded') !== 'true';
+
+            $(this).attr('aria-expanded', open)
+                   .find('span').text(open ? '검색조건 접기' : '검색조건 더보기');
+
+            $(this).closest('.search-box').toggleClass('is-open', open);
+        });
+
         // 정렬방법 / 표시 개수 변경 시 재조회
         $('#orderKey, #perCnt').on('change', function () {
             fnEstateList(1);
@@ -765,12 +809,28 @@
 
         // 비교 시트 :: 상단 탭으로 접고 펴기 / ESC로 접기
         $('#compareToggle').on('click', function () {
-            fnCollapseCompare($(this).attr('aria-expanded') === 'true');
+            fnNextCompareStep();
         });
 
         $(document).on('keydown', function (e) {
             if ($('#compareSheet').prop('hidden')) return;
-            if (e.key === 'Escape' || e.keyCode === 27) fnCollapseCompare(true);
+            if (e.key === 'Escape' || e.keyCode === 27) fnSetCompareStep('collapsed');
+        });
+
+        // 폭이 바뀌어 한도가 줄면 넘치는 물건은 자동으로 뺀다
+        var compareMaxNow = fnCompareMax();
+
+        $(window).on('resize', function () {
+            var max = fnCompareMax();
+
+            if (max === compareMaxNow) return;
+            compareMaxNow = max;
+
+            $('.compare-btn[aria-pressed="true"]').slice(max)
+                .attr('aria-pressed', 'false')
+                .find('.sr-only').text('비교 목록에 담기');
+
+            if (!$('#compareSheet').prop('hidden')) fnShowCompare(false);
         });
     });
 
@@ -805,8 +865,19 @@
         });
     }
 
-    /* 비교하기 :: 한 번에 담을 수 있는 최대 건수 */
-    var COMPARE_MAX = 3;
+    /*
+     * 비교하기 :: 한 번에 담을 수 있는 최대 건수.
+     * 카드가 한 화면에 들어가야 하므로 모바일에서는 2건으로 줄인다.
+     * (기준 폭은 CSS 모바일 breakpoint와 동일)
+     */
+    var COMPARE_MAX_PC = 3;
+    var COMPARE_MAX_MOBILE = 2;
+    var COMPARE_MOBILE_MQ = '(max-width: 47.9375rem)';
+
+    function fnCompareMax() {
+        return (window.matchMedia && window.matchMedia(COMPARE_MOBILE_MQ).matches)
+            ? COMPARE_MAX_MOBILE : COMPARE_MAX_PC;
+    }
 
     /**
      * 비교하기 :: 물건을 담거나 뺀다. 담으면 비교 시트를 올린다.
@@ -816,13 +887,24 @@
         var on = $btn.attr('aria-pressed') !== 'true';
 
         // 한도를 넘으면 담지 않고, 이유를 알 수 있도록 시트만 올린다.
-        if (on && $('.compare-btn[aria-pressed="true"]').length >= COMPARE_MAX) {
+        if (on && $('.compare-btn[aria-pressed="true"]').length >= fnCompareMax()) {
             fnShowCompare(true);
             return;
         }
 
         $btn.attr('aria-pressed', on)
             .find('.sr-only').text(on ? '비교 목록에서 빼기' : '비교 목록에 담기');
+
+        fnShowCompare(false);
+    }
+
+    /**
+     * 비교 목록 초기화 :: 담은 물건을 모두 뺀다. (남는 물건이 없으면 시트도 내려간다)
+     */
+    function fnResetCompare() {
+        $('.compare-btn[aria-pressed="true"]')
+            .attr('aria-pressed', 'false')
+            .find('.sr-only').text('비교 목록에 담기');
 
         fnShowCompare(false);
     }
@@ -873,10 +955,11 @@
      */
     function fnRenderCompare() {
         var items = fnCompareItems();
+        var max = fnCompareMax();
         var $list = $('#compareList').empty();
 
         // 한도 안내는 다시 그릴 때마다 지운다. (fnShowCompare가 필요할 때만 켠다)
-        $('#compareNotice').prop('hidden', true);
+        $('#compareNotice').text('최대 ' + max + '건까지 비교할 수 있습니다.').prop('hidden', true);
 
         $.each(items, function (i, item) {
             var $card = $('<li>', { 'class': 'compare-card' });
@@ -916,14 +999,14 @@
             $list.append($card);
         });
 
-        // 담긴 물건이 적어도 3칸 영역은 그대로 유지한다.
-        for (var slot = items.length; slot < COMPARE_MAX; slot++) {
+        // 담긴 물건이 적어도 한도만큼의 칸 영역은 그대로 유지한다.
+        for (var slot = items.length; slot < max; slot++) {
             $('<li>', { 'class': 'compare-card is-empty', 'aria-hidden': 'true' })
                 .append($('<span>', { 'class': 'compare-card-placeholder', text: '비교할 물건을 담아주세요' }))
                 .appendTo($list);
         }
 
-        $('#compareStatus').text('비교 목록 ' + items.length + '건 / 최대 ' + COMPARE_MAX + '건');
+        $('#compareStatus').text('비교 목록 ' + items.length + '건 / 최대 ' + max + '건');
     }
 
     /**
@@ -941,15 +1024,38 @@
 
         $('#compareNotice').prop('hidden', !overLimit);
         $sheet.prop('hidden', false);
-        fnCollapseCompare(false);
+        fnSetCompareStep('mid');
     }
 
-    /**
-     * 비교 시트 접기/펴기 :: 상단 '비교하기' 탭을 누르면 아래로 내려갔다 올라온다.
+    /*
+     * 비교 시트 단계 :: 맨 위 > 중간 > 토글만.
+     * 탭을 누를 때마다 한 단계씩 내려가고, 맨 아래에서 누르면 맨 위로 돌아온다.
+     * (중간 단계는 클래스 없이 CSS 기본값을 쓴다)
      */
-    function fnCollapseCompare(collapsed) {
-        $('#compareSheet').toggleClass('is-collapsed', collapsed);
-        $('#compareToggle').attr('aria-expanded', !collapsed);
+    var COMPARE_STEPS = ['full', 'mid', 'collapsed'];
+
+    function fnCompareStep() {
+        var $sheet = $('#compareSheet');
+
+        if ($sheet.hasClass('is-full')) return 'full';
+        if ($sheet.hasClass('is-collapsed')) return 'collapsed';
+        return 'mid';
+    }
+
+    function fnSetCompareStep(step) {
+        $('#compareSheet')
+            .toggleClass('is-full', step === 'full')
+            .toggleClass('is-mid', step === 'mid')
+            .toggleClass('is-collapsed', step === 'collapsed');
+
+        // 카드가 조금이라도 보이면 펼쳐진 것으로 알린다
+        $('#compareToggle').attr('aria-expanded', step !== 'collapsed');
+    }
+
+    function fnNextCompareStep() {
+        var i = $.inArray(fnCompareStep(), COMPARE_STEPS);
+
+        fnSetCompareStep(COMPARE_STEPS[(i + 1) % COMPARE_STEPS.length]);
     }
 
 
