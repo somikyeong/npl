@@ -86,9 +86,15 @@ button:focus-visible{
 button:focus:not(:focus-visible){
   outline : 0;
 }
+/* 조회 버튼 :: PC·태블릿 121*42 고정 */
 .btn.small {
-  min-width: 10rem;  
-  height: 4.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.1rem;
+  min-width: 0;
+  height: 4.2rem;
+  padding: 0;
   font-size: 1.5rem;
 }
 .btn.long {
@@ -144,10 +150,11 @@ button:focus:not(:focus-visible){
     padding: 1.2rem 3rem;
     font-size: 1.6rem;
   }
+  /* 조회 버튼 :: 모바일 100*42 고정 */
   .btn.small {
-    min-width: 9rem;
-    height: 4rem;
-    padding: 0 2rem;
+    width: 10rem;
+    height: 4.2rem;
+    padding: 0;
     font-size: 1.5rem;
   }
   .btn.long {

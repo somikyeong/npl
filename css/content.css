@@ -133,18 +133,27 @@
 
 .main-wrap .new-area{
     padding: 9rem 0 13rem;
+    background: #f6f6f6;
 }
 .main-wrap .new-area .inner{
     padding: 0;
 }
+/*
+ * 가로 스크롤 목록 :: 목록이 화면보다 넓을 때 margin auto로 가운데 정렬하면
+ * 왼쪽으로 넘친 부분이 스크롤로 닿지 않아 좌측 여백과 첫 카드가 잘린다.
+ * 화면보다 넓으면 왼쪽 정렬로 떨어지는 'safe center'를 써서 좌측 여백을 보장한다.
+ */
 .main-wrap .new-area .content{
+    display: flex;
+    justify-content: safe center;
     overflow-x: auto;
 }
 .main-wrap .new-area .content .sell-list{
     display: flex;
-    justify-content: space-between;
-    width: 167rem;
-    margin: 0 auto;
+    flex: none;
+    width: max-content;
+    margin: 0;
+    padding: 0 4rem;
 }
 .main-wrap .new-area .content .sell-wrap{
     overflow: hidden;
@@ -162,8 +171,22 @@
     height: 100%;
     background: rgba(0,0,0,.02);
 }
+/* 불릿(:before)을 absolute에서 flex 아이템으로 바꿔 텍스트와 수직 정렬한다.
+   텍스트가 2줄 이상이면 가운데가 아니라 첫 줄에 맞춰야 하므로 flex-start + 여백 계산. */
 .main-wrap .new-area .content .sell-wrap a li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding-left: 0;
     letter-spacing: -0.1rem;
+}
+.main-wrap .new-area .content .sell-wrap a li:before{
+    position: static;
+    flex-shrink: 0;
+    /* 첫 줄 line box(line-height 1.5) 중앙 = (1.5em - 불릿 0.4rem) / 2 */
+    margin-top: calc((1.5em - 0.4rem) / 2);
+    /* 어두운 오버레이 위이므로 불릿도 흰색 */
+    background: #fff;
 }
 .main-wrap .new-area .content .sell-wrap a img{
     width: 100%;
@@ -304,27 +327,22 @@
     padding: 0.9rem 2rem 0.9rem 1rem;
     border-bottom: 0.1rem solid #c9d8de;
 }
-/* flag와 제목은 항상 한 줄에 나란히 두고, 제목만 남는 폭을 차지한다 */
 .sub02-container .cont-top .title{
-    display: flex;
-    align-items: flex-start;
     flex: 1;
     min-width: 0;
 }
+/* flag는 사건번호(.case-no) 안에 들어가 텍스트 흐름을 함께 탄다 */
 .sub02-container .cont-top .title .flag{
-    flex-shrink: 0;
+    margin-right: 1.2rem;
 }
 .sub02-container .cont-top .title .title-info{
-    /* 3줄을 넘기면 말줄임. padding-top은 첫 줄 글자를 flag 글자와 맞추기 위한 값 */
+    /* 3줄을 넘기면 말줄임 */
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     line-clamp: 3;
     overflow: hidden;
-    flex: 1;
     min-width: 0;
-    margin-left: 1.2rem;
-    padding-top: 0.3rem;
     font-family: '돋움','Dotum';
     font-size: 1.2rem;
     font-weight: 700;
@@ -391,16 +409,15 @@
     position: relative;
     padding-left: 6rem;
 }
-.sub02-container .info:before{
-    content: '';
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    width: 0.1rem;
-    height: 100%;
-    background: #d9d9d9;
+/*
+ * 목록에는 진행상태 · 물건상세 · 사업용도 · 금액 4개만 노출한다.
+ * (개시결정일자/공고일자, 소재지는 첫 번째 .col의 1·3번째 행)
+ */
+.sub02-container .info .col:first-child .col-title p:nth-child(1),
+.sub02-container .info .col:first-child .col-title p:nth-child(3),
+.sub02-container .info .col:first-child .col-cont p:nth-child(1),
+.sub02-container .info .col:first-child .col-cont p:nth-child(3){
+    display: none;
 }
 .sub02-container .info .col{
     display: flex;
@@ -716,6 +733,24 @@
     position: relative;
     text-align: right;
     margin-bottom: 1.4rem;
+}
+/* 하단 목록 버튼 : 태블릿 이하에서만 노출한다 */
+.sub03-container .btn-wrap.bottom{
+    display: none;
+    margin: 4rem 0 0;
+    text-align: center;
+}
+.sub03-container .btn-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5.6rem;
+    font-size: 1.4rem;
+    color: #003159;
+    background: #fff;
+    border: 0.1rem solid #c9d7dd;
+    border-radius: 50%;
 }
 
 .sub03-container .btn-square.list span:before{
@@ -1098,8 +1133,13 @@
 
 /* 태블릿 */
 @media screen and (max-width: 74.9375rem) {
+    /* 태블릿부터 상단 비주얼 이미지 제거 */
     .main-wrap .visual-area{
-        height: 52rem;
+        display: none;
+    }
+    /* header가 fixed(9.6rem)라 첫 섹션 상단 여백에 헤더 높이를 더해 겹침 방지 */
+    .main-wrap .search-area .inner{
+        padding-top: 14.4rem;
     }
     /* 최신물건 : 고정폭(167rem)을 풀고 가로 스크롤 카드로 */
     .main-wrap .new-area .content{
@@ -1122,6 +1162,10 @@
     .sub03-container .btn-square.share{
         display: inline-block;
     }
+    /* 상단에서 뺀 목록 버튼을 본문 맨 아래에 다시 노출한다 */
+    .sub03-container .btn-wrap.bottom{
+        display: block;
+    }
     /*
      * 물건 개요 :: 사진(42rem 고정) + 항목명(19.4rem + 6rem)이 폭을 다 먹어
      * 값이 한 글자씩 줄바꿈되던 문제. 사진은 비율로, 항목명은 좁게 잡는다.
@@ -1140,17 +1184,23 @@
     .sub03-container .cont-area .thumbs{
         height: 6.4rem;
     }
+    /* info-wrap : 여백은 모바일과 동일하게 두고, 항목명/값만 50%씩 나눈다 */
     .sub03-container .cont-area .info-wrap ul{
-        padding: 2.4rem;
+        padding: 2rem 1.6rem;
     }
     .sub03-container .cont-area .info-wrap ul li + li{
-        margin-top: 2.4rem;
-        padding-top: 2.4rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
     }
     .sub03-container .cont-area .info-wrap dt{
-        width: 13rem;
-        margin-right: 2.4rem;
+        flex: 0 0 50%;
+        width: 50%;
+        margin-right: 0;
         white-space: normal;
+    }
+    .sub03-container .cont-area .info-wrap dd{
+        flex: 0 0 50%;
+        min-width: 0;
     }
 }
 
@@ -1197,8 +1247,9 @@
         margin-bottom: 3rem;
         font-size: 2.2rem;
     }
-    .main-wrap .visual-area{
-        height: 32rem;
+    /* 모바일 header 높이 6.4rem + 여백 */
+    .main-wrap .search-area .inner{
+        padding-top: 11.2rem;
     }
 
     .main-wrap .new-area{
@@ -1206,6 +1257,9 @@
     }
     .main-wrap .new-area .content{
         scroll-snap-type: x proximity;
+        /* 카드가 scroll-snap-align:start 라 좌측 padding만큼 스냅되어 여백이 사라진다.
+           스냅 기준선을 padding만큼 밀어 첫 카드 앞 여백을 유지한다. */
+        scroll-padding-left: 2rem;
     }
     .main-wrap .new-area .content .sell-list{
         gap: 1.2rem;
@@ -1226,8 +1280,7 @@
     .main-wrap .new-area .content .sell-wrap a{
         display: flex;
         flex-direction: column;
-        background: #f8fafd;
-        border: 0.1rem solid #d5e1e9;
+        background: #fff;
     }
     .main-wrap .new-area .content .sell-wrap a img{
         flex-shrink: 0;
@@ -1239,12 +1292,13 @@
         flex: 1;
         height: auto;
     }
+    /* 오버레이가 아니라 사진 아래에 붙는 카드 영역이므로 밝은 배경으로 */
     .main-wrap .new-area .content .list{
         justify-content: flex-start;
         height: auto;
         padding: 1.4rem 1.6rem;
-        color: #003159;
-        background: transparent;
+        background: #fff;
+        color: #000;
         transform: none;
         transition: none;
     }
@@ -1257,10 +1311,8 @@
         font-size: 1.3rem;
         line-height: 1.5;
     }
-    /* 배경이 밝아지므로 흰색 불릿을 본문색으로 */
-    .main-wrap .new-area .content .list-white li:before{
-        top: 0.8rem;
-        background-color: #003159;
+    .main-wrap .new-area .content .sell-wrap a li:before{
+        background: #333;
     }
 
     /*------- 매각처분 방식 및 공매 절차 -------*/
@@ -1303,6 +1355,10 @@
     }
     .sub02-container .cont-top{
         padding: 1rem 1.2rem;
+    }
+    /* 제목 :: 첫 줄은 flag + 사건번호, 주소지는 왼쪽 끝에서 시작하는 다음 줄로 */
+    .sub02-container .cont-top .title .title-info .estate-addr{
+        display: block;
     }
     /*
      * 왼쪽에 썸네일 + 그 아래 비교버튼, 오른쪽에 정보를 두는 2열 배치.
@@ -1356,9 +1412,6 @@
         gap: 0;
         padding-left: 0;
     }
-    .sub02-container .info:before{
-        display: none;
-    }
     /*
      * 노출 항목(진행상태 > 사업용도 > 물건상세 > 금액)이 두 .col에 나뉘어 있고
      * 순서도 DOM과 다르므로, 중간 래퍼를 display:contents로 걷어내
@@ -1367,11 +1420,6 @@
     .sub02-container .info .col,
     .sub02-container .info .col-cont{
         display: contents;
-    }
-    /* 개시결정일자(공고일자) / 소재지는 모바일에서 숨김 */
-    .sub02-container .info .col:first-child .col-cont p:nth-child(1),
-    .sub02-container .info .col:first-child .col-cont p:nth-child(3){
-        display: none;
     }
     .sub02-container .info .col:last-child .col-cont p:nth-child(1){
         order: 1;
@@ -1385,6 +1433,34 @@
     .sub02-container .info .col:last-child .col-cont p:nth-child(3){
         order: 4;
         margin-bottom: 0;
+    }
+    /* 값을 라벨 옆이 아니라 아래로 내린다 */
+    .sub02-container .info .col-cont p{
+        display: block;
+        padding-left: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+    /*
+     * 라벨 열(.col-title)이 숨겨져 불릿도 함께 사라지므로,
+     * 값 앞의 보조 라벨(.sr-only)에 같은 목록 불릿을 붙인다.
+     */
+    .sub02-container .info .col-cont .sr-only{
+        display: block;
+        position: relative;
+        margin: 0 0 0.2rem -1.2rem;
+        padding-left: 1.2rem;
+    }
+    .sub02-container .info .col-cont .sr-only:before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        /* 첫 줄 line box(line-height 1.75) 중앙 */
+        top: calc((1.75em - 0.4rem) / 2);
+        width: 0.4rem;
+        height: 0.4rem;
+        background: #003159;
+        border-radius: 50%;
     }
     .sub02-container .cont.empty{
         padding-top: 5rem;
@@ -1443,17 +1519,15 @@
     .sub03-container .cont-area .thumbs{
         height: 7.2rem;
     }
-    .sub03-container .cont-area .info-wrap ul{
-        padding: 2rem 1.6rem;
-    }
-    .sub03-container .cont-area .info-wrap ul li + li{
-        margin-top: 2rem;
-        padding-top: 2rem;
-    }
+    /* 여백은 태블릿과 동일. 50% 분할만 풀고 라벨 고정폭으로 되돌린다 */
     .sub03-container .cont-area .info-wrap dt{
+        flex: 0 0 auto;
         width: 13rem;
         margin-right: 1.6rem;
         white-space: normal;
+    }
+    .sub03-container .cont-area .info-wrap dd{
+        flex: 1;
     }
     .sub03-container section + section{
         margin-top: 3.6rem;
@@ -1605,8 +1679,12 @@
     .main-wrap .search-area .inner{
         padding: 4rem 1.6rem 4.8rem;
     }
-    .main-wrap .visual-area{
-        height: 26rem;
+    /* 320px header 높이 5.6rem + 여백 */
+    .main-wrap .search-area .inner{
+        padding-top: 9.6rem;
+    }
+    .main-wrap .new-area .content{
+        scroll-padding-left: 1.6rem;
     }
     .main-wrap .new-area .content .sell-list{
         padding: 0 1.6rem;

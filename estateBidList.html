@@ -209,9 +209,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- [D] : 모바일에서만 노출되는 아코디언 토글입니다. (PC/태블릿은 CSS로 숨김)
-                                 위 3개 항목은 항상 보이고, class에 is-fold 가 붙은 항목만 접힙니다. -->
+                            <!-- [D] : 검색조건 아코디언 (모바일 전용) :: 현재 미사용.
+                                 사용하려면 위 .search-box 에 type-fold class를 추가하고 아래 button의 주석을 해제한다.
+                                 위 3개 항목은 항상 보이고, class에 is-fold 가 붙은 항목만 모바일에서 접힌다.
+                                 (is-fold class는 마크업에 그대로 두었다. type-fold가 없으면 아무 동작도 하지 않는다.)
+
                             <button type="button" class="search-toggle" aria-expanded="false"><span>검색조건 더보기</span></button>
+                            -->
                         </div>
                     </form>
                     <div class="btn-wrap">
@@ -252,12 +256,16 @@
                 <div id="divContent" class="search-list-cont">
                     <ul>
                         <!-- [D] : 리스트 개수에 맞춰 해당 li를 루프 시켜 주세요 / 페이지 내 리스트 최대 개수는 기획 문의 -->
+                        <!-- [D] : 제목은 사건번호(.case-no)와 주소지(.estate-addr)를 각각 span으로 감싸 출력해 주세요.
+                                   모바일에서 주소지를 다음 줄로 떨어뜨리는 데 사용합니다. -->
                         <li class="cont" onclick="fnEstateDtl('MG20250625175231639');">
                             <div class="cont-top">
                                 <div class="title">
-                                    <span class="flag flagA">경 매</span>
                                     <h3 class="title-info">
-                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250625175231639'); return false;">2024 타경 4245 석곡면 연반리 산19번지 외 42필지 타운하우스 (착공전)</a>
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250625175231639'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2024 타경 4245</span>
+                                            <span class="estate-addr">석곡면 연반리 산19번지 외 42필지 타운하우스 (착공전)</span>
+                                        </a>
                                     </h3>
                                 </div>
                             </div>
@@ -302,9 +310,11 @@
                         <li class="cont" onclick="fnEstateDtl('MG20250625175309860');">
                             <div class="cont-top">
                                 <div class="title">
-                                    <span class="flag flagA">경 매</span>
                                     <h3 class="title-info">
-                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250625175309860'); return false;">2024타경113796 경상남도 창원시 진해구 용원동 1111번지 아파트 (착공전)</a>
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250625175309860'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2024타경113796</span>
+                                            <span class="estate-addr">경상남도 창원시 진해구 용원동 1111번지 아파트 (착공전)</span>
+                                        </a>
                                     </h3>
                                 </div>
                             </div>
@@ -349,9 +359,11 @@
                         <li class="cont" onclick="fnEstateDtl('MG20250831190137994');">
                             <div class="cont-top">
                                 <div class="title">
-                                    <span class="flag flagA">경 매</span>
                                     <h3 class="title-info">
-                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250831190137994'); return false;">2025타경30309 경기 부천시 원미구 심곡동 129-8 오피스텔 (공사진행중)</a>
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250831190137994'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2025타경30309</span>
+                                            <span class="estate-addr">경기 부천시 원미구 심곡동 129-8 오피스텔 (공사진행중)</span>
+                                        </a>
                                     </h3>
                                 </div>
                             </div>
@@ -396,9 +408,11 @@
                         <li class="cont" onclick="fnEstateDtl('MG20260219140630406');">
                             <div class="cont-top">
                                 <div class="title">
-                                    <span class="flag flagA">경 매</span>
                                     <h3 class="title-info">
-                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260219140630406'); return false;">2025타경501738 세종시 고운동 893-33번지 연립주택 (공사진행중)</a>
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260219140630406'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2025타경501738</span>
+                                            <span class="estate-addr">세종시 고운동 893-33번지 연립주택 (공사진행중)</span>
+                                        </a>
                                     </h3>
                                 </div>
                             </div>
@@ -443,9 +457,11 @@
                         <li class="cont" onclick="fnEstateDtl('MG20250625174505588');">
                             <div class="cont-top">
                                 <div class="title">
-                                    <span class="flag flagA">경 매</span>
                                     <h3 class="title-info">
-                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250625174505588'); return false;">2025타경2798 대전광역시 대덕구 중리동 238-7, 8번지 다세대주택 (공사진행중)</a>
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250625174505588'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2025타경2798</span>
+                                            <span class="estate-addr">대전광역시 대덕구 중리동 238-7, 8번지 다세대주택 (공사진행중)</span>
+                                        </a>
                                     </h3>
                                 </div>
                             </div>
@@ -490,9 +506,11 @@
                         <li class="cont" onclick="fnEstateDtl('MG20260219174641945');">
                             <div class="cont-top">
                                 <div class="title">
-                                    <span class="flag flagA">경 매</span>
                                     <h3 class="title-info">
-                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260219174641945'); return false;">2025타경35543 부천시 원미구 심곡동 176-14, 176-15, 376-31 오피스텔 (공사진행중)</a>
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260219174641945'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2025타경35543</span>
+                                            <span class="estate-addr">부천시 원미구 심곡동 176-14, 176-15, 376-31 오피스텔 (공사진행중)</span>
+                                        </a>
                                     </h3>
                                 </div>
                             </div>
@@ -537,9 +555,11 @@
                         <li class="cont" onclick="fnEstateDtl('MG20260219175207688');">
                             <div class="cont-top">
                                 <div class="title">
-                                    <span class="flag flagA">경 매</span>
                                     <h3 class="title-info">
-                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260219175207688'); return false;">2026타경10219 중랑구 중화동 306-19 외 주상복합 (공사진행중)</a>
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260219175207688'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2026타경10219</span>
+                                            <span class="estate-addr">중랑구 중화동 306-19 외 주상복합 (공사진행중)</span>
+                                        </a>
                                     </h3>
                                 </div>
                             </div>
@@ -584,9 +604,11 @@
                         <li class="cont" onclick="fnEstateDtl('MG20260821151401797');">
                             <div class="cont-top">
                                 <div class="title">
-                                    <span class="flag flagA">경 매</span>
                                     <h3 class="title-info">
-                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260821151401797'); return false;">2026타경 11018 울산광역시 울주군 삼남읍 신화리 1612-1번지 근린생활시설 (착공전)</a>
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260821151401797'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2026타경 11018</span>
+                                            <span class="estate-addr">울산광역시 울주군 삼남읍 신화리 1612-1번지 근린생활시설 (착공전)</span>
+                                        </a>
                                     </h3>
                                 </div>
                             </div>
@@ -762,6 +784,7 @@
         $('#datepicker2').next('.ui-datepicker-trigger').attr('aria-label', '입찰기간 종료일 달력 열기');
 
         // 검색조건 아코디언 :: 모바일에서만 보이는 토글 (위 3개 항목은 항상 노출)
+        // .search-box.type-fold 마크업을 쓸 때만 버튼이 존재하므로, 기본 형식에서는 아무 동작도 하지 않는다.
         $('.search-toggle').on('click', function () {
             var open = $(this).attr('aria-expanded') !== 'true';
 

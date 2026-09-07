@@ -181,8 +181,13 @@
 /*------- //sub page title -------*/
 
 /*------- search box -------*/
-/* 검색조건 아코디언 토글 : 모바일에서만 노출된다 */
-.search-toggle{
+/*
+ * 검색조건 아코디언 :: .search-box 에 type-fold class가 붙은 경우에만 동작한다.
+ * 기본(펼침) 형식 마크업에는 영향을 주지 않으므로, 마크업에서 '아코디언 형식' 블록의
+ * 주석만 풀면 바로 사용할 수 있다. 상세 동작은 모바일 미디어쿼리의 아코디언 블록 참고.
+ * 토글 버튼은 모바일에서만 노출된다.
+ */
+.search-box.type-fold .search-toggle{
     display: none;
 }
 .search-area .search-box{
@@ -682,6 +687,22 @@
 
 /*------- media screen -------*/
 @media screen and (max-width: 74.9375rem) {
+    /* header : 태블릿부터 흰 배경 + 하단 라인 */
+    .header{
+        background: #fff;
+        border-bottom: 1px solid #cdcdcd;
+    }
+    /* 흰 배경에서는 밝은 로고/메뉴가 보이지 않으므로 어두운 버전으로 교체 */
+    .header .logo img{
+        content: url(../images/common/logo01.png);
+    }
+    .header .gnb .depth1 a{
+        color: #333;
+    }
+    .header .gnb .depth1 a.active,
+    .header .gnb .depth1 a:hover{
+        color: #0080c8;
+    }
     .search-box .col3 .search-content{
         padding: 1rem 0.8rem;
     }
@@ -765,21 +786,22 @@
     }
 
     /*
-     * search box :: 위 3개 항목은 그대로 두고 .is-fold 항목만 접는다.
+     * search box :: 검색조건 아코디언 (.search-box.type-fold 에만 적용)
+     * 위 3개 항목은 그대로 두고 .is-fold 항목만 접는다.
      * 토글은 박스 맨 아래에 한 줄로 붙는다. (여는 상태 class 'is-open'은 .search-box에)
      */
-    .search-box .search-wrap.is-fold{
+    .search-box.type-fold .search-wrap.is-fold{
         overflow: hidden;
         max-height: 0;
         border-top-width: 0;
         transition: max-height .3s ease;
     }
-    .search-box.is-open .search-wrap.is-fold{
+    .search-box.type-fold.is-open .search-wrap.is-fold{
         /* 한 줄 높이를 넉넉히 넘는 값 (transition을 쓰려면 고정값이 필요) */
         max-height: 20rem;
         border-top-width: 0.1rem;
     }
-    .search-box .search-toggle{
+    .search-box.type-fold .search-toggle{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -792,7 +814,7 @@
         background: #f8fafd;
         border-top: 0.1rem solid #c9d8de;
     }
-    .search-box .search-toggle:after{
+    .search-box.type-fold .search-toggle:after{
         content: '';
         display: block;
         flex-shrink: 0;
@@ -805,7 +827,7 @@
         transition: transform .3s ease;
     }
     /* 펼친 상태 : 화살표를 위로 */
-    .search-box.is-open .search-toggle:after{
+    .search-box.type-fold.is-open .search-toggle:after{
         margin-top: 0.4rem;
         transform: rotate(-135deg);
     }
