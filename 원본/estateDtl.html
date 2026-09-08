@@ -1,0 +1,469 @@
+<html lang="ko" class=""><head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+<link rel="shortcut icon" href="/static/images/kfcc.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="/static/images/og_img.jpg">
+<meta property="og:title" content="새마을금고 ">
+<meta property="og:url" content="https://www.kfcc.co.kr"> <!-- 확인해봐야 함 TODO 김인혁 -->
+
+    <meta charset="UTF-8">
+    
+    <title>MG새마을금고</title>
+    
+    <!-- CSS (Carousel + Thumbs) -->
+    <link rel="stylesheet" href="/mciEstate/css/carousel.css">
+    <link rel="stylesheet" href="/mciEstate/css/carousel.thumbs.css">
+
+    <!-- fancybox-->
+    <link rel="stylesheet" href="./css/jquery.fancybox.css"><!-- [D] : 250619 | fancybox v5 => v2으로 버전 수정에 따른 파일 변경 -->
+    <link rel="stylesheet" href="./css/jquery.fancybox-thumbs.css"><!-- [D] : 250619 | fancybox v5 => v2으로 버전 수정에 따른 파일 변경 -->
+    
+    <link rel="stylesheet" href="/mciEstate/css/reset.css">
+    <link rel="stylesheet" href="/mciEstate/css/common.css">
+    <link rel="stylesheet" href="/mciEstate/css/layout.css?v=202602021700">
+    <link rel="stylesheet" href="/mciEstate/css/module.css">
+    <link rel="stylesheet" href="/mciEstate/css/content.css?v=202602021700">
+
+    <script type="text/javascript" src="/mciEstate/js/common.js"></script>
+    <script type="text/javascript" src="/mciEstate/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script><!-- [D] : 250619 | ie 대응 파일 추가 -->
+    
+    <!-- JS (Core + Thumbs Plugin) -->
+    <script src="/mciEstate/js/carousel.umd.js"></script>
+    <script src="/mciEstate/js/carousel.thumbs.umd.js"></script>
+
+    <!-- fancybox-->
+    <script src="./js/jquery.fancybox.js"></script><!-- [D] : 250619 | fancybox v5 => v2으로 버전 수정에 따른 파일 변경 -->
+    <script src="./js/jquery.fancybox.pack.js"></script><!-- [D] : 250619.1 | fancybox v5 => v2으로 버전 수정에 따른 파일 변경 -->
+    <script src="./js/jquery.fancybox-thumbs.js"></script><!-- [D] : 250619 | fancybox v5 => v2으로 버전 수정에 따른 파일 변경 -->
+<style type="text/css">.fancybox-margin{margin-right:15px;}</style><style type="text/css">.fancybox-margin{margin-right:15px;}</style></head>
+<body>
+    <!-- [S]: header -->
+    
+
+<header class="header">
+    <div class="inner">
+        <a href="./index.do" class="logo">
+            <img class="logo_img" src="/mciEstate/images/common/logo.png" alt="MG새마을금고">
+        </a>
+        <nav class="nav">
+            <ul class="gnb">
+            
+<!--                 <li class="depth1"> -->
+<!--                     <a href="./estateList.do" id="allMenu"><span>전체물건</span></a> -->
+<!--                 </li> -->
+                <li class="depth1">
+                    <a href="./estateBidList.do" id="bidMenu"><span>경매물건</span></a>
+                </li>
+                <li class="depth1">
+                    <a href="./estateSaleList.do" id="saleMenu" class="active"><span>공매물건</span></a>
+                </li>
+                <li class="depth1" style="display: none;"><!-- [D] : 250619 | style="display: none;" 추가  -->
+                      <a href="javascript:;"><span>공매FAQ</span></a>
+               	</li>
+            </ul>
+        </nav>
+    </div>
+</header>
+    <!-- [E]: header -->
+    
+    <div id="wrap" class="sub-wrap">
+        <div id="container" class="sub03-container">
+            <!-- [S]: title -->
+            <div class="title-area">
+                <div class="inner">
+                    <p>물건상세</p>
+                </div>
+            </div>
+            <!-- [E]: title -->
+
+            <!-- [S]: contents -->
+            <div class="contents inner">
+                <!-- [S]: 상단 -->
+                <section>
+                    <div class="btn-wrap">
+                        <a href="javascript:;" class="btn-square print"><span>출력</span></a>
+                        <a href="javascript:;" class="btn-square list" onclick="javascript:goEstateList();"><span>목록</span></a>
+                    </div>
+                    <div class="title-wrap">
+                        <div class="title-top">
+                            <p>
+                                
+                                    
+                                    
+                                        <span class="flag flagB">공 매</span>
+                                    
+                                
+                                <span>202410-39866-00</span> 
+                            </p>
+                            <ul class="title-info">
+                                <li>공고일자 : 2024.10.21</li>
+                                <li>조회수 : 85회</li>
+                            </ul> 
+                        </div>
+                        <div class="title-bottom">
+                            <span class="category">[ 상업시설 / 근린생활시설 ]</span>
+                            <strong class="address">경기도 구리시 갈매동 519 외 1필지 39개호 (완공)</strong>
+                        </div>
+                    </div>
+                    <div class="cont-area">
+                        <!-- [D] : 250619.1 | fancybox v5 => v2으로 버전 수정에 따른 마크업 변경 -->
+                        <div class="gallery-wrap">
+                            
+                                <!-- 메인 이미지 -->
+                                <a id="mainImageLink" class="fancybox mainImageLink" href="/upload/data/mciEstate/하남금고(1000007557)_1번_1776831809035.jpg">
+                                    <img id="mainImage" src="/upload/data/mciEstate/하남금고(1000007557)_1번_1776831809035.jpg" alt="메인 이미지" onerror="this.onerror=null; this.src='/mciEstate/images/common/noImage.jpg';">
+                                </a>
+                                <div class="thumbs">
+                                    <!-- 썸네일: zoom 연결 X, 단순 메인 변경용 -->
+                                    
+                                        <a href="javascript:;" data-src="/upload/data/mciEstate/하남금고(1000007557)_1번_1776831809035.jpg">
+                                            <img src="/upload/data/mciEstate/하남금고(1000007557)_1번_1776831809035.jpg" alt="1" onerror="this.onerror=null; this.src='/mciEstate/images/common/noImage.jpg';">
+                                        </a>
+                                    
+                                        <!-- 팝업용 이미지 마크업 (보이진 않지만 Fancybox가 참조함, jsp 반복처리용) -->
+                                        <a href="/upload/data/mciEstate/하남금고(1000007557)_1번_1776831809035.jpg" class="fancybox hidden" data-fancybox-group="gallery"></a>
+                                    
+                                        <a href="javascript:;" data-src="/upload/data/mciEstate/하남금고(1000007557)_2번_1776831810709.jpg">
+                                            <img src="/upload/data/mciEstate/하남금고(1000007557)_2번_1776831810709.jpg" alt="1" onerror="this.onerror=null; this.src='/mciEstate/images/common/noImage.jpg';">
+                                        </a>
+                                    
+                                        <!-- 팝업용 이미지 마크업 (보이진 않지만 Fancybox가 참조함, jsp 반복처리용) -->
+                                        <a href="/upload/data/mciEstate/하남금고(1000007557)_2번_1776831810709.jpg" class="fancybox hidden" data-fancybox-group="gallery"></a>
+                                    
+                                        <a href="javascript:;" data-src="/upload/data/mciEstate/하남금고(1000007557)_4번_1776831811987.jpg">
+                                            <img src="/upload/data/mciEstate/하남금고(1000007557)_4번_1776831811987.jpg" alt="1" onerror="this.onerror=null; this.src='/mciEstate/images/common/noImage.jpg';">
+                                        </a>
+                                    
+                                        <!-- 팝업용 이미지 마크업 (보이진 않지만 Fancybox가 참조함, jsp 반복처리용) -->
+                                        <a href="/upload/data/mciEstate/하남금고(1000007557)_4번_1776831811987.jpg" class="fancybox hidden" data-fancybox-group="gallery"></a>
+                                    
+                                        <a href="javascript:;" data-src="/upload/data/mciEstate/하남금고(1000007557)_5번_1776831813165.jpg">
+                                            <img src="/upload/data/mciEstate/하남금고(1000007557)_5번_1776831813165.jpg" alt="1" onerror="this.onerror=null; this.src='/mciEstate/images/common/noImage.jpg';">
+                                        </a>
+                                    
+                                        <!-- 팝업용 이미지 마크업 (보이진 않지만 Fancybox가 참조함, jsp 반복처리용) -->
+                                        <a href="/upload/data/mciEstate/하남금고(1000007557)_5번_1776831813165.jpg" class="fancybox hidden" data-fancybox-group="gallery"></a>
+                                    
+                                </div>
+                            
+                            
+                        </div>                         
+                        <!-- //[D] : 250619.1 | fancybox v5 => v2으로 버전 수정에 따른 마크업 변경 -->
+                        
+                        <div class="info-wrap print-flex uses-transform section">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>경공매</dt>
+                                        <dd>공매</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>진행상태</dt>
+                                        <dd>수의계약 가능</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>면적</dt>
+                                        <dd><span class="blueA">토지 2,988</span>㎡ / <span class="blueA">건물 15,608</span>㎡ </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>입찰기간 </dt>
+                                        <dd>2024.10.21 - 2024.11.13</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>감정평가금액<span>(백만원)</span></dt>
+                                        <dd class="blueA">29,257 (백만원)</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>마지막회차 최저입찰가격<span>(백만원)</span></dt>
+                                        <dd class="blueA">18,155 (백만원)</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>법원명/온비드</dt>
+                                        <dd>
+                                            <span class="onbid">온비드</span>
+                                            
+                                                <a href="https://www.onbid.co.kr/shortcut.do?code=x8mcfbT1O3v6" target="_blank">바로가기</a>
+                                            
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>문의처</dt>
+                                        <dd>하남금고 이윤상<br>
+                                        031-792-2715</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- [E]: 상단 -->
+                
+                <!-- [S]: 기본정보 -->
+                <section>
+                    <p class="s-title">기본정보</p>
+                    <div class="table-wrap print-flex uses-transform section">
+                        <dl class="place">
+                            <dt>대표소재지</dt>
+                            <dd>경기도 구리시 갈매동 519 외 1필지 39개호</dd>
+                        </dl>
+                        <table class="table-info">
+                            <caption>기본정보</caption>
+                            <colgroup>
+                                <col width="25%" span="4">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="col">사업용도</th>
+                                    <th scope="col">인허가여부</th>
+                                    <th scope="col">인허가번호</th>
+                                    <th scope="col" class="bor-right-none">착공 및 완공여부</th>
+                                </tr>
+                                <tr>
+                                    <td>상업시설/근린생활시설</td>
+                                    <td>
+                                        여
+                                        
+                                    </td>
+                                    <td>2017-건축과-신축허가-63</td>
+                                    <td>완공</td>
+                                </tr>
+                                <tr>
+                                    <th scope="col" colspan="4" class="bor-right-none">기타</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"><p class="blueA"></p></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <!-- [E]: 기본정보 -->
+
+                <!-- [S]: 조건 -->
+                <section>
+                    <p class="s-title">매각조건</p>
+                    <div class="table-wrap print-flex uses-transform section">
+                        <table class="table-option">
+                            <caption>매각조건</caption>
+                            <colgroup>
+                                <col width="50%" span="4">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>감정평가금액 <span>(백만원)</span></th>
+                                    <td>29,257 (백만원)</td>
+                                    <th>감정평가기관 / 일자</th>
+                                    <td>대화감정평가법인 / 2023.12.19</td>
+                                </tr>
+                                <tr>
+                                    <th>1회차 최저입찰가 <span>(백만원)</span></th>
+                                    <td>18,404 (백만원)</td>
+                                    <th>마지막회차 최저입찰가격</th>
+                                    <td>18,155 (백만원)</td>
+                                </tr>
+                                <tr>
+                                    <th>유찰저감률 <span>(%)</span></th>
+                                    <td>1.36%</td>
+                                    <th>매각처분방법 / 수의계약 가능 여부</th>
+                                    <td>수의계약(매각) / 마지막 차수 최종유찰시 가능</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <!-- [E]: 조건 -->
+            </div>
+            <!-- [E]: contents -->
+        </div>
+    </div>
+
+    <!-- [S]: footer -->
+    
+
+<footer class="footer">
+    <div class="inner">
+        <a href="./index.do" class="logo">
+            <img src="/mciEstate/images/common/logo01.png" alt="MG새마을금고">
+        </a>
+
+        <address>COPYRIGHT 2025 ©새마을금고 NPL 홍보 플랫폼. ALL RIGHTS RESERVED.</address>
+    </div>
+</footer>
+    <!-- [E]: footer -->
+    
+    <form name="EstateDtlfrm" id="EstateDtlfrm" method="POST">
+        <input type="hidden" name="pageNo" value="1">
+        <input type="hidden" name="ownerType" value="">
+        <input type="hidden" name="estateType" value="S">
+        <input type="hidden" name="estateStatus" value="">
+        <input type="hidden" name="estateLocType" value="">
+        <input type="hidden" name="estateLocDtlType" value="">
+        <input type="hidden" name="estateUseType" value="">
+        <input type="hidden" name="bussType" value="">
+        <input type="hidden" name="bussDtlType" value="">
+        <input type="hidden" name="estateLoc" value="">
+        <input type="hidden" name="gmgoNm" value="">
+        <input type="hidden" name="mgrNm" value="">
+        <input type="hidden" name="bidStrDt" value="">
+        <input type="hidden" name="bidEndDt" value="">
+        <input type="hidden" name="orderKey" value="byNotDt">
+        <input type="hidden" name="perCnt" value="8">
+    </form>
+    
+    <!-- [S]: script -->
+    <script> // [D] : 250619.1 | fancybox v5 => v2으로 버전 수정에 따른 스크립트 변경
+        $(document).ready(function () {
+            // 썸네일 클릭 시 메인이미지 교체 (zoom 없음)
+            $('.thumbs a[data-src]').on('click', function() {
+                var newSrc = $(this).data('src');
+                $('#mainImage').attr('src', newSrc);
+                $('#mainImageLink').attr('href', newSrc);
+            });
+    
+            // 1. Fancybox 초기화 (hidden 요소만 그룹으로 인식)
+            $(".fancybox.hidden").fancybox({
+                helpers: {
+                    thumbs: {
+                        width: 60,
+                        height: 60
+                    }
+                },
+                closeBtn: true,
+                arrows: true,
+                loop: false
+            });
+    
+            // 2. 메인이미지 클릭 시 → gallery 그룹에서 index 찾아서 수동 오픈
+            $('#mainImageLink').on('click', function (e) {
+                e.preventDefault();
+    
+                var currentHref = $(this).attr('href');
+                var galleryItems = $(".fancybox.hidden");
+                var startIndex = 0;
+    
+                galleryItems.each(function (i) {
+                    if ($(this).attr('href') === currentHref) {
+                        startIndex = i;
+                        return false;
+                    }
+                });
+                
+                $.fancybox.open(galleryItems, {
+                    index: startIndex,
+                    helpers: {
+                        thumbs: {
+                            width: 60,
+                            height: 60
+                        }
+                    },
+                    closeBtn: true,
+                    arrows: true,
+                    loop: false
+                }, startIndex);
+            });
+            
+            //메뉴 active 처리
+            if("S" == 'B'){   //경매
+                $('#bidMenu').addClass('active');
+            }else{      //공매
+                $('#saleMenu').addClass('active');
+            }
+            
+            // 2025-08-29 추가
+            $(".print").on("click", function(e)
+            {
+                e.preventDefault();
+                // 프린트영역
+                const $prtCont = $("div.contents.inner").clone(false, false);
+                // 버튼영역 삭제
+                $prtCont.find(".btn-wrap").remove();
+                // 조회수 제거
+                $prtCont.find(".title-info").find('li')[1].remove();
+                // 바로가기 제거
+                $prtCont.find("a:contains('바로가기')").remove();
+                // 문자열로변환
+                const prtContent = $prtCont[0].innerHTML;
+                // 개행, 탭 문자 제거
+                const html = prtContent.replace(/\n/g, "").replace(/\t/g, "");
+                
+                // iframe 생성
+                const $iframe = $("<iframe>", {style : "display : none;"}).appendTo("body");
+                const iframe = $iframe[0];
+                
+                const doc = iframe.contentWindow.document;
+                
+                doc.open();
+                doc.write(
+                          '<!doctype html><html><head>'
+                        + '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">'
+                        + '<link rel="stylesheet" href="/mciEstate/css/reset.css">'
+                        + '<link rel="stylesheet" href="/mciEstate/css/common.css">'
+                        + '<link rel="stylesheet" href="/mciEstate/css/layout.css">'
+                        + '<link rel="stylesheet" href="/mciEstate/css/module.css">'
+                        + '<link rel="stylesheet" href="/mciEstate/css/content.css">'
+                        + '<link rel="stylesheet" href="./css/jquery.fancybox.css">'
+                        + '<link rel="stylesheet" href="./css/jquery.fancybox-thumbs.css">'
+                        + '<style>'
+                        + '@media print {'
+                        + '    .sub03-container .cont-area{flex-direction: column;}'
+                        + '    .sub03-container .cont-area .gallery-wrap{width: 100%;}'
+                        + '    .sub03-container .cont-area .info-wrap ul{padding: 27px 0 0 0;}'
+                        + '    .info-wrap ul li:last-child dl:last-child{padding-bottom: 27px;}'
+//                      + '    .sub03-container .table-wrap{border-top : 1px solid #2384c6;}'
+                        + '    .print-flex{display : block !important;}'
+                        + '    .uses-transform{transform : none !important;}'
+                        + '    .section{break-inside : avoid;}'
+                        + '    thead{display : table-header-group;}'
+                        + '    tr, img, svg, canvas{break-inside : avoid; page-break-inside : avoid;}'
+                        + '    * {-webkit-print-color-adjust : exact; print-color-adjust : axact;}'
+                        + '}'
+                        + '@page {'
+                        + '    size : A4;'
+                        + '    margin : 12mm;'
+                        + '}'
+                        + '</style>'
+                        + '</head><body>'
+                        + '<div id="wrap" class="sub-wrap">'
+                        + '<div id="container" class="sub03-container">'
+                        + html
+                        + '</div>'
+                        + '</div>'
+                        + '</body></html>'
+                         );
+                
+                // 프린트영역에 삽입
+                doc.close();
+                
+                iframe.contentWindow.focus();
+                iframe.contentWindow.print();
+                
+                setTimeout(() =>
+                {
+                    iframe.remove();    
+                }, 1000);
+            });
+        });
+
+        function goEstateList(){
+            var estateType = $("input[name=estateType]").val();
+            if(estateType === '')
+                estateType = 'S';
+            if('1' === '')
+                $("#pageNo").val("1");
+            var f = document.EstateDtlfrm;
+            if(estateType === 'B'){     //경매
+                f.action="/mciEstate/estateBidList.do";
+            }else{          //공매
+                f.action="/mciEstate/estateSaleList.do";
+            }
+            
+            document.charset = "utf-8"
+            $("#EstateDtlfrm").submit();
+        }
+    </script>
+    <!-- [E]: script -->
+
+</body></html>

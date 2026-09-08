@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://www.kfcc.co.kr">
     <meta property="og:image" content="https://www.kfcc.co.kr/static/images/og_img.jpg">
 
-    <link rel="icon" type="image/svg+xml" href="./images/common/favicon.svg">
+    <link rel="icon" type="image/png" href="./images/common/favicon.png">
 
     <!-- [D] : 250619 | fancybox v5 => v2으로 버전 수정에 따른 파일 변경 -->
     <link rel="stylesheet" href="./css/jquery.fancybox.css">
@@ -99,12 +99,6 @@
                                         </button>
                                     </li>
                                     <li>
-                                        <button type="button" class="share-btn mail" onclick="fnShareMail();">
-                                            <span class="ico"></span>
-                                            <span class="txt">이메일</span>
-                                        </button>
-                                    </li>
-                                    <li>
                                         <button type="button" class="share-btn url" onclick="fnShareUrl();">
                                             <span class="ico"></span>
                                             <span class="txt">URL복사</span>
@@ -143,30 +137,30 @@
 
                         <!-- 썸네일 : zoom 연결 X, 메인 이미지 교체용 / 팝업용 a는 Fancybox가 참조하는 숨김 마크업 -->
                         <div class="thumbs" role="group" aria-label="물건 사진 목록">
-                            <button type="button" aria-label="1번째 사진 보기" data-src="/upload/data/mciEstate/61-1_1750844612884.jpg">
+                            <button type="button" aria-label="1번째 사진 보기" value="/upload/data/mciEstate/61-1_1750844612884.jpg">
                                 <img src="/upload/data/mciEstate/61-1_1750844612884.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
                             </button>
-                            <a href="/upload/data/mciEstate/61-1_1750844612884.jpg" class="fancybox hidden" data-fancybox-group="gallery" tabindex="-1" aria-hidden="true"></a>
+                            <a href="/upload/data/mciEstate/61-1_1750844612884.jpg" class="fancybox hidden" rel="gallery" tabindex="-1" aria-hidden="true"></a>
 
-                            <button type="button" aria-label="2번째 사진 보기" data-src="/upload/data/mciEstate/61-2_1750844614498.jpg">
+                            <button type="button" aria-label="2번째 사진 보기" value="/upload/data/mciEstate/61-2_1750844614498.jpg">
                                 <img src="/upload/data/mciEstate/61-2_1750844614498.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
                             </button>
-                            <a href="/upload/data/mciEstate/61-2_1750844614498.jpg" class="fancybox hidden" data-fancybox-group="gallery" tabindex="-1" aria-hidden="true"></a>
+                            <a href="/upload/data/mciEstate/61-2_1750844614498.jpg" class="fancybox hidden" rel="gallery" tabindex="-1" aria-hidden="true"></a>
 
-                            <button type="button" aria-label="3번째 사진 보기" data-src="/upload/data/mciEstate/61-3_1750844615672.jpg">
+                            <button type="button" aria-label="3번째 사진 보기" value="/upload/data/mciEstate/61-3_1750844615672.jpg">
                                 <img src="/upload/data/mciEstate/61-3_1750844615672.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
                             </button>
-                            <a href="/upload/data/mciEstate/61-3_1750844615672.jpg" class="fancybox hidden" data-fancybox-group="gallery" tabindex="-1" aria-hidden="true"></a>
+                            <a href="/upload/data/mciEstate/61-3_1750844615672.jpg" class="fancybox hidden" rel="gallery" tabindex="-1" aria-hidden="true"></a>
 
-                            <button type="button" aria-label="4번째 사진 보기" data-src="/upload/data/mciEstate/61-4_1750844616981.jpg">
+                            <button type="button" aria-label="4번째 사진 보기" value="/upload/data/mciEstate/61-4_1750844616981.jpg">
                                 <img src="/upload/data/mciEstate/61-4_1750844616981.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
                             </button>
-                            <a href="/upload/data/mciEstate/61-4_1750844616981.jpg" class="fancybox hidden" data-fancybox-group="gallery" tabindex="-1" aria-hidden="true"></a>
+                            <a href="/upload/data/mciEstate/61-4_1750844616981.jpg" class="fancybox hidden" rel="gallery" tabindex="-1" aria-hidden="true"></a>
 
-                            <button type="button" aria-label="5번째 사진 보기" data-src="/upload/data/mciEstate/61-5_1750844617935.jpg">
+                            <button type="button" aria-label="5번째 사진 보기" value="/upload/data/mciEstate/61-5_1750844617935.jpg">
                                 <img src="/upload/data/mciEstate/61-5_1750844617935.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
                             </button>
-                            <a href="/upload/data/mciEstate/61-5_1750844617935.jpg" class="fancybox hidden" data-fancybox-group="gallery" tabindex="-1" aria-hidden="true"></a>
+                            <a href="/upload/data/mciEstate/61-5_1750844617935.jpg" class="fancybox hidden" rel="gallery" tabindex="-1" aria-hidden="true"></a>
                         </div>
                     </div>
                     <!-- //[D] : 250619.1 | fancybox v5 => v2으로 버전 수정에 따른 마크업 변경 -->
@@ -202,7 +196,11 @@
                             <li>
                                 <dl>
                                     <dt>법원명/온비드</dt>
-                                    <dd><span class="onbid">광주지방법원</span></dd>
+                                    <!-- [D] : 바로가기 링크(href)는 경매/공매 구분에 맞는 주소로 출력해 주세요. 없으면 a 태그를 빼면 됩니다. -->
+                                    <dd>
+                                        <span class="onbid">광주지방법원</span>
+                                        <a href="http://www.onbid.co.kr/shortcut.do?code=U8IeN3Iep0tf" target="_blank">바로가기<span class="sr-only">(새 창)</span></a>
+                                    </dd>
                                 </dl>
                                 <dl>
                                     <dt>문의처</dt>
@@ -268,7 +266,7 @@
                             <tr>
                                 <th scope="row">감정평가금액 <span>(백만원)</span></th>
                                 <td>6,134 (백만원)</td>
-                                <th scope="row">감정평가기관 / 일자</th>
+                                <th scope="row">감정평가기관<br class="br-mo">/ 일자</th>
                                 <td>가온감정평가법인 / 2025.05.30</td>
                             </tr>
                             <tr>
@@ -280,7 +278,7 @@
                             <tr>
                                 <th scope="row">유찰저감률 <span>(%)</span></th>
                                 <td>20%</td>
-                                <th scope="row">매각처분방법 / 수의계약 가능 여부</th>
+                                <th scope="row">매각처분방법 /<br class="br-mo">수의계약 가능 여부</th>
                                 <td>경매입찰 / 불가</td>
                             </tr>
                         </tbody>
@@ -346,8 +344,8 @@
             .attr('aria-current', 'page');
 
         // 썸네일 클릭 시 메인 이미지 교체 (zoom 없음)
-        $('.thumbs button[data-src]').on('click', function () {
-            var newSrc = $(this).data('src');
+        $('.thumbs button[value]').on('click', function () {
+            var newSrc = $(this).val();
 
             $('#mainImage').attr('src', newSrc);
             $('#mainImageLink').attr('href', newSrc);
@@ -469,85 +467,9 @@
         f.submit();
     }
 
-    /* 공유 팝업을 열기 직전 포커스를 돌려줄 요소 */
-    var shareOpener = null;
-
-    /**
-     * 공유하기 :: 태블릿 이하에서만 노출되는 버튼. 공유 팝업을 연다.
-     * 팝업 내용(썸네일/물건번호/소재지)은 본문에 그려진 값을 그대로 가져다 쓴다.
-     */
-    function fnShare() {
-        var $layer = $('#shareLayer');
-
-        $('#shareThumb').attr('src', $('#mainImage').attr('src'));
-        $('#shareNum').text($('.title-wrap .title-top p span').not('.flag').text().trim());
-        $('#shareAddr').text($('.title-wrap .address').text().trim());
-
-        shareOpener = document.activeElement;
-        /* hidden 속성 미지원 브라우저를 대비해 class로도 함께 제어한다 */
-        $layer.removeAttr('hidden').addClass('is-open');
-        /* 닫기 버튼 대신 팝업 자체에 포커스를 줘 X에 포커스링이 그려지지 않게 한다 */
-        $layer.find('.share-popup').focus();
-    }
-
-    function fnShareClose() {
-        $('#shareLayer').attr('hidden', 'hidden').removeClass('is-open');
-
-        if (shareOpener) {
-            shareOpener.focus();
-            shareOpener = null;
-        }
-    }
-
-    /* ESC로 닫기 */
-    $(document).on('keydown', function (e) {
-        if (e.key === 'Escape' && $('#shareLayer').hasClass('is-open')) {
-            fnShareClose();
-        }
-    });
-
-    /**
-     * 카카오톡 공유.
-     * [D] : Kakao JavaScript SDK와 앱 키가 준비되면 아래 주석 블록을 사용하세요.
-     *       (SDK 미탑재 상태에서는 URL 복사로 대체 동작합니다.)
-     */
-    function fnShareKakao() {
-        if (typeof Kakao === 'undefined' || !Kakao.isInitialized || !Kakao.isInitialized()) {
-            fnShareUrl();
-            return;
-        }
-
-        Kakao.Share.sendDefault({
-            objectType: 'feed',
-            content: {
-                title: $('#shareNum').text(),
-                description: $('#shareAddr').text(),
-                imageUrl: $('#shareThumb').prop('src'),
-                link: { mobileWebUrl: location.href, webUrl: location.href }
-            }
-        });
-    }
-
-    /** 이메일 공유 :: 기본 메일 앱을 연다. */
-    function fnShareMail() {
-        var subject = $('#shareNum').text() + ' ' + $('#shareAddr').text();
-        var body = subject + '\n' + location.href;
-
-        location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    }
-
-    /** URL 복사 :: clipboard 미지원 브라우저는 prompt로 대체한다. */
-    function fnShareUrl() {
-        if (navigator.clipboard) {
-            navigator.clipboard.writeText(location.href).then(function () {
-                alert('주소가 복사되었습니다.');
-            });
-            return;
-        }
-
-        prompt('아래 주소를 복사해 주세요.', location.href);
-    }
 </script>
+<!-- [D] : 퍼블리싱 확인용 스크립트입니다. 개발 이관 시 이 줄은 삭제하셔도 됩니다. -->
+<script src="./js/preview/share.js"></script>
 <!-- [E]: script -->
 </body>
 </html>

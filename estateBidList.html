@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://www.kfcc.co.kr">
     <meta property="og:image" content="https://www.kfcc.co.kr/static/images/og_img.jpg">
 
-    <link rel="icon" type="image/svg+xml" href="./images/common/favicon.svg">
+    <link rel="icon" type="image/png" href="./images/common/favicon.png">
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
@@ -271,7 +271,7 @@
                             </div>
                             <div class="cont-bottom">
                                 <div class="compare-box">
-                                    <button type="button" class="compare-btn" aria-pressed="false" data-estate-id="MG20250625175231639" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20250625175231639" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
                                         <span class="sr-only">비교 목록에 담기</span>
                                     </button>
                                 </div>
@@ -320,7 +320,7 @@
                             </div>
                             <div class="cont-bottom">
                                 <div class="compare-box">
-                                    <button type="button" class="compare-btn" aria-pressed="false" data-estate-id="MG20250625175309860" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20250625175309860" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
                                         <span class="sr-only">비교 목록에 담기</span>
                                     </button>
                                 </div>
@@ -369,7 +369,7 @@
                             </div>
                             <div class="cont-bottom">
                                 <div class="compare-box">
-                                    <button type="button" class="compare-btn" aria-pressed="false" data-estate-id="MG20250831190137994" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20250831190137994" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
                                         <span class="sr-only">비교 목록에 담기</span>
                                     </button>
                                 </div>
@@ -418,7 +418,7 @@
                             </div>
                             <div class="cont-bottom">
                                 <div class="compare-box">
-                                    <button type="button" class="compare-btn" aria-pressed="false" data-estate-id="MG20260219140630406" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20260219140630406" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
                                         <span class="sr-only">비교 목록에 담기</span>
                                     </button>
                                 </div>
@@ -467,7 +467,7 @@
                             </div>
                             <div class="cont-bottom">
                                 <div class="compare-box">
-                                    <button type="button" class="compare-btn" aria-pressed="false" data-estate-id="MG20250625174505588" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20250625174505588" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
                                         <span class="sr-only">비교 목록에 담기</span>
                                     </button>
                                 </div>
@@ -516,7 +516,7 @@
                             </div>
                             <div class="cont-bottom">
                                 <div class="compare-box">
-                                    <button type="button" class="compare-btn" aria-pressed="false" data-estate-id="MG20260219174641945" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20260219174641945" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
                                         <span class="sr-only">비교 목록에 담기</span>
                                     </button>
                                 </div>
@@ -565,7 +565,7 @@
                             </div>
                             <div class="cont-bottom">
                                 <div class="compare-box">
-                                    <button type="button" class="compare-btn" aria-pressed="false" data-estate-id="MG20260219175207688" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20260219175207688" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
                                         <span class="sr-only">비교 목록에 담기</span>
                                     </button>
                                 </div>
@@ -614,7 +614,7 @@
                             </div>
                             <div class="cont-bottom">
                                 <div class="compare-box">
-                                    <button type="button" class="compare-btn" aria-pressed="false" data-estate-id="MG20260821151401797" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20260821151401797" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
                                         <span class="sr-only">비교 목록에 담기</span>
                                     </button>
                                 </div>
@@ -653,6 +653,8 @@
 
                     <!-- [S]: 페이지네이션 -->
                     <nav class="pagination" aria-label="물건 목록 페이지">
+                        <!-- [D] : 첫 페이지에서는 이전, 마지막 페이지에서는 다음 버튼에 disabled를 넣어 주세요. -->
+                        <button type="button" class="button prev-btn" onclick="fnEstateList(1);" aria-label="이전 페이지">이전</button>
                         <ul class="num">
                             <!-- [D] : 현재 페이지 li에 active 클래스, button에 aria-current="page" 추가 -->
                             <li class="active">
@@ -745,9 +747,15 @@
 
         <p class="compare-notice" id="compareNotice" role="alert" hidden></p>
 
-        <!-- [D] : 카드는 목록에서 담은 물건으로 fnRenderCompare()가 채웁니다. -->
+        <!-- [D] : 담은 물건은 fnRenderCompare()가 채웁니다.
+                   중간 단계(.is-mid)는 카드 목록, 맨 위 단계(.is-full)는 비교표로 보이며
+                   두 마크업을 모두 그려두고 CSS로 하나만 노출합니다. -->
         <div class="compare-list-wrap">
             <ul class="compare-list" id="compareList"></ul>
+            <table class="compare-table" id="compareTable">
+                <caption class="sr-only">담은 물건 비교표</caption>
+                <tbody></tbody>
+            </table>
         </div>
     </div>
     <p class="sr-only" id="compareStatus" role="status"></p>
@@ -779,21 +787,6 @@
             dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
         });
 
-        // jQuery UI가 생성한 달력 열기 버튼에 접근 가능한 이름 부여
-        $('#datepicker1').next('.ui-datepicker-trigger').attr('aria-label', '입찰기간 시작일 달력 열기');
-        $('#datepicker2').next('.ui-datepicker-trigger').attr('aria-label', '입찰기간 종료일 달력 열기');
-
-        // 검색조건 아코디언 :: 모바일에서만 보이는 토글 (위 3개 항목은 항상 노출)
-        // .search-box.type-fold 마크업을 쓸 때만 버튼이 존재하므로, 기본 형식에서는 아무 동작도 하지 않는다.
-        $('.search-toggle').on('click', function () {
-            var open = $(this).attr('aria-expanded') !== 'true';
-
-            $(this).attr('aria-expanded', open)
-                   .find('span').text(open ? '검색조건 접기' : '검색조건 더보기');
-
-            $(this).closest('.search-box').toggleClass('is-open', open);
-        });
-
         // 정렬방법 / 표시 개수 변경 시 재조회
         $('#orderKey, #perCnt').on('change', function () {
             fnEstateList(1);
@@ -822,38 +815,6 @@
                     });
                 }
             });
-        });
-
-        // 페이지네이션 현재 위치 표시
-        $('.pagination .num li').on('click', function () {
-            $('.pagination .num li').removeClass('active').find('button').removeAttr('aria-current');
-            $(this).addClass('active').find('button').attr('aria-current', 'page');
-        });
-
-        // 비교 시트 :: 상단 탭으로 접고 펴기 / ESC로 접기
-        $('#compareToggle').on('click', function () {
-            fnNextCompareStep();
-        });
-
-        $(document).on('keydown', function (e) {
-            if ($('#compareSheet').prop('hidden')) return;
-            if (e.key === 'Escape' || e.keyCode === 27) fnSetCompareStep('collapsed');
-        });
-
-        // 폭이 바뀌어 한도가 줄면 넘치는 물건은 자동으로 뺀다
-        var compareMaxNow = fnCompareMax();
-
-        $(window).on('resize', function () {
-            var max = fnCompareMax();
-
-            if (max === compareMaxNow) return;
-            compareMaxNow = max;
-
-            $('.compare-btn[aria-pressed="true"]').slice(max)
-                .attr('aria-pressed', 'false')
-                .find('.sr-only').text('비교 목록에 담기');
-
-            if (!$('#compareSheet').prop('hidden')) fnShowCompare(false);
         });
     });
 
@@ -888,200 +849,6 @@
         });
     }
 
-    /*
-     * 비교하기 :: 한 번에 담을 수 있는 최대 건수.
-     * 카드가 한 화면에 들어가야 하므로 모바일에서는 2건으로 줄인다.
-     * (기준 폭은 CSS 모바일 breakpoint와 동일)
-     */
-    var COMPARE_MAX_PC = 3;
-    var COMPARE_MAX_MOBILE = 2;
-    var COMPARE_MOBILE_MQ = '(max-width: 47.9375rem)';
-
-    function fnCompareMax() {
-        return (window.matchMedia && window.matchMedia(COMPARE_MOBILE_MQ).matches)
-            ? COMPARE_MAX_MOBILE : COMPARE_MAX_PC;
-    }
-
-    /**
-     * 비교하기 :: 물건을 담거나 뺀다. 담으면 비교 시트를 올린다.
-     */
-    function fnToggleCompare(btn) {
-        var $btn = $(btn);
-        var on = $btn.attr('aria-pressed') !== 'true';
-
-        // 한도를 넘으면 담지 않고, 이유를 알 수 있도록 시트만 올린다.
-        if (on && $('.compare-btn[aria-pressed="true"]').length >= fnCompareMax()) {
-            fnShowCompare(true);
-            return;
-        }
-
-        $btn.attr('aria-pressed', on)
-            .find('.sr-only').text(on ? '비교 목록에서 빼기' : '비교 목록에 담기');
-
-        fnShowCompare(false);
-    }
-
-    /**
-     * 비교 목록 초기화 :: 담은 물건을 모두 뺀다. (남는 물건이 없으면 시트도 내려간다)
-     */
-    function fnResetCompare() {
-        $('.compare-btn[aria-pressed="true"]')
-            .attr('aria-pressed', 'false')
-            .find('.sr-only').text('비교 목록에 담기');
-
-        fnShowCompare(false);
-    }
-
-    /**
-     * 비교 목록에서 빼기 :: 시트 안의 빼기 버튼에서 호출한다.
-     */
-    function fnRemoveCompare(estateId) {
-        $('.compare-btn').filter(function () {
-            return $(this).data('estateId') === estateId;
-        }).attr('aria-pressed', 'false').find('.sr-only').text('비교 목록에 담기');
-
-        fnShowCompare(false);
-    }
-
-    /**
-     * 담은 물건 정보 :: 목록 행에 이미 그려진 내용을 그대로 읽어온다.
-     * [D] 서버 연동 시 estateId로 상세 데이터를 받아오도록 교체 가능
-     */
-    function fnCompareItems() {
-        return $('.compare-btn[aria-pressed="true"]').map(function () {
-            var $btn = $(this);
-            var $cont = $btn.closest('.cont');
-            var $flag = $cont.find('.flag');
-            var rows = [];
-
-            $cont.find('.info .col-cont p').each(function () {
-                var $row = $(this).clone();
-                var label = $.trim($row.find('.sr-only').text());
-
-                $row.find('.sr-only').remove();
-                rows.push({ label: label, value: $.trim($row.text()) });
-            });
-
-            return {
-                id: $btn.data('estateId'),
-                flag: $.trim($flag.text()),
-                flagClass: $flag.attr('class'),
-                title: $.trim($cont.find('.title-info a').text()),
-                img: $cont.find('.img-box img').attr('src'),
-                rows: rows
-            };
-        }).get();
-    }
-
-    /**
-     * 비교 카드 그리기 :: 담은 물건을 카드로 나란히 세운다.
-     */
-    function fnRenderCompare() {
-        var items = fnCompareItems();
-        var max = fnCompareMax();
-        var $list = $('#compareList').empty();
-
-        // 한도 안내는 다시 그릴 때마다 지운다. (fnShowCompare가 필요할 때만 켠다)
-        $('#compareNotice').text('최대 ' + max + '건까지 비교할 수 있습니다.').prop('hidden', true);
-
-        $.each(items, function (i, item) {
-            var $card = $('<li>', { 'class': 'compare-card' });
-            var $thumb = $('<div>', { 'class': 'compare-card-thumb' }).appendTo($card);
-            var $body = $('<div>', { 'class': 'compare-card-body' }).appendTo($card);
-            var $flags = $('<div>', { 'class': 'compare-card-flags' }).appendTo($body);
-            var $info = $('<dl>', { 'class': 'compare-card-info' });
-
-            $('<img>', { src: item.img, alt: '' })
-                .on('error', function () {
-                    this.onerror = null;
-                    this.src = './images/common/noImage.svg';
-                })
-                .appendTo($thumb);
-            $('<button>', { type: 'button', 'class': 'compare-remove' })
-                .append($('<span>', { 'class': 'sr-only', text: item.title + ' 비교 목록에서 빼기' }))
-                .on('click', function () { fnRemoveCompare(item.id); })
-                .appendTo($thumb);
-
-            $('<span>', { 'class': item.flagClass, text: item.flag }).appendTo($flags);
-
-            // 진행상태는 목록 항목 중 하나이므로 칩으로 따로 올려준다.
-            $.each(item.rows, function (r, row) {
-                if (row.label !== '진행상태') return;
-                $('<span>', { 'class': 'compare-card-state', text: row.value }).appendTo($flags);
-            });
-
-            $('<span>', { 'class': 'compare-card-title', text: item.title }).appendTo($body);
-
-            $.each(item.rows, function (r, row) {
-                if (row.label === '진행상태') return;
-                $info.append($('<dt>', { text: row.label }))
-                     .append($('<dd>', { text: row.value }));
-            });
-            $info.appendTo($body);
-
-            $list.append($card);
-        });
-
-        // 담긴 물건이 적어도 한도만큼의 칸 영역은 그대로 유지한다.
-        for (var slot = items.length; slot < max; slot++) {
-            $('<li>', { 'class': 'compare-card is-empty', 'aria-hidden': 'true' })
-                .append($('<span>', { 'class': 'compare-card-placeholder', text: '비교할 물건을 담아주세요' }))
-                .appendTo($list);
-        }
-
-        $('#compareStatus').text('비교 목록 ' + items.length + '건 / 최대 ' + max + '건');
-    }
-
-    /**
-     * 비교 시트 올리기 :: 담은 물건이 없으면 시트를 감춘다.
-     */
-    function fnShowCompare(overLimit) {
-        var $sheet = $('#compareSheet');
-
-        fnRenderCompare();
-
-        if (!$('.compare-btn[aria-pressed="true"]').length && !overLimit) {
-            $sheet.prop('hidden', true);
-            return;
-        }
-
-        $('#compareNotice').prop('hidden', !overLimit);
-        $sheet.prop('hidden', false);
-        fnSetCompareStep('mid');
-    }
-
-    /*
-     * 비교 시트 단계 :: 맨 위 > 중간 > 토글만.
-     * 탭을 누를 때마다 한 단계씩 내려가고, 맨 아래에서 누르면 맨 위로 돌아온다.
-     * (중간 단계는 클래스 없이 CSS 기본값을 쓴다)
-     */
-    var COMPARE_STEPS = ['full', 'mid', 'collapsed'];
-
-    function fnCompareStep() {
-        var $sheet = $('#compareSheet');
-
-        if ($sheet.hasClass('is-full')) return 'full';
-        if ($sheet.hasClass('is-collapsed')) return 'collapsed';
-        return 'mid';
-    }
-
-    function fnSetCompareStep(step) {
-        $('#compareSheet')
-            .toggleClass('is-full', step === 'full')
-            .toggleClass('is-mid', step === 'mid')
-            .toggleClass('is-collapsed', step === 'collapsed');
-
-        // 카드가 조금이라도 보이면 펼쳐진 것으로 알린다
-        $('#compareToggle').attr('aria-expanded', step !== 'collapsed');
-    }
-
-    function fnNextCompareStep() {
-        var i = $.inArray(fnCompareStep(), COMPARE_STEPS);
-
-        fnSetCompareStep(COMPARE_STEPS[(i + 1) % COMPARE_STEPS.length]);
-    }
-
-
     /**
      * 물건 상세정보 조회 :: 목록의 검색 조건을 함께 전달한다.
      */
@@ -1107,6 +874,9 @@
         $('#estateFrm').submit();
     }
 </script>
+<!-- [D] : 퍼블리싱 확인용 스크립트입니다. 개발 이관 시 이 두 줄은 삭제하셔도 됩니다. -->
+<script src="./js/preview/common.js"></script>
+<script src="./js/preview/compare.js"></script>
 <!-- [E]: script -->
 </body>
 </html>

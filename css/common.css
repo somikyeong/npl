@@ -91,6 +91,16 @@
   top: 0;
 }
 
+/* 모바일에서만 줄바꿈되는 br. PC/태블릿에서는 공백 한 칸으로 이어진다 */
+.br-mo{
+  display: none;
+}
+@media screen and (max-width: 47.9375rem) {
+  .br-mo{
+    display: inline;
+  }
+}
+
 /* 접근성을 위한 텍스트 블라이드처리 공통 클래스 */
 .sr-only{
   overflow: hidden;
@@ -129,7 +139,7 @@
   }
 }
 
-@media screen and (max-width: 30rem) {
+@media screen and (max-width: 24.3125rem) {
   .inner{
     padding: 0 1.6rem;
   }

@@ -132,11 +132,17 @@
     background-size: 100%;
     background-position: center;
 }
+/* 이전 버튼은 같은 화살표를 180도 돌려 쓴다. (left 53%의 치우침도 반대로) */
 .pagination .button.prev-btn:after{
+    left: 47%;
     transform: translate(-50%, -50%) rotate(180deg);
 }
 .pagination .button.next-btn:after{
     transform: translate(-50%, -50%);
+}
+.pagination .button[disabled]{
+    opacity: .4;
+    cursor: default;
 }
 
 .pagination .num{
@@ -281,6 +287,10 @@
 .sheet[hidden]{
     display: none;
 }
+/* 맨 위 단계는 화면을 거의 다 덮으므로 고정 header(z-index 300) 아래로 깔린다 */
+.sheet.is-full{
+    z-index: 200;
+}
 /* 상단 탭 : 누르면 시트가 아래로 내려갔다 올라온다 */
 .sheet .sheet-toggle{
     display: flex;
@@ -292,8 +302,8 @@
     margin: 0 auto;
     font-size: 1.6rem;
     font-weight: 700;
-    color: #003159;
-    background: #fff;
+    color: #fff;
+    background: #0072bc;
     border-radius: 1rem 1rem 0 0;
     box-shadow: 0 -0.2rem 0.8rem rgba(0, 0, 0, 0.12);
 }
@@ -309,8 +319,8 @@
     height: 0.8rem;
     /* 회전한 사각형이라 위아래로 겹쳐 '>>>' 처럼 촘촘히 쌓는다 */
     margin: -0.2rem auto 0;
-    border-right: 0.2rem solid #003159;
-    border-bottom: 0.2rem solid #003159;
+    border-right: 0.2rem solid #fff;
+    border-bottom: 0.2rem solid #fff;
     transform: rotate(45deg);
     /* 순서대로 하나씩 밝아지며 흐르는 느낌 */
     animation: sheetArrowGlow 1.4s ease-in-out infinite;
@@ -336,13 +346,13 @@
 }
 @keyframes sheetArrowGlow{
     0%, 100%{
-        opacity: 0.3;
-        border-color: #7fa8c6;
+        opacity: 0.35;
+        border-color: #fff;
     }
     50%{
         opacity: 1;
-        border-color: #2384c6;
-        filter: drop-shadow(0 0 0.3rem rgba(35, 132, 198, 0.85));
+        border-color: #fff;
+        filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.85));
     }
 }
 /* 움직임을 줄이도록 설정한 사용자에게는 깜빡임 없이 보여준다 */
@@ -367,8 +377,17 @@
     box-shadow: 0 -0.4rem 1.6rem rgba(0, 0, 0, 0.12);
     transition: max-height .3s ease;
 }
+/*
+ * 맨 위 단계는 비교표라 PC에서 1003*875 고정.
+ * 화면이 낮으면 고정 header(9.6rem)와 토글 탭(4.2rem)을 뺀 높이까지만 올라와
+ * header를 절대 가리지 않는다.
+ */
 .sheet.is-full .sheet-body{
-    max-height: 90vh;
+    width: 100.3rem;
+    max-width: 100%;
+    height: 87.5rem;
+    max-height: calc(100vh - 9.6rem - 4.2rem);
+    margin: 0 auto;
 }
 /* 중간 단계는 카드가 눕는 요약형이라 내용 높이에 맞춘 낮은 값을 쓴다 */
 .sheet.is-mid .sheet-body{
@@ -417,7 +436,7 @@
     background: #fff;
     border: 0.2rem solid #2384c6;
     border-radius: 1.6rem;
-    box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.1);
 }
 .share-head{
     display: flex;
@@ -470,11 +489,18 @@
 }
 .share-num,
 .share-addr{
+    overflow: hidden;
     font-size: 1.4rem;
     font-weight: 700;
     color: #181818;
     word-break: keep-all;
     line-height: 1.4;
+}
+/* 물건번호 · 소재지 모두 한 줄만 노출하고 길어지면 말줄임 */
+.share-num,
+.share-addr{
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .share-num{
     margin-top: 1.4rem;
@@ -504,9 +530,6 @@
 .share-btn.kakao .ico{
     background-color: #fee500;
     background-image: url('./../images/icons/icon_share_kakao.svg');
-}
-.share-btn.mail .ico{
-    background-image: url('./../images/icons/icon_share_mail.svg');
 }
 .share-btn.url .ico{
     background-image: url('./../images/icons/icon_share_url.svg');
@@ -692,10 +715,7 @@
         background: #fff;
         border-bottom: 1px solid #cdcdcd;
     }
-    /* 흰 배경에서는 밝은 로고/메뉴가 보이지 않으므로 어두운 버전으로 교체 */
-    .header .logo img{
-        content: url(../images/common/logo01.png);
-    }
+    /* 로고는 기존 이미지를 그대로 쓰고, 메뉴 글자만 어둡게 바꾼다 */
     .header .gnb .depth1 a{
         color: #333;
     }
@@ -720,6 +740,15 @@
     .search-box .search-section.col3 .search-wrap-set .search-wrap:last-child{
         width: 100%;
         border-left: 0;
+    }
+    /* 공유하기 팝업 : 238*420, 썸네일 174*174 */
+    .share-popup{
+        width: 23.8rem;
+        height: 42rem;
+    }
+    .share-thumb{
+        width: 17.4rem;
+        height: 17.4rem;
     }
 }
 
@@ -852,13 +881,26 @@
         margin-top: 4rem;
     }
 
+    /* 공유하기 팝업 : 218*400, 썸네일 160*160 */
+    .share-popup{
+        width: 21.8rem;
+        height: 40rem;
+    }
+    .share-thumb{
+        width: 16rem;
+        height: 16rem;
+    }
+
     /* bottom sheet */
     .sheet .sheet-toggle{
         width: 14rem;
         height: 3.8rem;
         font-size: 1.5rem;
     }
-    /* 3단계 높이는 PC와 동일하게 쓴다 (중간 60vh / 맨 위 90vh) */
+    /* 중간 단계 높이는 PC와 동일. 맨 위 단계는 header(6.4rem) + 토글(3.8rem)을 뺀 높이까지 */
+    .sheet.is-full .sheet-body{
+        max-height: calc(100vh - 6.4rem - 3.8rem);
+    }
 
     /* datepicker : 화면을 넘지 않도록 */
     .ui-datepicker{
@@ -879,10 +921,14 @@
     }
 }
 
-@media screen and (max-width: 30rem) {
-    /* 320px에서도 로고와 메뉴가 한 줄에 들어가도록 축소 */
+@media screen and (max-width: 24.3125rem) {
+    /* 390px 미만(소형 단말)에서도 로고와 메뉴가 한 줄에 들어가도록 축소 */
     .header{
         height: 5.6rem;
+    }
+    /* header가 5.6rem으로 줄어드는 만큼 맨 위 단계 시트도 다시 계산한다 */
+    .sheet.is-full .sheet-body{
+        max-height: calc(100vh - 5.6rem - 3.8rem);
     }
     .header .logo{
         width: 10rem;
@@ -917,7 +963,7 @@
     .search-box .search-content.col2 .col2-first{
         margin-right: 0;
     }
-    /* 공유하기 팝업 : 320px에서도 화면을 넘지 않도록 */
+    /* 공유하기 팝업 : 390px 미만에서도 화면을 넘지 않도록 */
     .share-popup{
         max-width: calc(100vw - 3.2rem);
         padding: 1.6rem;
@@ -958,8 +1004,8 @@
     }
 }
 
-@media screen and (max-width: 30rem) {
-    /* 320px header 높이 5.6rem + 여백 */
+@media screen and (max-width: 24.3125rem) {
+    /* 390px 미만 header 높이 5.6rem + 여백 */
     .sub-wrap .sub02-container .title-area,
     .sub-wrap .sub03-container .title-area{
         padding: 9.6rem 0 4rem;
