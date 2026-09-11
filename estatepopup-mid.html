@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MG새마을금고 NPL 홍보 플랫폼 경매대상 물건 목록. 진행상태·소재지·용도지역·사업용도 등 조건별로 경매물건을 검색할 수 있습니다.">
+
+    <title>비교하기 시트 – 중간 단계 | MG새마을금고 NPL 홍보 플랫폼</title>
+
+    <meta property="og:title" content="경매대상 물건 | MG새마을금고 NPL 홍보 플랫폼">
+    <meta property="og:url" content="https://www.kfcc.co.kr">
+    <meta property="og:image" content="https://www.kfcc.co.kr/static/images/og_img.jpg">
+
+    <link rel="icon" type="image/png" href="./images/common/favicon.png">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/module.css">
+    <link rel="stylesheet" href="./css/content.css">
+</head>
+<body>
+<a href="#container" class="skip-nav">본문 바로가기</a>
+
+<!-- [S]: header -->
+<header class="header">
+    <div class="inner">
+        <a href="./index.html" class="logo">
+            <img class="logo_img" src="./images/common/logo.png" alt="MG새마을금고 NPL 홍보 플랫폼 홈으로 이동">
+        </a>
+        <nav class="nav" aria-label="주메뉴">
+            <ul class="gnb">
+                <li class="depth1">
+                    <a href="./estateBidList.html" id="bidMenu" class="active" aria-current="page"><span>경매물건</span></a>
+                </li>
+                <li class="depth1">
+                    <a href="./estateSaleList.html" id="saleMenu"><span>공매물건</span></a>
+                </li>
+                <!-- [D] : 250619 | 공매FAQ 페이지 오픈 전까지 비노출 -->
+                <li class="depth1" hidden>
+                    <a href="javascript:;" id="faqMenu"><span>공매FAQ</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- [E]: header -->
+
+<main id="wrap" class="sub-wrap">
+    <div id="container" class="sub02-container" tabindex="-1">
+        <!-- [S]: title -->
+        <div class="title-area">
+            <div class="inner">
+                <h1>경매대상 물건</h1>
+            </div>
+        </div>
+        <!-- [E]: title -->
+
+        <!-- [S]: contents -->
+        <div class="contents inner">
+            <!-- [S]: 전체물건검색 -->
+            <section class="search-area" aria-labelledby="bidSearchTitle">
+                <h2 class="sr-only" id="bidSearchTitle">경매물건 검색</h2>
+                <div class="content">
+                    <form id="frm" name="frm" method="get" role="search" aria-labelledby="bidSearchTitle" onsubmit="fnEstateList(1); return false;">
+                        <div class="search-box">
+                            <div class="search-section">
+                                <div class="search-wrap-set">
+                                    <div class="search-wrap">
+                                        <label class="search-title" for="estateStatus">진행상태</label>
+                                        <div class="search-content select-box">
+                                            <select id="estateStatus" name="estateStatus">
+                                                <option value="" selected>선택</option>
+                                                <option value="01">경매 준비중</option>
+                                                <option value="02">매각공고 중</option>
+                                                <option value="03">경매진행 중</option>
+                                                <option value="04">경매종결(매각완료)</option>
+                                                <option value="05">수의계약 가능</option>
+                                                <option value="06">기타</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="search-wrap" role="group" aria-labelledby="bidPeriodLabel">
+                                        <span class="search-title" id="bidPeriodLabel">입찰기간</span>
+                                        <div class="search-content col2">
+                                            <input type="text" id="datepicker1" name="bidStrDt" class="text col2-first calendar" placeholder="1회차" autocomplete="off" aria-label="입찰기간 시작일(1회차), 형식 YYYY-MM-DD">
+                                            <input type="text" id="datepicker2" name="bidEndDt" class="text col2-last calendar" placeholder="마지막회차" autocomplete="off" aria-label="입찰기간 종료일(마지막회차), 형식 YYYY-MM-DD">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-wrap-set">
+                                    <div class="search-wrap" role="group" aria-labelledby="estateLocLabel">
+                                        <span class="search-title" id="estateLocLabel">소재지</span>
+                                        <div class="search-content col2 select-box">
+                                            <select id="estateLocType" name="estateLocType" class="col2-first black" aria-label="소재지 권역 선택">
+                                                <option value="" selected>선택</option>
+                                                <option value="M">수도권</option>
+                                                <option value="L">지방</option>
+                                            </select>
+                                            <select id="estateLocDtlType" name="estateLocDtlType" class="col2-last black" aria-label="소재지 시/도 선택">
+                                                <option value="" selected>시/도</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="search-wrap is-fold">
+                                        <label class="search-title" for="estateUseType">용도지역</label>
+                                        <div class="search-content select-box">
+                                            <select id="estateUseType" name="estateUseType">
+                                                <option value="" selected>선택</option>
+                                                <option value="01">제1종전용주거지역</option>
+                                                <option value="02">제2종전용주거지역</option>
+                                                <option value="03">제1종일반주거지역</option>
+                                                <option value="04">제2종일반주거지역</option>
+                                                <option value="05">준주거지역</option>
+                                                <option value="06">중심상업지역</option>
+                                                <option value="07">일반상업지역</option>
+                                                <option value="08">근린상업지역</option>
+                                                <option value="09">유통상업지역</option>
+                                                <option value="10">전용공업지역</option>
+                                                <option value="11">일반공업지역</option>
+                                                <option value="12">준공업지역</option>
+                                                <option value="13">보전녹지지역</option>
+                                                <option value="14">생산녹지지역</option>
+                                                <option value="15">자연녹지지역</option>
+                                                <option value="16">기타</option>
+                                                <option value="17">제3종일반주거지역</option>
+                                                <option value="18">지구단위계획구역</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-wrap-set">
+                                    <div class="search-wrap is-fold" role="group" aria-labelledby="bussLabel">
+                                        <span class="search-title" id="bussLabel">사업용도</span>
+                                        <div class="search-content col2 select-box">
+                                            <select id="bussType" name="bussType" class="col2-first black" aria-label="사업구분 선택">
+                                                <option value="" selected>사업구분</option>
+                                                <option value="01">주거시설</option>
+                                                <option value="02">상업시설</option>
+                                                <option value="03">업무시설</option>
+                                                <option value="04">숙박시설</option>
+                                                <option value="05">레져시설</option>
+                                                <option value="06">산업시설</option>
+                                                <option value="07">기타시설</option>
+                                            </select>
+                                            <select id="bussDtlType" name="bussDtlType" class="col2-last black" aria-label="사업형태 선택">
+                                                <option value="" selected>사업형태</option>
+                                                <option value="011">아파트</option>
+                                                <option value="012">주상복합</option>
+                                                <option value="013">연립주택</option>
+                                                <option value="014">다세대주택</option>
+                                                <option value="015">타운하우스</option>
+                                                <option value="016">기타주거시설</option>
+                                                <option value="021">근린생활시설</option>
+                                                <option value="022">백화점</option>
+                                                <option value="023">대형마트</option>
+                                                <option value="024">쇼핑센터</option>
+                                                <option value="025">상가</option>
+                                                <option value="026">기타상업시설</option>
+                                                <option value="031">오피스텔</option>
+                                                <option value="032">오피스빌딩</option>
+                                                <option value="033">기타업무시설</option>
+                                                <option value="041">호텔</option>
+                                                <option value="042">콘도</option>
+                                                <option value="043">리조트</option>
+                                                <option value="044">펜션</option>
+                                                <option value="045">기타숙박시설</option>
+                                                <option value="051">골프장</option>
+                                                <option value="052">스키장</option>
+                                                <option value="053">관람장</option>
+                                                <option value="054">관광단지</option>
+                                                <option value="055">기타레져시설</option>
+                                                <option value="061">공장설립</option>
+                                                <option value="062">아파트형공장</option>
+                                                <option value="063">항만사업</option>
+                                                <option value="064">조선사업</option>
+                                                <option value="065">도로사업</option>
+                                                <option value="066">물류센터</option>
+                                                <option value="067">기타산업시설</option>
+                                                <option value="071">의료시설</option>
+                                                <option value="072">교육시설</option>
+                                                <option value="073">복지시설</option>
+                                                <option value="074">연수시설</option>
+                                                <option value="075">종교시설</option>
+                                                <option value="076">기타시설</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="search-wrap is-fold">
+                                        <label class="search-title" for="estateLoc">주소 상세</label>
+                                        <div class="search-content">
+                                            <input type="text" id="estateLoc" name="estateLoc" class="text" placeholder="물건 소재지 상세">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-wrap-set">
+                                    <div class="search-wrap is-fold">
+                                        <label class="search-title" for="gmgoNm">담당 기관명<span>(새마을금고명)</span></label>
+                                        <div class="search-content">
+                                            <input type="text" id="gmgoNm" name="gmgoNm" class="text" placeholder="담당 기관명">
+                                        </div>
+                                    </div>
+                                    <div class="search-wrap is-fold">
+                                        <label class="search-title" for="mgrNm">담당자명</label>
+                                        <div class="search-content">
+                                            <input type="text" id="mgrNm" name="mgrNm" class="text" placeholder="담당자명">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [D] : 검색조건 아코디언 (모바일 전용) :: 현재 미사용.
+                                 사용하려면 위 .search-box 에 type-fold class를 추가하고 아래 button의 주석을 해제한다.
+                                 위 3개 항목은 항상 보이고, class에 is-fold 가 붙은 항목만 모바일에서 접힌다.
+                                 (is-fold class는 마크업에 그대로 두었다. type-fold가 없으면 아무 동작도 하지 않는다.)
+
+                            <button type="button" class="search-toggle" aria-expanded="false"><span>검색조건 더보기</span></button>
+                            -->
+                        </div>
+                    </form>
+                    <div class="btn-wrap">
+                        <button type="submit" form="frm" class="btn small">조회</button>
+                    </div>
+                </div>
+            </section>
+            <!-- [E]: 전체물건검색 -->
+
+            <!-- [S]: 검색 리스트 -->
+            <section class="search-list-area" aria-labelledby="bidListTitle">
+                <h2 class="sr-only" id="bidListTitle">경매물건 목록</h2>
+                <p id="listStatus" class="sr-only" role="status"></p>
+
+                <div class="search-list-title">
+                    <p class="compare-guide">
+                        <img src="./images/icons/icon_compare.svg" alt="비교 아이콘을" width="20" height="20">
+                        눌러 물건을 비교할 수 있습니다
+                    </p>
+                    <div class="select-area">
+                        <span id="sortLabel">정렬방법</span>
+                        <div class="select-box">
+                            <select id="orderKey" name="orderKey" aria-label="정렬방법 선택">
+                                <option value="byNotDt">공고일순</option>
+                                <option value="byLowPri">최저매각가순</option>
+                            </select>
+                        </div>
+                        <div class="select-box">
+                            <select id="perCnt" name="perCnt" aria-label="페이지당 표시 개수 선택">
+                                <option value="8">8</option>
+                                <option value="16">16</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [D] : #divContent 내부는 estateListAjax 응답으로 통째 교체되는 영역입니다. -->
+                <div id="divContent" class="search-list-cont">
+                    <ul>
+                        <!-- [D] : 리스트 개수에 맞춰 해당 li를 루프 시켜 주세요 / 페이지 내 리스트 최대 개수는 기획 문의 -->
+                        <!-- [D] : 제목은 사건번호(.case-no)와 주소지(.estate-addr)를 각각 span으로 감싸 출력해 주세요.
+                                   모바일에서 주소지를 다음 줄로 떨어뜨리는 데 사용합니다. -->
+                        <li class="cont" onclick="fnEstateDtl('MG20250625175231639');">
+                            <div class="cont-top">
+                                <div class="title">
+                                    <h3 class="title-info">
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250625175231639'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2024 타경 4245</span>
+                                            <span class="estate-addr">석곡면 연반리 산19번지 외 42필지 타운하우스 (착공전)</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="cont-bottom">
+                                <div class="compare-box">
+                                    <button type="button" class="compare-btn" aria-pressed="true" value="MG20250625175231639" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                        <span class="sr-only">비교 목록에서 빼기</span>
+                                    </button>
+                                </div>
+                                <div class="img-box">
+                                    <img src="/upload/data/mciEstate/61-1_1750844612884.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                                </div>
+                                <div class="info">
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">개시결정일자</p>
+                                            <p class="list">물건상세</p>
+                                            <p class="list">소재지</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">개시결정일자 </span>2024.05.20</p>
+                                            <p><span class="sr-only">물건상세 </span>[토지 274.98㎡]/[건물 632.69㎡]</p>
+                                            <p><span class="sr-only">소재지 </span>석곡면 연반리 산19번지 외 42필지</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">진행상태</p>
+                                            <p class="list">사업용도</p>
+                                            <p class="list">최저매각가격</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">진행상태 </span>경매 준비중</p>
+                                            <p><span class="sr-only">사업용도 </span>기타시설/ 타운하우스</p>
+                                            <p><span class="sr-only">최저매각가격 </span>6,134(백만원)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="cont" onclick="fnEstateDtl('MG20250625175309860');">
+                            <div class="cont-top">
+                                <div class="title">
+                                    <h3 class="title-info">
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250625175309860'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2024타경113796</span>
+                                            <span class="estate-addr">경상남도 창원시 진해구 용원동 1111번지 아파트 (착공전)</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="cont-bottom">
+                                <div class="compare-box">
+                                    <button type="button" class="compare-btn" aria-pressed="true" value="MG20250625175309860" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                        <span class="sr-only">비교 목록에서 빼기</span>
+                                    </button>
+                                </div>
+                                <div class="img-box">
+                                    <img src="/upload/data/mciEstate/71-1_1750851469072.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                                </div>
+                                <div class="info">
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">개시결정일자</p>
+                                            <p class="list">물건상세</p>
+                                            <p class="list">소재지</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">개시결정일자 </span>2024.10.25</p>
+                                            <p><span class="sr-only">물건상세 </span>[토지 26,004㎡]/[건물 170㎡]</p>
+                                            <p><span class="sr-only">소재지 </span>경상남도 창원시 진해구 용원동 1111번지</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">진행상태</p>
+                                            <p class="list">사업용도</p>
+                                            <p class="list">최저매각가격</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">진행상태 </span>경매진행 중</p>
+                                            <p><span class="sr-only">사업용도 </span>주거시설/ 아파트</p>
+                                            <p><span class="sr-only">최저매각가격 </span>36,137(백만원)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="cont" onclick="fnEstateDtl('MG20250831190137994');">
+                            <div class="cont-top">
+                                <div class="title">
+                                    <h3 class="title-info">
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250831190137994'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2025타경30309</span>
+                                            <span class="estate-addr">경기 부천시 원미구 심곡동 129-8 오피스텔 (공사진행중)</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="cont-bottom">
+                                <div class="compare-box">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20250831190137994" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                        <span class="sr-only">비교 목록에 담기</span>
+                                    </button>
+                                </div>
+                                <div class="img-box">
+                                    <img src="/upload/data/mciEstate/산곡금고(1000011185)_1번_1756634489918.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                                </div>
+                                <div class="info">
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">개시결정일자</p>
+                                            <p class="list">물건상세</p>
+                                            <p class="list">소재지</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">개시결정일자 </span>2025.01.16</p>
+                                            <p><span class="sr-only">물건상세 </span>[토지 453.90㎡]/[건물 -㎡]</p>
+                                            <p><span class="sr-only">소재지 </span>경기 부천시 원미구 심곡동 129-8</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">진행상태</p>
+                                            <p class="list">사업용도</p>
+                                            <p class="list">최저매각가격</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">진행상태 </span>경매진행 중</p>
+                                            <p><span class="sr-only">사업용도 </span>업무시설/ 오피스텔</p>
+                                            <p><span class="sr-only">최저매각가격 </span>2,257(백만원)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="cont" onclick="fnEstateDtl('MG20260219140630406');">
+                            <div class="cont-top">
+                                <div class="title">
+                                    <h3 class="title-info">
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260219140630406'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2025타경501738</span>
+                                            <span class="estate-addr">세종시 고운동 893-33번지 연립주택 (공사진행중)</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="cont-bottom">
+                                <div class="compare-box">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20260219140630406" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                        <span class="sr-only">비교 목록에 담기</span>
+                                    </button>
+                                </div>
+                                <div class="img-box">
+                                    <img src="/upload/data/mciEstate/천안서부금고(1000012591)_1번_1771477586681.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                                </div>
+                                <div class="info">
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">개시결정일자</p>
+                                            <p class="list">물건상세</p>
+                                            <p class="list">소재지</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">개시결정일자 </span>2025.02.12</p>
+                                            <p><span class="sr-only">물건상세 </span>[토지 4,958㎡]/[건물 -㎡]</p>
+                                            <p><span class="sr-only">소재지 </span>세종시 고운동 893-33번지</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">진행상태</p>
+                                            <p class="list">사업용도</p>
+                                            <p class="list">최저매각가격</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">진행상태 </span>경매진행 중</p>
+                                            <p><span class="sr-only">사업용도 </span>주거시설/ 연립주택</p>
+                                            <p><span class="sr-only">최저매각가격 </span>5,560(백만원)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="cont" onclick="fnEstateDtl('MG20250625174505588');">
+                            <div class="cont-top">
+                                <div class="title">
+                                    <h3 class="title-info">
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20250625174505588'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2025타경2798</span>
+                                            <span class="estate-addr">대전광역시 대덕구 중리동 238-7, 8번지 다세대주택 (공사진행중)</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="cont-bottom">
+                                <div class="compare-box">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20250625174505588" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                        <span class="sr-only">비교 목록에 담기</span>
+                                    </button>
+                                </div>
+                                <div class="img-box">
+                                    <img src="/upload/data/mciEstate/24-1_1751443421167.jpeg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                                </div>
+                                <div class="info">
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">개시결정일자</p>
+                                            <p class="list">물건상세</p>
+                                            <p class="list">소재지</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">개시결정일자 </span>2025.04.11</p>
+                                            <p><span class="sr-only">물건상세 </span>[토지 1,763.90㎡]/[건물 -㎡]</p>
+                                            <p><span class="sr-only">소재지 </span>대전광역시 대덕구 중리동 238-7, 8번지</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">진행상태</p>
+                                            <p class="list">사업용도</p>
+                                            <p class="list">최저매각가격</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">진행상태 </span>경매진행 중</p>
+                                            <p><span class="sr-only">사업용도 </span>주거시설/ 다세대주택</p>
+                                            <p><span class="sr-only">최저매각가격 </span>8,561(백만원)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="cont" onclick="fnEstateDtl('MG20260219174641945');">
+                            <div class="cont-top">
+                                <div class="title">
+                                    <h3 class="title-info">
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260219174641945'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2025타경35543</span>
+                                            <span class="estate-addr">부천시 원미구 심곡동 176-14, 176-15, 376-31 오피스텔 (공사진행중)</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="cont-bottom">
+                                <div class="compare-box">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20260219174641945" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                        <span class="sr-only">비교 목록에 담기</span>
+                                    </button>
+                                </div>
+                                <div class="img-box">
+                                    <img src="/upload/data/mciEstate/부천중앙금고(1000011429)_1번_1771490796847.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                                </div>
+                                <div class="info">
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">개시결정일자</p>
+                                            <p class="list">물건상세</p>
+                                            <p class="list">소재지</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">개시결정일자 </span>2025.12.31</p>
+                                            <p><span class="sr-only">물건상세 </span>[토지 575.70㎡]/[건물 -㎡]</p>
+                                            <p><span class="sr-only">소재지 </span>부천시 원미구 심곡동 176-14, 176-15, 376-31</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">진행상태</p>
+                                            <p class="list">사업용도</p>
+                                            <p class="list">최저매각가격</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">진행상태 </span>경매진행 중</p>
+                                            <p><span class="sr-only">사업용도 </span>업무시설/ 오피스텔</p>
+                                            <p><span class="sr-only">최저매각가격 </span>-(백만원)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="cont" onclick="fnEstateDtl('MG20260219175207688');">
+                            <div class="cont-top">
+                                <div class="title">
+                                    <h3 class="title-info">
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260219175207688'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2026타경10219</span>
+                                            <span class="estate-addr">중랑구 중화동 306-19 외 주상복합 (공사진행중)</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="cont-bottom">
+                                <div class="compare-box">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20260219175207688" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                        <span class="sr-only">비교 목록에 담기</span>
+                                    </button>
+                                </div>
+                                <div class="img-box">
+                                    <img src="/upload/data/mciEstate/광남금고(1000012110)_1번_1771491123943.jpg" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                                </div>
+                                <div class="info">
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">개시결정일자</p>
+                                            <p class="list">물건상세</p>
+                                            <p class="list">소재지</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">개시결정일자 </span>2026.02.05</p>
+                                            <p><span class="sr-only">물건상세 </span>[토지 942㎡]/[건물 -㎡]</p>
+                                            <p><span class="sr-only">소재지 </span>중랑구 중화동 306-19 외</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">진행상태</p>
+                                            <p class="list">사업용도</p>
+                                            <p class="list">최저매각가격</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">진행상태 </span>경매진행 중</p>
+                                            <p><span class="sr-only">사업용도 </span>주거시설/ 주상복합</p>
+                                            <p><span class="sr-only">최저매각가격 </span>-(백만원)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="cont" onclick="fnEstateDtl('MG20260821151401797');">
+                            <div class="cont-top">
+                                <div class="title">
+                                    <h3 class="title-info">
+                                        <a href="./estateDtl.html" onclick="event.stopPropagation(); fnEstateDtl('MG20260821151401797'); return false;">
+                                            <span class="case-no"><span class="flag flagA">경 매</span>2026타경 11018</span>
+                                            <span class="estate-addr">울산광역시 울주군 삼남읍 신화리 1612-1번지 근린생활시설 (착공전)</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="cont-bottom">
+                                <div class="compare-box">
+                                    <button type="button" class="compare-btn" aria-pressed="false" value="MG20260821151401797" onclick="event.stopPropagation(); fnToggleCompare(this); return false;">
+                                        <span class="sr-only">비교 목록에 담기</span>
+                                    </button>
+                                </div>
+                                <div class="img-box">
+                                    <img src="/upload/data/mciEstate/농소_3_1787292838826.png" alt="" loading="lazy" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                                </div>
+                                <div class="info">
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">개시결정일자</p>
+                                            <p class="list">물건상세</p>
+                                            <p class="list">소재지</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">개시결정일자 </span>2026.06.29</p>
+                                            <p><span class="sr-only">물건상세 </span>[토지 6,967.40㎡]/[건물 -㎡]</p>
+                                            <p><span class="sr-only">소재지 </span>울산광역시 울주군 삼남읍 신화리 1612-1번지</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="col-title list-wrap" aria-hidden="true">
+                                            <p class="list">진행상태</p>
+                                            <p class="list">사업용도</p>
+                                            <p class="list">최저매각가격</p>
+                                        </div>
+                                        <div class="col-cont">
+                                            <p><span class="sr-only">진행상태 </span>경매진행 중</p>
+                                            <p><span class="sr-only">사업용도 </span>상업시설/ 근린생활시설</p>
+                                            <p><span class="sr-only">최저매각가격 </span>-(백만원)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- [S]: 페이지네이션 -->
+                    <nav class="pagination" aria-label="물건 목록 페이지">
+                        <!-- [D] : 첫 페이지에서는 이전, 마지막 페이지에서는 다음 버튼에 disabled를 넣어 주세요. -->
+                        <button type="button" class="button prev-btn" onclick="fnEstateList(1);" aria-label="이전 페이지">이전</button>
+                        <ul class="num">
+                            <!-- [D] : 현재 페이지 li에 active 클래스, button에 aria-current="page" 추가 -->
+                            <li class="active">
+                                <button type="button" onclick="fnEstateList(1);" aria-label="1 페이지" aria-current="page">1</button>
+                            </li>
+                            <li>
+                                <button type="button" onclick="fnEstateList(2);" aria-label="2 페이지">2</button>
+                            </li>
+                        </ul>
+                        <button type="button" class="button next-btn" onclick="fnEstateList(2);" aria-label="다음 페이지">다음</button>
+                    </nav>
+                    <!-- [E]: 페이지네이션 -->
+                </div>
+            </section>
+            <!-- [E]: 검색 리스트 -->
+        </div>
+        <!-- [E]: contents -->
+    </div>
+</main>
+
+<!-- [S]: footer -->
+<footer class="footer">
+    <div class="inner">
+        <a href="./index.html" class="logo">
+            <img src="./images/common/logo01.png" alt="MG새마을금고">
+        </a>
+
+        <p class="copyright"><small>COPYRIGHT 2025 ©새마을금고 NPL 홍보 플랫폼. ALL RIGHTS RESERVED.</small></p>
+    </div>
+</footer>
+<!-- [E]: footer -->
+
+<!-- 물건 상세 이동용 파라미터 전달 폼 -->
+<form name="estateFrm" id="estateFrm" method="get" action="./estateDtl.html">
+    <input type="hidden" name="estateId" id="hEstateId">
+    <input type="hidden" name="pageNo" id="hPageNo">
+    <input type="hidden" name="ownerType" id="hOwnerType">
+    <input type="hidden" name="estateType" id="hEstateType">
+    <input type="hidden" name="estateStatus" id="hEstateStatus">
+    <input type="hidden" name="estateLocType" id="hEstateLocType">
+    <input type="hidden" name="estateLocDtlType" id="hEstateLocDtlType">
+    <input type="hidden" name="estateUseType" id="hEstateUseType">
+    <input type="hidden" name="bussType" id="hBussType">
+    <input type="hidden" name="bussDtlType" id="hBussDtlType">
+    <input type="hidden" name="estateLoc" id="hEstateLoc">
+    <input type="hidden" name="gmgoNm" id="hGmgoNm">
+    <input type="hidden" name="mgrNm" id="hMgrNm">
+    <input type="hidden" name="bidStrDt" id="hBidStrDt">
+    <input type="hidden" name="bidEndDt" id="hBidEndDt">
+    <input type="hidden" name="orderKey" id="hOrderKey">
+    <input type="hidden" name="perCnt" id="hPerCnt">
+</form>
+
+<!-- [S]: 비교하기 시트 -->
+<!--
+ * [D] : 이 페이지는 비교하기 시트 중간 단계(.is-mid) 확인용 화면입니다.
+ *       스크립트 없이도 바로 보이도록 시트 내용을 마크업으로 그려둔 상태이며,
+ *       실제 동작(담기/빼기/단계 전환)은 estateBidList.html + js/preview/compare.js 를 봐주세요.
+ *
+ * [D] : 시트는 3단계이며, #compareSheet에 붙는 class로 단계가 결정됩니다.
+ *
+ *   1) 맨 위    : <div class="sheet is-full">      / .sheet-body max-height 90vh
+ *                 (비교표 – .compare-table 만 노출)
+ *   2) 중간     : <div class="sheet is-mid">       / .sheet-body max-height 28rem
+ *                 (카드가 가로로 눕는 요약형 – .compare-list 만 노출)
+ *   3) 토글만   : <div class="sheet is-collapsed"> / .sheet-body max-height 0
+ *
+ *   - 세 클래스는 동시에 붙이지 마세요. 하나만 붙습니다.
+ *   - 카드 목록(.compare-list)과 비교표(.compare-table)는 둘 다 그려두고
+ *     CSS로 단계에 맞는 하나만 보여줍니다.
+ *   - 화살표 방향(.sheet-arrow)도 이 class를 따릅니다.
+ *     맨 위 / 중간 = 아래 방향, 토글만 = 위 방향.
+ *   - 시트 자체를 감출 때는 class가 아니라 #compareSheet 의 hidden 속성을 씁니다.
+ *     (담긴 물건이 없을 때 = hidden, 한 건이라도 담기면 hidden 제거)
+ *   - 단계를 바꿀 때 #compareToggle 의 aria-expanded 도 함께 맞춰주세요.
+ *     (토글만 단계 = false, 나머지 = true)
+-->
+<div class="sheet is-mid" id="compareSheet" role="region" aria-label="비교하기">
+    <button type="button" class="sheet-toggle" id="compareToggle" aria-expanded="true" aria-controls="compareSheetBody">
+        <span class="sr-only">비교하기</span>
+        <span class="sheet-arrow" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+    <div class="sheet-body" id="compareSheetBody">
+        <div class="compare-util">
+            <button type="button" class="compare-reset" onclick="fnResetCompare();">
+                <span class="sr-only">비교 목록 초기화</span>
+            </button>
+            <button type="button" class="compare-close" onclick="fnSetCompareStep('collapsed');">닫기</button>
+        </div>
+
+        <!-- [D] : 한도(PC 3건 / 모바일 2건)를 넘겨 담으려 할 때만 hidden을 뗍니다. -->
+        <p class="compare-notice" id="compareNotice" role="alert" hidden>최대 3건까지 비교할 수 있습니다.</p>
+
+        <!-- [D] : 아래 두 마크업은 담은 물건 2건 + 빈 칸 1건 예시입니다.
+                   실제 연동 시에는 담은 건수만큼 카드/열을 반복하고,
+                   남는 칸은 .is-empty 로 채워 한도(최대 3칸)를 유지해 주세요. -->
+        <div class="compare-list-wrap">
+            <!-- [D] : 중간 단계(.is-mid) 요약형 카드 목록 -->
+            <ul class="compare-list" id="compareList">
+                <li class="compare-card">
+                    <div class="compare-card-thumb">
+                        <img src="/upload/data/mciEstate/61-1_1750844612884.jpg" alt="" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                        <button type="button" class="compare-remove" onclick="fnRemoveCompare('MG20250625175231639');">
+                            <span class="sr-only">2024 타경 4245 석곡면 연반리 산19번지 외 42필지 타운하우스 (착공전) 비교 목록에서 빼기</span>
+                        </button>
+                    </div>
+                    <div class="compare-card-body">
+                        <div class="compare-card-flags">
+                            <!-- [D] : .group-label 은 요약형(.is-mid)에서만 보이는 항목명입니다. -->
+                            <span class="group-label">경공매번호</span>
+                            <span class="flag flagA">경 매</span>
+                            <span class="compare-card-state">경매 준비중</span>
+                        </div>
+                        <span class="compare-card-title">2024 타경 4245 석곡면 연반리 산19번지 외 42필지 타운하우스 (착공전)</span>
+                        <dl class="compare-card-info">
+                            <dt>개시결정일자</dt>
+                            <dd>2024.05.20</dd>
+                            <dt>물건상세</dt>
+                            <dd>[토지 274.98㎡]/[건물 632.69㎡]</dd>
+                            <dt class="row-addr">소재지</dt>
+                            <dd class="row-addr">석곡면 연반리 산19번지 외 42필지</dd>
+                            <dt>사업용도</dt>
+                            <dd>기타시설/ 타운하우스</dd>
+                            <dt>최저매각가격</dt>
+                            <dd>6,134(백만원)</dd>
+                        </dl>
+                    </div>
+                </li>
+
+                <li class="compare-card">
+                    <div class="compare-card-thumb">
+                        <img src="/upload/data/mciEstate/71-1_1750851469072.jpg" alt="" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                        <button type="button" class="compare-remove" onclick="fnRemoveCompare('MG20250625175309860');">
+                            <span class="sr-only">2024타경113796 경상남도 창원시 진해구 용원동 1111번지 아파트 (착공전) 비교 목록에서 빼기</span>
+                        </button>
+                    </div>
+                    <div class="compare-card-body">
+                        <div class="compare-card-flags">
+                            <span class="group-label">경공매번호</span>
+                            <span class="flag flagA">경 매</span>
+                            <span class="compare-card-state">경매진행 중</span>
+                        </div>
+                        <span class="compare-card-title">2024타경113796 경상남도 창원시 진해구 용원동 1111번지 아파트 (착공전)</span>
+                        <dl class="compare-card-info">
+                            <dt>개시결정일자</dt>
+                            <dd>2024.10.25</dd>
+                            <dt>물건상세</dt>
+                            <dd>[토지 26,004㎡]/[건물 170㎡]</dd>
+                            <dt class="row-addr">소재지</dt>
+                            <dd class="row-addr">경상남도 창원시 진해구 용원동 1111번지</dd>
+                            <dt>사업용도</dt>
+                            <dd>주거시설/ 아파트</dd>
+                            <dt>최저매각가격</dt>
+                            <dd>36,137(백만원)</dd>
+                        </dl>
+                    </div>
+                </li>
+
+                <!-- [D] : 빈 칸은 칸 전체가 버튼입니다. -->
+                <li class="compare-card is-empty">
+                    <button type="button" class="compare-card-placeholder" onclick="fnSetCompareStep('collapsed');">최대 3개까지 선택 가능합니다.</button>
+                </li>
+            </ul>
+
+            <!-- [D] : 맨 위 단계(.is-full) 비교표.
+                       왼쪽 첫 열이 항목명(th)이고, 담은 물건이 한 열씩 오른쪽으로 붙습니다.
+                       .td-label 은 태블릿 이하에서만 보이는 항목명으로, PC는 왼쪽 th가 대신합니다.
+                       빈 칸은 첫 행에서 rowspan으로 열 전체를 버튼 하나로 만듭니다. -->
+            <table class="compare-table" id="compareTable">
+                <caption class="sr-only">담은 물건 비교표</caption>
+                <tbody>
+                    <tr class="row-img">
+                        <th scope="row">물건사진</th>
+                        <td>
+                            <div class="compare-table-thumb">
+                                <img src="/upload/data/mciEstate/61-1_1750844612884.jpg" alt="" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                                <button type="button" class="compare-remove" onclick="fnRemoveCompare('MG20250625175231639');">
+                                    <span class="sr-only">2024 타경 4245 석곡면 연반리 산19번지 외 42필지 타운하우스 (착공전) 비교 목록에서 빼기</span>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="compare-table-thumb">
+                                <img src="/upload/data/mciEstate/71-1_1750851469072.jpg" alt="" onerror="this.onerror=null; this.src='./images/common/noImage.svg';">
+                                <button type="button" class="compare-remove" onclick="fnRemoveCompare('MG20250625175309860');">
+                                    <span class="sr-only">2024타경113796 경상남도 창원시 진해구 용원동 1111번지 아파트 (착공전) 비교 목록에서 빼기</span>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="is-empty" rowspan="5">
+                            <button type="button" class="compare-card-placeholder" onclick="fnSetCompareStep('collapsed');">최대 3개까지 선택 가능합니다.</button>
+                        </td>
+                    </tr>
+                    <tr class="row-flag">
+                        <th scope="row">경공매빈도</th>
+                        <td>
+                            <span class="td-label">경공매빈도</span>
+                            <span class="flag flagA">경 매</span>
+                            <span class="compare-card-state">경매 준비중</span>
+                        </td>
+                        <td>
+                            <span class="td-label">경공매빈도</span>
+                            <span class="flag flagA">경 매</span>
+                            <span class="compare-card-state">경매진행 중</span>
+                        </td>
+                    </tr>
+                    <tr class="row-use">
+                        <th scope="row">용도</th>
+                        <td>
+                            <span class="td-label">용도</span>
+                            <span class="td-value">기타시설/ 타운하우스</span>
+                        </td>
+                        <td>
+                            <span class="td-label">용도</span>
+                            <span class="td-value">주거시설/ 아파트</span>
+                        </td>
+                    </tr>
+                    <tr class="row-detail">
+                        <th scope="row">물건상세</th>
+                        <td>
+                            <span class="td-label">물건상세</span>
+                            <span class="td-value">[토지 274.98㎡]/[건물 632.69㎡]</span>
+                        </td>
+                        <td>
+                            <span class="td-label">물건상세</span>
+                            <span class="td-value">[토지 26,004㎡]/[건물 170㎡]</span>
+                        </td>
+                    </tr>
+                    <tr class="row-addr">
+                        <th scope="row">소재지</th>
+                        <td>
+                            <span class="td-label">소재지</span>
+                            <span class="td-value">석곡면 연반리 산19번지 외 42필지</span>
+                        </td>
+                        <td>
+                            <span class="td-label">소재지</span>
+                            <span class="td-value">경상남도 창원시 진해구 용원동 1111번지</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <p class="sr-only" id="compareStatus" role="status">비교 목록 2건 / 최대 3건</p>
+</div>
+<!-- [E]: 비교하기 시트 -->
+
+
+<!-- [S]: script -->
+<!-- [D] : 이 페이지는 비교하기 시트 화면 확인용이라 스크립트를 모두 뺀 상태입니다.
+              (개발/스크립트 없이도 시트가 바로 보입니다)
+              동작까지 보려면 estateBidList.html 을 열거나, 아래 두 줄을 다시 넣으세요.
+              <script src="./js/common.js"></script>
+              <script src="./js/preview/compare.js"></script> -->
+<!-- [E]: script -->
+</body>
+</html>

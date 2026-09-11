@@ -671,6 +671,10 @@
 .sheet.is-full .compare-list{
     display: none;
 }
+/* 표가 시트 높이를 꽉 채우려면 표를 감싼 영역부터 남는 높이를 가져가야 한다 */
+.sheet.is-full .compare-list-wrap{
+    flex: 1;
+}
 .sheet.is-full .compare-table{
     display: table;
     table-layout: fixed;
