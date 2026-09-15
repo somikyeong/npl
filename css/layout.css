@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* ==============================
- * header, footer, form, popup(modal/ bottomsheet ...) 등 컴포넌트 형태의 공통 style
+ * header, footer, form 등 컴포넌트 형태의 공통 style (팝업 · 레이어는 popup.css)
  * ============================== */
 
 /*------- header -------*/
@@ -276,270 +276,7 @@
 }
 /*------- //search box -------*/
 
-/*------- bottom sheet -------*/
-.sheet{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 400;
-    width: 100%;
-}
-.sheet[hidden]{
-    display: none;
-}
-/* 맨 위 단계는 화면을 거의 다 덮으므로 고정 header(z-index 300) 아래로 깔린다 */
-.sheet.is-full{
-    z-index: 200;
-}
-/* 상단 탭 : 누르면 시트가 아래로 내려갔다 올라온다 */
-.sheet .sheet-toggle{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    width: 16rem;
-    height: 4.2rem;
-    margin: 0 auto;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-    background: #0072bc;
-    border-radius: 1rem 1rem 0 0;
-    box-shadow: 0 -0.2rem 0.8rem rgba(0, 0, 0, 0.12);
-}
-/* 펼친 상태 : 화살표 3개가 아래를 가리킨다 (누르면 내려간다) */
-.sheet .sheet-arrow{
-    display: block;
-    /* 겹쳐 쌓은 화살표의 실제 높이만큼만 차지하도록 */
-    line-height: 0;
-}
-.sheet .sheet-arrow i{
-    display: block;
-    width: 0.8rem;
-    height: 0.8rem;
-    /* 회전한 사각형이라 위아래로 겹쳐 '>>>' 처럼 촘촘히 쌓는다 */
-    margin: -0.2rem auto 0;
-    border-right: 0.2rem solid #fff;
-    border-bottom: 0.2rem solid #fff;
-    transform: rotate(45deg);
-    /* 순서대로 하나씩 밝아지며 흐르는 느낌 */
-    animation: sheetArrowGlow 1.4s ease-in-out infinite;
-}
-.sheet .sheet-arrow i:nth-child(1){
-    animation-delay: 0s;
-}
-.sheet .sheet-arrow i:nth-child(2){
-    animation-delay: .18s;
-}
-.sheet .sheet-arrow i:nth-child(3){
-    animation-delay: .36s;
-}
-/* 접힌 상태 : 화살표를 위로 (다시 올릴 수 있음) + 흐르는 방향도 뒤집는다 */
-.sheet.is-collapsed .sheet-arrow i{
-    transform: rotate(-135deg);
-}
-.sheet.is-collapsed .sheet-arrow i:nth-child(1){
-    animation-delay: .36s;
-}
-.sheet.is-collapsed .sheet-arrow i:nth-child(3){
-    animation-delay: 0s;
-}
-@keyframes sheetArrowGlow{
-    0%, 100%{
-        opacity: 0.35;
-        border-color: #fff;
-    }
-    50%{
-        opacity: 1;
-        border-color: #fff;
-        filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.85));
-    }
-}
-/* 움직임을 줄이도록 설정한 사용자에게는 깜빡임 없이 보여준다 */
-@media (prefers-reduced-motion: reduce){
-    .sheet .sheet-arrow i{
-        animation: none;
-        opacity: 1;
-    }
-}
-/*
- * 시트는 3단계 :: 맨 위(.is-full) > 중간(기본) > 토글만(.is-collapsed).
- * 클래스가 없는 기본값이 중간 단계다.
- */
-.sheet .sheet-body{
-    /* 내용이 최대 높이를 넘으면 안쪽에서 스크롤되도록 세로 flex로 둔다 */
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    max-height: 60vh;
-    background: #fff;
-    border-top: 0.1rem solid #e6e6e6;
-    box-shadow: 0 -0.4rem 1.6rem rgba(0, 0, 0, 0.12);
-    transition: max-height .3s ease;
-}
-/*
- * 맨 위 단계는 비교표라 PC에서 1003*875 고정.
- * 화면이 낮으면 고정 header(9.6rem)와 토글 탭(4.2rem)을 뺀 높이까지만 올라와
- * header를 절대 가리지 않는다.
- */
-.sheet.is-full .sheet-body{
-    width: 100.3rem;
-    max-width: 100%;
-    height: 87.5rem;
-    max-height: calc(100vh - 9.6rem - 4.2rem);
-    margin: 0 auto;
-}
-/* 중간 단계는 카드가 눕는 요약형이라 내용 높이에 맞춘 낮은 값을 쓴다 */
-.sheet.is-mid .sheet-body{
-    max-height: 28rem;
-}
-.sheet.is-collapsed .sheet-body{
-    max-height: 0;
-}
-/*------- //bottom sheet -------*/
-
-/*------- 공유하기 팝업 -------*/
-/*
- * 기본은 숨김. hidden 속성을 지원하지 않는 브라우저(IE 등)에서도
- * 마크업이 그대로 노출되지 않도록 display로 직접 막는다.
- * 열리면 기준 요소(.btn-wrap) 오른쪽 아래, 즉 공유하기 버튼 바로 밑에 붙는다.
- */
-.share-layer{
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    z-index: 500;
-    padding-top: 0.8rem;
-}
-.share-layer.is-open{
-    display: block;
-}
-/* 배경은 어둡게 덮지 않고, 바깥 클릭으로 닫히기만 한다 */
-.share-dim{
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-}
-.share-popup{
-    /* dim 위로 올리기 위해 position 지정 */
-    position: relative;
-    /* 열릴 때 포커스를 받는 대상이라 기본 외곽선은 지운다 */
-    outline: none;
-    width: 30rem;
-    max-width: calc(100vw - 4rem);
-    padding: 2rem;
-    text-align: left;
-    background: #fff;
-    border: 0.2rem solid #2384c6;
-    border-radius: 1.6rem;
-    box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.1);
-}
-.share-head{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.share-head h2{
-    font-size: 2rem;
-    font-weight: 700;
-    color: #181818;
-}
-/* 닫기 : 두 개의 선을 겹쳐 X를 만든다 */
-.share-close{
-    position: relative;
-    flex-shrink: 0;
-    width: 2.4rem;
-    height: 2.4rem;
-}
-.share-close:before,
-.share-close:after{
-    content: '';
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 1.8rem;
-    height: 0.2rem;
-    background: #181818;
-}
-.share-close:before{
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-.share-close:after{
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-.share-body{
-    margin-top: 1.8rem;
-    text-align: center;
-}
-.share-thumb{
-    overflow: hidden;
-    width: 15.2rem;
-    height: 11.4rem;
-    margin: 0 auto;
-}
-.share-thumb img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.share-num,
-.share-addr{
-    overflow: hidden;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #181818;
-    word-break: keep-all;
-    line-height: 1.4;
-}
-/* 물건번호 · 소재지 모두 한 줄만 노출하고 길어지면 말줄임 */
-.share-num,
-.share-addr{
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.share-num{
-    margin-top: 1.4rem;
-}
-.share-addr{
-    margin-top: 0.6rem;
-}
-.share-list{
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-.share-btn{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-.share-btn .ico{
-    display: block;
-    width: 4.8rem;
-    height: 4.8rem;
-    background: #f2f2f2 no-repeat center / 2.4rem 2.4rem;
-    border-radius: 50%;
-}
-.share-btn.kakao .ico{
-    background-color: #fee500;
-    background-image: url('./../images/icons/icon_share_kakao.svg');
-}
-.share-btn.url .ico{
-    background-image: url('./../images/icons/icon_share_url.svg');
-}
-.share-btn .txt{
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #262626;
-}
-/*------- //공유하기 팝업 -------*/
+/* [D] : 팝업 · 레이어(비교하기 시트 / 공유하기 팝업 / fancybox) 스타일은 popup.css 로 분리했습니다. */
 
 /*------- datepicker -------*/
 .ui-datepicker{
@@ -648,66 +385,6 @@
 }
 /*------- //datepicker -------*/
 
-/*------- fancybox -------*/
-.fancybox-overlay{
-    background: rgba(0, 0, 0, 0.6);
-}
-.fancybox-close{
-    top: 0.4rem;
-    right: 0.4rem;
-    width: 4rem;
-    height: 4rem;
-    background-image: url('./../images/icons/icon_close.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-}
-.fancybox-prev span{
-    left: -5rem;
-    visibility: visible;
-    display: block;
-    width: 4.2rem;
-    height: 4.2rem;
-    background-image: url('./../images/icons/icon_arrow_right01.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 2rem;
-    background-color: rgba(255,255,255,0.5);
-    border-radius: 50%;
-    transform: rotate(180deg);
-}
-.fancybox-next span{
-    right: -5rem;
-    visibility: visible;
-    display: block;
-    width: 4.2rem;
-    height: 4.2rem;
-    background-image: url('./../images/icons/icon_arrow_right01.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 2rem;
-    background-color: rgba(255,255,255,0.5);
-    border-radius: 50%;
-}
-.fancybox-skin{
-    padding: 0 !important;
-    background: none;
-}
-.fancybox-wrap{
-    width: 90rem !important;
-    height: auto !important;
-}
-.fancybox-outer,
-.fancybox-inner,
-.fancybox-inner img{
-    width: 100% !important;
-    height: 100% !important;
-}
-.fancybox-opened .fancybox-title{
-    display: none;
-}
-/*------- //fancybox -------*/
-
 /*------- media screen -------*/
 @media screen and (max-width: 74.9375rem) {
     /* header : 태블릿부터 흰 배경 + 하단 라인 */
@@ -740,15 +417,6 @@
     .search-box .search-section.col3 .search-wrap-set .search-wrap:last-child{
         width: 100%;
         border-left: 0;
-    }
-    /* 공유하기 팝업 : 238*420, 썸네일 174*174 */
-    .share-popup{
-        width: 23.8rem;
-        height: 42rem;
-    }
-    .share-thumb{
-        width: 17.4rem;
-        height: 17.4rem;
     }
 }
 
@@ -881,54 +549,18 @@
         margin-top: 4rem;
     }
 
-    /* 공유하기 팝업 : 218*400, 썸네일 160*160 */
-    .share-popup{
-        width: 21.8rem;
-        height: 40rem;
-    }
-    .share-thumb{
-        width: 16rem;
-        height: 16rem;
-    }
-
-    /* bottom sheet */
-    .sheet .sheet-toggle{
-        width: 14rem;
-        height: 3.8rem;
-        font-size: 1.5rem;
-    }
-    /* 중간 단계 높이는 PC와 동일. 맨 위 단계는 header(6.4rem) + 토글(3.8rem)을 뺀 높이까지 */
-    .sheet.is-full .sheet-body{
-        max-height: calc(100vh - 6.4rem - 3.8rem);
-    }
-
     /* datepicker : 화면을 넘지 않도록 */
     .ui-datepicker{
         width: calc(100vw - 3.2rem);
         max-width: 32rem;
     }
 
-    /* fancybox : 화면폭에 맞추고 좌우 화살표를 안쪽으로 */
-    .fancybox-wrap{
-        width: calc(100vw - 2.4rem) !important;
-        left: 1.2rem !important;
-    }
-    .fancybox-prev span{
-        left: 0.8rem;
-    }
-    .fancybox-next span{
-        right: 0.8rem;
-    }
 }
 
 @media screen and (max-width: 24.3125rem) {
     /* 390px 미만(소형 단말)에서도 로고와 메뉴가 한 줄에 들어가도록 축소 */
     .header{
         height: 5.6rem;
-    }
-    /* header가 5.6rem으로 줄어드는 만큼 맨 위 단계 시트도 다시 계산한다 */
-    .sheet.is-full .sheet-body{
-        max-height: calc(100vh - 5.6rem - 3.8rem);
     }
     .header .logo{
         width: 10rem;
@@ -962,11 +594,6 @@
     }
     .search-box .search-content.col2 .col2-first{
         margin-right: 0;
-    }
-    /* 공유하기 팝업 : 390px 미만에서도 화면을 넘지 않도록 */
-    .share-popup{
-        max-width: calc(100vw - 3.2rem);
-        padding: 1.6rem;
     }
 }
 
